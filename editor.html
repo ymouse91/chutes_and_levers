@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chutes & Levers — Card Editor</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Oswald:wght@400;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:     #1a0a00;
+  --panel:  #110600;
+  --card:   #fdf6e3;
+  --border: #3a2a10;
+  --wall:   #c0392b;
+  --gold:   #f1c40f;
+  --accent: #e74c3c;
+  --purple: #9b59b6;
+  --text:   #e8dcc8;
+  --muted:  #7a6a50;
+  --cs: 68px;
+  --wt: 6px;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Share Tech Mono', monospace;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+header {
+  background: #0a0300;
+  border-bottom: 2px solid var(--accent);
+  padding: 7px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+header h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+header .sub { font-size: 11px; color: var(--muted); }
+
+/* ── Layout ── */
+.workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 210px;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+.sidebar h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+}
+
+.side-toggle { display: flex; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+.side-toggle button {
+  flex: 1;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  background: #1e0d00;
+  color: var(--muted);
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.side-toggle button.active { background: var(--accent); color: #fff; font-weight: bold; }
+
+/* Tool list */
+.tool-list { display: flex; flex-direction: column; gap: 4px; }
+.tool-btn {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  background: #1e0d00;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: all .15s;
+  border-radius: 2px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tool-btn:hover { border-color: var(--gold); }
+.tool-btn.active { background: var(--gold); color: #1a0a00; border-color: var(--gold); font-weight: bold; }
+.tool-btn.t-wall.active   { background: var(--wall);   color:#fff; border-color:var(--wall); }
+.tool-btn.t-erase.active  { background: #555;           color:#fff; border-color:#555; }
+.tool-btn.t-chute.active  { background: #c0392b;        color:#fff; border-color:#c0392b; }
+.tool-btn.t-lever.active  { background: var(--purple);  color:#fff; border-color:var(--purple); }
+
+.tool-sep { height: 1px; background: var(--border); margin: 2px 0; }
+
+.info-box {
+  background: #0d0500;
+  border: 1px solid var(--border);
+  padding: 7px 9px;
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.9;
+  border-radius: 2px;
+}
+.info-box b { color: var(--text); }
+
+.act-btn {
+  width: 100%;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  background: #1e0d00;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 7px 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  text-align: left;
+  transition: all .15s;
+  margin-bottom: 4px;
+}
+.act-btn:hover { border-color: var(--gold); color: var(--gold); }
+.act-btn.danger:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  gap: 10px;
+  overflow: auto;
+}
+
+.card-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--muted);
+}
+.card-label b { color: var(--accent); font-size: 17px; }
+
+/* ── Grid ── */
+#gc-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+#gc {
+  position: relative;
+  background: var(--card);
+  box-shadow: 0 0 0 3px #666, 0 6px 32px #00000099;
+  flex-shrink: 0;
+  cursor: default;
+  transform-origin: center center;
+}
+
+/* Wall segments */
+.ws {
+  position: absolute;
+  background: var(--wall);
+  z-index: 6;
+  pointer-events: none;
+  border-radius: 1px;
+}
+
+/* Special overlays */
+.sp {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Hover zones — shown dynamically */
+.hz {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  transition: background .08s;
+}
+.hz:hover { background: rgba(192,57,43,0.22) !important; }
+
+/* ── JSON ── */
+.json-wrap { width: 100%; max-width: 500px; }
+.json-bar  { display:flex; gap:6px; margin-bottom:3px; align-items:center; }
+.json-bar span { font-size:11px; color:var(--muted); flex:1; }
+.json-bar button {
+  font-family:'Share Tech Mono',monospace; font-size:11px;
+  background:#1e0d00; color:var(--text); border:1px solid var(--border);
+  padding:3px 9px; cursor:pointer; border-radius:2px;
+}
+.json-bar button:hover { border-color:var(--gold); color:var(--gold); }
+#json-out {
+  width:100%; height:100px;
+  background:#0a0300; color:#7ec8a0;
+  border:1px solid var(--border);
+  font-family:'Share Tech Mono',monospace; font-size:10px;
+  padding:7px; resize:vertical; border-radius:2px;
+}
+
+/* Stats */
+#stats { font-size:10px; color:var(--muted); line-height:1.9; }
+#stats b { color:var(--text); }
+
+/* Toast */
+#toast {
+  position:fixed; bottom:18px; left:50%;
+  transform:translateX(-50%) translateY(36px);
+  background:var(--gold); color:#1a0a00;
+  font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:1px;
+  padding:7px 18px; border-radius:2px;
+  opacity:0; transition:opacity .2s, transform .2s;
+  pointer-events:none; z-index:200;
+}
+#toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+
+/* Puzzle manager + solver */
+.puzzle-bar { width:100%; max-width:500px; display:flex; gap:6px; align-items:center; }
+.puzzle-bar select, .puzzle-bar input {
+  font-family:'Share Tech Mono',monospace; font-size:11px;
+  background:#0a0300; color:var(--text); border:1px solid var(--border);
+  padding:6px 7px; border-radius:2px;
+}
+.puzzle-bar select { flex:1; min-width:0; }
+.puzzle-bar input { width:150px; }
+.solver-box {
+  width:100%; max-width:500px; background:#0d0500; border:1px solid var(--border);
+  padding:8px 9px; border-radius:2px; font-size:10px; color:var(--muted); line-height:1.7;
+}
+.solver-box b { color:var(--text); }
+#solver-out {
+  margin-top:6px; white-space:pre-wrap; word-break:break-word; color:#7ec8a0;
+  max-height:180px; overflow:auto; border-top:1px solid var(--border); padding-top:6px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>C&amp;L EDITOR</h1>
+  <span class="sub">Chutes &amp; Levers — card editor</span>
+</header>
+
+<div class="workspace">
+<div class="sidebar">
+
+  <div>
+    <h2>SIDE</h2>
+    <div class="side-toggle">
+      <button id="btn-front" class="active" onclick="switchSide('front')">FRONT</button>
+      <button id="btn-back"                 onclick="switchSide('back')">BACK</button>
+    </div>
+  </div>
+
+  <div>
+    <h2>TOOL</h2>
+    <div class="tool-list">
+      <button class="tool-btn t-wall active"  id="tool-wall"   onclick="setTool('wall')">🧱 Wall</button>
+      <button class="tool-btn t-erase"        id="tool-erase"  onclick="setTool('erase')">✕ Erase</button>
+      <div class="tool-sep"></div>
+      <button class="tool-btn"               id="tool-start"  onclick="setTool('start')">▶ START</button>
+      <button class="tool-btn"               id="tool-goal"   onclick="setTool('goal')">🏁 GOAL</button>
+      <div class="tool-sep"></div>
+      <button class="tool-btn t-chute"       id="tool-chute"  onclick="setTool('chute')" style="color:#e74c3c">⬛ Chute</button>
+      <button class="tool-btn t-lever"       id="tool-lever"  onclick="setTool('lever')" style="color:#9b59b6">◎ Lever (corner)</button>
+    </div>
+  </div>
+
+  <div>
+    <h2>HELP</h2>
+    <div class="info-box">
+      <b>Wall / Erase:</b><br>
+      → click a <b>cell edge</b><br><br>
+      <b>Start / Goal:</b><br>
+      → click the <b>center of a cell</b><br><br>
+      <b>Chute:</b><br>
+      → click an <b>inner cell edge</b> (the chute belongs to the selected cell)<br><br>
+      <b>Lever:</b><br>
+      → click a <b>corner</b> (the lever is placed in that corner)
+    </div>
+  </div>
+
+  <div>
+    <h2>ACTIONS</h2>
+    <button class="act-btn" onclick="clearSide()">Clear this side</button>
+    <button class="act-btn" onclick="copyFB()">Copy FRONT → BACK</button>
+    <button class="act-btn danger" onclick="clearAll()">Clear all</button>
+  </div>
+
+  <div>
+    <h2>STATS</h2>
+    <div id="stats">—</div>
+  </div>
+
+</div>
+
+<div class="main">
+  <div class="card-label">SIDE: <b id="side-lbl">FRONT</b> · LAYOUT: <b id="start-orient-lbl">Portrait</b></div>
+  <div class="puzzle-bar">
+    <select id="puzzle-select" onchange="selectPuzzleByIndex(this.value)"></select>
+    <input id="puzzle-name" type="text" placeholder="Puzzle name">
+  </div>
+  <div class="puzzle-bar">
+    <button onclick="newPuzzle(0)">New portrait puzzle</button>
+    <button onclick="newPuzzle(1)">New landscape puzzle</button>
+    <button onclick="savePuzzleMeta()">Save puzzle</button>
+    <button onclick="duplicatePuzzle()">Duplicate puzzle</button>
+    <button onclick="deletePuzzle()">Delete puzzle</button>
+  </div>
+  <div id="gc-wrap"><div id="gc"></div></div>
+  <div class="solver-box">
+    <div><b>Solver</b> — tries to solve the current puzzle using the visible rule assumptions.</div>
+    <div style="margin-top:6px; display:flex; gap:6px; flex-wrap:wrap;">
+      <button onclick="runSolver()">Solve current puzzle</button>
+      <button onclick="clearSolverOut()">Clear result</button>
+    </div>
+    <div id="solver-out">—</div>
+  </div>
+  <div class="json-wrap">
+    <div class="json-bar">
+      <span>JSON</span>
+      <button onclick="saveAllPuzzlesToFile()">Save all</button>
+      <button onclick="loadAllPuzzlesFromFile()">Load file</button>
+      <button onclick="copyJSON()">Copy</button>
+      <button onclick="importJSON()">Import</button>
+    </div>
+    <textarea id="json-out" readonly spellcheck="false"></textarea>
+  </div>
+</div>
+</div>
+
+<div id="toast"></div>
+<input id="file-load-input" type="file" accept="application/json,.json" style="display:none">
+
+<script>
+// ═══════════════════════════════════════════════════
+// CONFIG
+// ═══════════════════════════════════════════════════
+const COLS = 5, ROWS = 7;
+const CS   = 68;    // cell size px
+const WT   = 6;     // wall thickness px
+const HW   = 12;    // hit zone half-width
+
+// ═══════════════════════════════════════════════════
+// DATA MODEL
+// walls[r][c] = { B: bool, R: bool }   (only B and R stored)
+// start / goal = {col, row} | null
+// chutes = [ {col, row, wall: 'T'|'B'|'L'|'R'} ]
+// levers = [ {col, row, corner: 'TL'|'TR'|'BL'|'BR'} ]
+// initialOrientation: 0 = pysty (5×7), 1 = vaaka (7×5)
+// ═══════════════════════════════════════════════════
+function normalizeOrientation(o) {
+  return (+o === 1 || +o === 90) ? 1 : 0;
+}
+function orientationLabel(o) {
+  return normalizeOrientation(o) === 1 ? 'Landscape' : 'Portrait';
+}
+function dimsForOrientation(o) {
+  return normalizeOrientation(o) === 1 ? { cols: ROWS, rows: COLS } : { cols: COLS, rows: ROWS };
+}
+function emptyS(cols = COLS, rows = ROWS) {
+  return {
+    walls:  Array.from({length:rows}, ()=>Array.from({length:cols}, ()=>({B:false,R:false}))),
+    start:  null,
+    goal:   null,
+    chutes: [],
+    levers: [],
+  };
+}
+
+function makePuzzle(name='New puzzle', initialOrientation = 0) {
+  initialOrientation = normalizeOrientation(initialOrientation);
+  const d = dimsForOrientation(initialOrientation);
+  return {
+    id: `puzzle-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,
+    name,
+    initialOrientation,
+    card: { front: emptyS(d.cols, d.rows), back: emptyS(d.cols, d.rows) }
+  };
+}
+
+let puzzles = [makePuzzle('Puzzle 1', 0)];
+let currentPuzzleIndex = 0;
+let aSide   = 'front';
+let aTool   = 'wall';
+
+function currentPuzzle() { return puzzles[currentPuzzleIndex]; }
+const card = () => currentPuzzle().card;
+const S  = () => card()[aSide];
+const WC = (r,c) => S().walls[r][c];
+const otherSide = side => side === 'front' ? 'back' : 'front';
+function currentDims() { return dimsForOrientation(currentPuzzle().initialOrientation ?? 0); }
+function sideDims(s) { return { rows: s.walls.length, cols: s.walls[0]?.length || 0 }; }
+
+function syncOrientationUI() {
+  const o = normalizeOrientation(currentPuzzle().initialOrientation ?? 0);
+  currentPuzzle().initialOrientation = o;
+  const a = document.getElementById('start-orient-lbl');
+  if (a) a.textContent = orientationLabel(o);
+}
+
+function applyEditorOrientation() {
+  const wrap = document.getElementById('gc-wrap');
+  const grid = document.getElementById('gc');
+  if (!wrap || !grid) return;
+  const d = currentDims();
+  wrap.style.width = (d.cols * CS) + 'px';
+  wrap.style.height = (d.rows * CS) + 'px';
+  grid.style.transform = 'none';
+  syncOrientationUI();
+}
+
+function addOrReplaceChute(side, chute) {
+  const arr = card()[side].chutes;
+  const i = arr.findIndex(ch => ch.col===chute.col && ch.row===chute.row && ch.wall===chute.wall);
+  if (i >= 0) arr[i] = {...chute};
+  else arr.push({...chute});
+}
+
+function removeChute(side, chute) {
+  card()[side].chutes = card()[side].chutes.filter(ch => !(ch.col===chute.col && ch.row===chute.row && ch.wall===chute.wall));
+}
+
+function refreshPuzzleUI() {
+  const sel = document.getElementById('puzzle-select');
+  const nameInp = document.getElementById('puzzle-name');
+  if (!sel || !nameInp) return;
+  sel.innerHTML = puzzles.map((p,i)=>`<option value="${i}">${i+1}. ${escapeHtml(p.name||`Puzzle ${i+1}`)}</option>`).join('');
+  sel.value = String(currentPuzzleIndex);
+  nameInp.value = currentPuzzle().name || `Puzzle ${currentPuzzleIndex+1}`;
+  syncOrientationUI();
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+}
+function exportCurrentCard() {
+  function exp(s) {
+    const walls=[];
+    const d = sideDims(s);
+    for(let r=0;r<d.rows;r++) for(let c=0;c<d.cols;c++) {
+      const w=s.walls[r][c];
+      if(w.B||w.R) walls.push({r,c,...(w.B?{B:true}:{}),...(w.R?{R:true}:{})});
+    }
+    return { walls, start:s.start, goal:s.goal, chutes:s.chutes, levers:s.levers };
+  }
+  return {front:exp(card().front), back:exp(card().back)};
+}
+function exportPuzzleSet() {
+  return { puzzles: puzzles.map((p, i) => ({ id: p.id || `puzzle-${i+1}`, name: p.name || `Puzzle ${i+1}`, initialOrientation: normalizeOrientation(p.initialOrientation ?? 0), card: exportCardOf(p.card) })) };
+}
+function exportCardOf(cd) {
+  function exp(s) {
+    const walls=[];
+    const d = sideDims(s);
+    for(let r=0;r<d.rows;r++) for(let c=0;c<d.cols;c++) {
+      const w=s.walls[r][c];
+      if(w.B||w.R) walls.push({r,c,...(w.B?{B:true}:{}),...(w.R?{R:true}:{})});
+    }
+    return { walls, start:s.start, goal:s.goal, chutes:s.chutes, levers:s.levers };
+  }
+  return { front: exp(cd.front), back: exp(cd.back) };
+}
+function importCardObj(data, initialOrientation = 0) {
+  const d = dimsForOrientation(initialOrientation);
+  function imp(sd) {
+    const s = emptyS(d.cols, d.rows);
+    (sd.walls||[]).forEach(w=>{ if(w.r>=0&&w.r<d.rows&&w.c>=0&&w.c<d.cols){ if(w.B)s.walls[w.r][w.c].B=true; if(w.R)s.walls[w.r][w.c].R=true; }});
+    s.start=sd.start||null; s.goal=sd.goal||null;
+    s.chutes=(sd.chutes||[]).map(x=>({...x})); s.levers=(sd.levers||[]).map(x=>({...x}));
+    return s;
+  }
+  return { front: imp(data.front||{}), back: imp(data.back||{}) };
+}
+
+function selectPuzzleByIndex(v) {
+  const idx = +v;
+  if (!(idx >= 0 && idx < puzzles.length)) return;
+  savePuzzleMeta();
+  currentPuzzleIndex = idx;
+  aSide = 'front';
+  document.getElementById('side-lbl').textContent = 'FRONT';
+  document.getElementById('btn-front').classList.add('active');
+  document.getElementById('btn-back').classList.remove('active');
+  refreshPuzzleUI();
+  buildGrid();
+  applyEditorOrientation();
+  render();
+}
+function savePuzzleMeta() {
+  currentPuzzle().name = document.getElementById('puzzle-name').value.trim() || `Puzzle ${currentPuzzleIndex+1}`;
+  refreshPuzzleUI();
+  updateJSON();
+}
+function newPuzzle(initialOrientation = 0) {
+  savePuzzleMeta();
+  puzzles.push(makePuzzle(`Puzzle ${puzzles.length+1}`, initialOrientation));
+  currentPuzzleIndex = puzzles.length - 1;
+  aSide = 'front';
+  refreshPuzzleUI();
+  buildGrid();
+  applyEditorOrientation();
+  render();
+  toast('New ' + orientationLabel(initialOrientation).toLowerCase() + ' puzzle');
+}
+
+function duplicatePuzzle() {
+  savePuzzleMeta();
+  const src = currentPuzzle();
+  const clone = { id: `puzzle-${Date.now()}-${Math.random().toString(36).slice(2,8)}`, name: `${src.name || 'Puzzle'} copy`, initialOrientation: normalizeOrientation(src.initialOrientation ?? 0), card: JSON.parse(JSON.stringify(src.card)) };
+  puzzles.splice(currentPuzzleIndex + 1, 0, clone);
+  currentPuzzleIndex++;
+  refreshPuzzleUI();
+  buildGrid();
+  applyEditorOrientation();
+  render();
+  toast('Puzzle duplicated');
+}
+function deletePuzzle() {
+  if (puzzles.length === 1) {
+    puzzles[0] = makePuzzle('Puzzle 1', 0);
+    currentPuzzleIndex = 0;
+  } else {
+    puzzles.splice(currentPuzzleIndex, 1);
+    currentPuzzleIndex = Math.max(0, currentPuzzleIndex - 1);
+  }
+  refreshPuzzleUI();
+  buildGrid();
+  applyEditorOrientation();
+  render();
+  toast('Puzzle deleted');
+}
+function clearSolverOut() {
+  document.getElementById('solver-out').textContent = '—';
+}
+
+// ═══════════════════════════════════════════════════
+// BUILD DOM
+// ═══════════════════════════════════════════════════
+const gc = document.getElementById('gc');
+
+function buildGrid() {
+  const d = currentDims();
+  const cols = d.cols, rows = d.rows;
+  gc.innerHTML = '';
+  gc.style.width  = cols * CS + 'px';
+  gc.style.height = rows * CS + 'px';
+
+  // ── Wall hit zones — straddle the wall line ──
+  // Horizontal lines: canonical wall = B of (r, c)
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const hz = el('hz');
+      css(hz, c*CS + 4, (r+1)*CS - HW, CS - 8, HW*2);
+      hz.dataset.t = 'wall'; hz.dataset.wt = 'B'; hz.dataset.r = r; hz.dataset.c = c;
+      hz.addEventListener('click', onHit);
+      gc.appendChild(hz);
+    }
+  }
+  // Vertical lines: canonical wall = R of (r, c)
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const vz = el('hz');
+      css(vz, (c+1)*CS - HW, r*CS + 4, HW*2, CS - 8);
+      vz.dataset.t = 'wall'; vz.dataset.wt = 'R'; vz.dataset.r = r; vz.dataset.c = c;
+      vz.addEventListener('click', onHit);
+      gc.appendChild(vz);
+    }
+  }
+
+  // ── Cell center zones (for start/goal) ──
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const cz = el('hz');
+      css(cz, c*CS + CS*.2, r*CS + CS*.2, CS*.6, CS*.6);
+      cz.style.borderRadius = '4px';
+      cz.dataset.t = 'cell'; cz.dataset.r = r; cz.dataset.c = c;
+      cz.addEventListener('click', onHit);
+      gc.appendChild(cz);
+    }
+  }
+
+  // ── Inner-edge zones (for chutes that belong to a specific cell side) ──
+  const EZ = 14; // depth inside the cell
+  const EM = 8;  // margin along the edge
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const edges = [
+        { wall:'T', x:c*CS + EM,         y:r*CS,              w:CS - EM*2, h:EZ },
+        { wall:'B', x:c*CS + EM,         y:(r+1)*CS - EZ,     w:CS - EM*2, h:EZ },
+        { wall:'L', x:c*CS,              y:r*CS + EM,         w:EZ,         h:CS - EM*2 },
+        { wall:'R', x:(c+1)*CS - EZ,     y:r*CS + EM,         w:EZ,         h:CS - EM*2 },
+      ];
+      edges.forEach(({wall,x,y,w,h}) => {
+        const ez = el('hz hz-edge');
+        css(ez, x, y, w, h);
+        ez.dataset.t = 'chute-edge';
+        ez.dataset.r = r;
+        ez.dataset.c = c;
+        ez.dataset.wall = wall;
+        ez.addEventListener('click', onHit);
+        gc.appendChild(ez);
+      });
+    }
+  }
+
+  // ── Corner zones (for lever) ──
+  const CK = CS * 0.28;
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const corners = [
+        {corner:'TL', x:c*CS,           y:r*CS},
+        {corner:'TR', x:(c+1)*CS-CK,    y:r*CS},
+        {corner:'BL', x:c*CS,           y:(r+1)*CS-CK},
+        {corner:'BR', x:(c+1)*CS-CK,    y:(r+1)*CS-CK},
+      ];
+      corners.forEach(({corner,x,y}) => {
+        const cz = el('hz');
+        css(cz, x, y, CK, CK);
+        cz.style.borderRadius = corner.includes('T') ? (corner.includes('L')?'4px 0 0 0':'0 4px 0 0') : (corner.includes('L')?'0 0 0 4px':'0 0 4px 0');
+        cz.dataset.t = 'corner'; cz.dataset.r = r; cz.dataset.c = c; cz.dataset.corner = corner;
+        cz.addEventListener('click', onHit);
+        gc.appendChild(cz);
+      });
+    }
+  }
+
+  render();
+}
+
+function el(cls) {
+  const d = document.createElement('div');
+  if (cls) d.className = cls;
+  return d;
+}
+function css(e, x, y, w, h) {
+  e.style.cssText += `;left:${x}px;top:${y}px;width:${w}px;height:${h}px`;
+}
+
+// ═══════════════════════════════════════════════════
+// HIT HANDLER
+// ═══════════════════════════════════════════════════
+function onHit(e) {
+  e.stopPropagation();
+  const d = e.currentTarget.dataset;
+  const r = +d.r, c = +d.c;
+
+  // ── WALL / ERASE on wall line ──
+  if (d.t === 'wall') {
+    if (aTool === 'wall') {
+      WC(r,c)[d.wt] = !WC(r,c)[d.wt];
+      render(); return;
+    }
+    if (aTool === 'erase') {
+      WC(r,c)[d.wt] = false;
+      render(); return;
+    }
+  }
+
+  // ── CHUTE edge inside a selected cell ──
+  if (d.t === 'chute-edge') {
+    const here = {col:c, row:r, wall:d.wall};
+    const pair = oppositeCellForChute(here);
+
+    if (aTool === 'chute') {
+      const existsHere = S().chutes.some(ch => ch.col===here.col && ch.row===here.row && ch.wall===here.wall);
+      if (existsHere) {
+        removeChute(aSide, here);
+        if (pair) removeChute(otherSide(aSide), pair);
+      } else {
+        addOrReplaceChute(aSide, here);
+        if (pair) addOrReplaceChute(otherSide(aSide), pair);
+      }
+      render(); return;
+    }
+    if (aTool === 'erase') {
+      removeChute(aSide, here);
+      if (pair) removeChute(otherSide(aSide), pair);
+      render(); return;
+    }
+  }
+
+  // ── CELL center ──
+  if (d.t === 'cell') {
+    if (aTool === 'start') { S().start = {col:c, row:r}; render(); return; }
+    if (aTool === 'goal')  { S().goal  = {col:c, row:r}; render(); return; }
+    if (aTool === 'erase') {
+      const s = S();
+      if (s.start && s.start.col===c && s.start.row===r) s.start = null;
+      if (s.goal  && s.goal.col===c  && s.goal.row===r)  s.goal  = null;
+      render(); return;
+    }
+  }
+
+  // ── CORNER ──
+  if (d.t === 'corner') {
+    if (aTool === 'lever') {
+      const exists = S().levers.some(lv => lv.col===c && lv.row===r && lv.corner===d.corner);
+      if (exists) {
+        S().levers = S().levers.filter(lv => !(lv.col===c && lv.row===r && lv.corner===d.corner));
+      } else {
+        S().levers = S().levers.filter(lv => !(lv.col===c && lv.row===r && lv.corner===d.corner));
+        S().levers.push({col:c, row:r, corner:d.corner});
+      }
+      render(); return;
+    }
+    if (aTool === 'erase') {
+      S().levers = S().levers.filter(lv => !(lv.col===c && lv.row===r && lv.corner===d.corner));
+      render(); return;
+    }
+  }
+}
+
+function oppositeCellForChute(ch) {
+  const d = currentDims();
+  const col = d.cols - 1 - ch.col;
+  const row = ch.row;
+  const wall = ch.wall === 'L' ? 'R' : ch.wall === 'R' ? 'L' : ch.wall;
+  return { col, row, wall };
+}
+
+// ═══════════════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════════════
+function render() {
+  applyEditorOrientation();
+  gc.querySelectorAll('.ws,.sp').forEach(e=>e.remove());
+  renderWalls();
+  renderSpecials();
+  updateJSON();
+  updateStats();
+}
+
+function renderWalls() {
+  const s = S();
+  const d = sideDims(s);
+  for (let r=0; r<d.rows; r++) {
+    for (let c=0; c<d.cols; c++) {
+      const w = s.walls[r][c];
+      if (w.B) {
+        const seg = el('ws');
+        seg.style.cssText = `position:absolute;background:var(--wall);z-index:6;pointer-events:none;border-radius:1px;` +
+          `left:${c*CS}px;top:${(r+1)*CS - WT/2}px;width:${CS}px;height:${WT}px`;
+        gc.appendChild(seg);
+      }
+      if (w.R) {
+        const seg = el('ws');
+        seg.style.cssText = `position:absolute;background:var(--wall);z-index:6;pointer-events:none;border-radius:1px;` +
+          `left:${(c+1)*CS - WT/2}px;top:${r*CS}px;width:${WT}px;height:${CS}px`;
+        gc.appendChild(seg);
+      }
+    }
+  }
+  // Outer border
+  const brd = [
+    `left:0;top:0;width:${d.cols*CS}px;height:3px`,
+    `left:0;bottom:0;width:${d.cols*CS}px;height:3px`,
+    `left:0;top:0;width:3px;height:${d.rows*CS}px`,
+    `right:0;top:0;width:3px;height:${d.rows*CS}px`,
+  ];
+  brd.forEach(b => {
+    const d = el('ws');
+    d.style.cssText = `position:absolute;background:#666;z-index:3;pointer-events:none;${b}`;
+    gc.appendChild(d);
+  });
+}
+
+function renderSpecials() {
+  const s = S();
+  // START
+  if (s.start) renderCellLabel(s.start.col, s.start.row, 'START', '#888', '#88888822');
+  // GOAL
+  if (s.goal)  renderCellLabel(s.goal.col, s.goal.row, 'GOAL', '#c8960a', '#f1c40f33');
+
+  // Chutes — drawn on their wall
+  s.chutes.forEach(ch => renderChute(ch));
+
+  // Levers — drawn in their corner
+  s.levers.forEach(lv => renderLever(lv));
+}
+
+function renderCellLabel(col, row, label, color, bg) {
+  const d = el('sp');
+  d.style.cssText = `position:absolute;z-index:5;pointer-events:none;display:flex;align-items:center;justify-content:center;` +
+    `font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;border-radius:3px;` +
+    `left:${col*CS+3}px;top:${row*CS+3}px;width:${CS-6}px;height:${CS-6}px;` +
+    `background:${bg};color:${color};border:1px solid ${color}55`;
+  d.textContent = label;
+  gc.appendChild(d);
+}
+
+function renderChute(ch) {
+  const CW = 10; // chute width
+  const CM = 8;  // margin from cell edge
+
+  const col = ch.col, row = ch.row;
+  const wall = ch.wall;
+
+  const d = el('sp');
+  d.style.position = 'absolute';
+  d.style.zIndex = '7';
+  d.style.pointerEvents = 'none';
+  d.style.borderRadius = '3px';
+  d.style.background = '#e74c3c';
+  d.style.opacity = '0.88';
+
+  const arr = el('sp');
+  arr.style.position = 'absolute';
+  arr.style.zIndex = '8';
+  arr.style.pointerEvents = 'none';
+  arr.style.color = '#fff';
+  arr.style.fontSize = '14px';
+  arr.style.lineHeight = '1';
+  arr.style.textShadow = '0 1px 3px #0005';
+  arr.style.display = 'flex';
+  arr.style.alignItems = 'center';
+  arr.style.justifyContent = 'center';
+  arr.style.width = '16px';
+  arr.style.height = '16px';
+
+  if (wall === 'T') {
+    d.style.left   = (col*CS + CM) + 'px';
+    d.style.top    = (row*CS + WT/2 - CW/2) + 'px';
+    d.style.width  = (CS - CM*2) + 'px';
+    d.style.height = CW + 'px';
+
+    arr.style.left = (col*CS + CS/2 - 8) + 'px';
+    arr.style.top  = (row*CS + 4) + 'px';
+    arr.textContent = '▲';
+  } else if (wall === 'B') {
+    d.style.left   = (col*CS + CM) + 'px';
+    d.style.top    = ((row+1)*CS - WT/2 - CW/2) + 'px';
+    d.style.width  = (CS - CM*2) + 'px';
+    d.style.height = CW + 'px';
+
+    arr.style.left = (col*CS + CS/2 - 8) + 'px';
+    arr.style.top  = ((row+1)*CS - 20) + 'px';
+    arr.textContent = '▼';
+  } else if (wall === 'L') {
+    d.style.left   = (col*CS + WT/2 - CW/2) + 'px';
+    d.style.top    = (row*CS + CM) + 'px';
+    d.style.width  = CW + 'px';
+    d.style.height = (CS - CM*2) + 'px';
+
+    arr.style.left = (col*CS + 4) + 'px';
+    arr.style.top  = (row*CS + CS/2 - 8) + 'px';
+    arr.textContent = '◀';
+  } else if (wall === 'R') {
+    d.style.left   = ((col+1)*CS - WT/2 - CW/2) + 'px';
+    d.style.top    = (row*CS + CM) + 'px';
+    d.style.width  = CW + 'px';
+    d.style.height = (CS - CM*2) + 'px';
+
+    arr.style.left = ((col+1)*CS - 20) + 'px';
+    arr.style.top  = (row*CS + CS/2 - 8) + 'px';
+    arr.textContent = '▶';
+  }
+
+  const pair = oppositeCellForChute(ch);
+  if (pair) {
+    const tip = `Continues on the other side: (${pair.col},${pair.row}) ${pair.wall}`;
+    d.title = tip;
+    arr.title = tip;
+  }
+
+  gc.appendChild(d);
+  gc.appendChild(arr);
+}
+
+function renderLever(lv) {
+  const SZ = 14; // dot size
+  const M  = 3;  // margin from corner
+  const col = lv.col, row = lv.row;
+  let x, y;
+  switch (lv.corner) {
+    case 'TL': x = col*CS + M;        y = row*CS + M;        break;
+    case 'TR': x = (col+1)*CS - SZ-M; y = row*CS + M;        break;
+    case 'BL': x = col*CS + M;        y = (row+1)*CS - SZ-M; break;
+    case 'BR': x = (col+1)*CS - SZ-M; y = (row+1)*CS - SZ-M; break;
+  }
+  const d = el('sp');
+  d.style.cssText = `position:absolute;z-index:8;pointer-events:none;` +
+    `left:${x}px;top:${y}px;width:${SZ}px;height:${SZ}px;` +
+    `background:var(--purple);border-radius:50%;` +
+    `border:2px solid #fff5;`;
+  gc.appendChild(d);
+}
+
+// ═══════════════════════════════════════════════════
+// TOOL / SIDE SWITCH
+// ═══════════════════════════════════════════════════
+function setTool(t) {
+  aTool = t;
+  document.querySelectorAll('.tool-btn').forEach(b=>b.classList.remove('active'));
+  const tb = document.getElementById('tool-'+t);
+  if (tb) tb.classList.add('active');
+
+  // Aktivoi vain ne klikkialueet, joita valittu työkalu tarvitsee.
+  // Muut alueet eivät saa peittää aktiivisia alueita.
+  gc.querySelectorAll('.hz').forEach(hz => {
+    const type = hz.dataset.t;
+    let enabled = false;
+
+    if (t === 'wall') {
+      enabled = (type === 'wall');
+    } else if (t === 'erase') {
+      enabled = (type === 'wall' || type === 'chute-edge' || type === 'cell' || type === 'corner');
+    } else if (t === 'chute') {
+      enabled = (type === 'chute-edge');
+    } else if (t === 'lever') {
+      enabled = (type === 'corner');
+    } else if (t === 'start' || t === 'goal') {
+      enabled = (type === 'cell');
+    }
+
+    hz.style.pointerEvents = enabled ? 'auto' : 'none';
+    hz.style.cursor = enabled ? 'pointer' : 'default';
+
+    // Poista-työkalussa kulma-alueen pitää olla seinäalueen yläpuolella,
+    // jotta vipu voidaan poistaa varmasti myös kulmissa joissa seinän hitzone osuu päällekkäin.
+    if (type === 'corner') hz.style.zIndex = (t === 'erase' || t === 'lever') ? '14' : '11';
+    else if (type === 'wall') hz.style.zIndex = (t === 'wall' || t === 'erase') ? '13' : '10';
+    else if (type === 'chute-edge') hz.style.zIndex = (t === 'chute' ? '13' : '9');
+    else if (type === 'cell') hz.style.zIndex = '10';
+  });
+}
+
+function switchSide(s) {
+  aSide = s;
+  document.getElementById('side-lbl').textContent = s.toUpperCase();
+  document.getElementById('btn-front').classList.toggle('active', s==='front');
+  document.getElementById('btn-back').classList.toggle('active',  s==='back');
+  render();
+}
+
+// ═══════════════════════════════════════════════════
+// ACTIONS
+// ═══════════════════════════════════════════════════
+function clearSide() {
+  const d = currentDims();
+  const old = card()[aSide];
+  card()[aSide] = {
+    walls:  Array.from({length:d.rows}, ()=>Array.from({length:d.cols}, ()=>({B:false,R:false}))),
+    start:  null,
+    goal:   null,
+    chutes: Array.isArray(old.chutes) ? JSON.parse(JSON.stringify(old.chutes)) : [],
+    levers: [],
+  };
+  render();
+  toast('Cleared side (chutes preserved)');
+}
+function clearAll()  { const d = currentDims(); card().front=emptyS(d.cols, d.rows); card().back=emptyS(d.cols, d.rows); render(); toast('All cleared'); }
+function copyFB()    { card().back=JSON.parse(JSON.stringify(card().front)); if(aSide==='back') render(); updateJSON(); toast('Copytu BACK:iin'); }
+
+// ═══════════════════════════════════════════════════
+// JSON
+// ═══════════════════════════════════════════════════
+function exportJSON() {
+  return JSON.stringify(exportPuzzleSet(), null, 2);
+}
+
+function importFrom(str) {
+  try {
+    const data = JSON.parse(str);
+    if (Array.isArray(data.puzzles)) {
+      puzzles = data.puzzles.map((p, i) => ({
+        id: p.id || `puzzle-${i+1}`,
+        name: p.name || `Puzzle ${i+1}`,
+        initialOrientation: normalizeOrientation(p.initialOrientation ?? 0),
+        card: importCardObj(p.card || p, normalizeOrientation(p.initialOrientation ?? 0))
+      }));
+      if (!puzzles.length) puzzles = [makePuzzle('Puzzle 1')];
+      currentPuzzleIndex = 0;
+    } else if (data.front || data.back) {
+      puzzles = [{ id:`puzzle-${Date.now()}`, name:'Puzzle 1', initialOrientation: 0, card: importCardObj(data, 0) }];
+      currentPuzzleIndex = 0;
+    } else {
+      throw new Error('JSON is not a recognized puzzle file');
+    }
+    aSide = 'front';
+    refreshPuzzleUI();
+    buildGrid();
+    applyEditorOrientation();
+    render(); toast('Importtu');
+  } catch(err) { toast('Virhe: '+err.message); }
+}
+
+function updateJSON() { document.getElementById('json-out').value = exportJSON(); }
+function copyJSON()   { navigator.clipboard.writeText(exportJSON()).then(()=>toast('Copytu')).catch(()=>{ document.getElementById('json-out').select(); document.execCommand('copy'); toast('Copytu'); }); }
+function importJSON() { const s=prompt('Paste JSON:'); if(s) importFrom(s); }
+
+function suggestedExportName() {
+  const base = (currentPuzzle().name || 'chutes-levers-puzzles')
+    .toLowerCase()
+    .replace(/[^a-z0-9åäö_-]+/gi, '-')
+    .replace(/^-+|-+$/g, '') || 'chutes-levers-puzzles';
+  return `challenges.json`;
+}
+
+function saveAllPuzzlesToFile() {
+  try {
+    savePuzzleMeta();
+    const json = exportJSON();
+    const blob = new Blob([json], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = suggestedExportName();
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    toast('All puzzles saved to file');
+  } catch (err) {
+    toast('Save failed: ' + err.message);
+  }
+}
+
+function loadAllPuzzlesFromFile() {
+  const inp = document.getElementById('file-load-input');
+  if (!inp) return;
+  inp.value = '';
+  inp.click();
+}
+
+function handleFileLoad(ev) {
+  const file = ev.target.files && ev.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      importFrom(String(reader.result || ''));
+      toast('Puzzles loaded from file');
+    } catch (err) {
+      toast('Load failed: ' + err.message);
+    }
+  };
+  reader.onerror = () => toast('Reading the file failed');
+  reader.readAsText(file, 'utf-8');
+}
+
+document.getElementById('file-load-input').addEventListener('change', handleFileLoad);
+
+function solveCard(puzzleOrCard) {
+  const hasCardWrapper = !!(puzzleOrCard && puzzleOrCard.card);
+  const cardData = hasCardWrapper ? puzzleOrCard.card : puzzleOrCard;
+  const initialOrientation = normalizeOrientation(hasCardWrapper ? (puzzleOrCard.initialOrientation ?? 0) : 0);
+  const base = dimsForOrientation(initialOrientation);
+  const BASE_COLS = base.cols;
+  const BASE_ROWS = base.rows;
+  const ALLOW_LEFT_WALL_CHUTE_ENTRY = false;
+
+  function mkGrid(rows, cols) {
+    return Array.from({ length: rows }, () => Array.from({ length: cols }, () => ({ B: false, R: false })));
+  }
+  function rotWall90CW(w) { return { T:'R', R:'B', B:'L', L:'T' }[w] || w; }
+  function rotCorner90CW(c) { return { TL:'TR', TR:'BR', BR:'BL', BL:'TL' }[c] || c; }
+  function rotPoint90CW(col, row, oldCols, oldRows) { return { col: oldRows - 1 - row, row: col }; }
+  function rotGrid90CW(g, oldRows, oldCols) {
+    const newRows = oldCols, newCols = oldRows;
+    const ng = mkGrid(newRows, newCols);
+    for (let r = 0; r < oldRows; r++) {
+      for (let c = 0; c < oldCols; c++) {
+        const nc = oldRows - 1 - r;
+        const nr = c;
+        if (g[r][c].R) ng[nr][nc].B = true;
+        if (g[r][c].B) {
+          const ownerC = (nc - 1 + newCols) % newCols;
+          ng[nr][ownerC].R = true;
+        }
+      }
+    }
+    return ng;
+  }
+  function rotatePointTurnsCW(col, row, cols, rows, turns) {
+    turns = ((turns % 4) + 4) % 4;
+    let c = col, r = row, cc = cols, rr = rows;
+    for (let i = 0; i < turns; i++) {
+      const p = rotPoint90CW(c, r, cc, rr);
+      c = p.col; r = p.row;
+      const nCols = rr, nRows = cc;
+      cc = nCols; rr = nRows;
+    }
+    return { col: c, row: r, cols: cc, rows: rr };
+  }
+  function unrotatePointTurnsCW(col, row, cols, rows, turns) {
+    turns = ((turns % 4) + 4) % 4;
+    let c = col, r = row, cc = cols, rr = rows;
+    for (let i = 0; i < turns; i++) {
+      const oldCols = rr, oldRows = cc;
+      const nc = r;
+      const nr = oldRows - 1 - c;
+      c = nc; r = nr;
+      cc = oldCols; rr = oldRows;
+    }
+    return { col: c, row: r, cols: cc, rows: rr };
+  }
+  function rotWallCCW(w) { return { T:'L', L:'B', B:'R', R:'T' }[w] || w; }
+  function unrotateWallTurnsCW(w, turns) {
+    turns = ((turns % 4) + 4) % 4;
+    let out = w;
+    for (let i = 0; i < turns; i++) out = rotWallCCW(out);
+    return out;
+  }
+  function pairBaseChute(ch) {
+    return {
+      col: (BASE_COLS - 1) - ch.col,
+      row: ch.row,
+      wall: ({ L:'R', R:'L' }[ch.wall] || ch.wall),
+    };
+  }
+  function baseToState(sd) {
+    const st = {
+      cols: BASE_COLS,
+      rows: BASE_ROWS,
+      grid: mkGrid(BASE_ROWS, BASE_COLS),
+      chutes: (sd.chutes || []).map(c => ({ ...c })),
+      levers: (sd.levers || []).map(l => ({ ...l })),
+      start: sd.start ? { ...sd.start } : null,
+      goal: sd.goal ? { ...sd.goal } : null,
+    };
+    (sd.walls || []).forEach(w => {
+      if (w.r >= 0 && w.r < BASE_ROWS && w.c >= 0 && w.c < BASE_COLS) {
+        if (w.B) st.grid[w.r][w.c].B = true;
+        if (w.R) st.grid[w.r][w.c].R = true;
+      }
+    });
+    return st;
+  }
+  function rotateState90CW(st) {
+    const oldCols = st.cols, oldRows = st.rows;
+    const nst = {
+      cols: oldRows,
+      rows: oldCols,
+      grid: rotGrid90CW(st.grid, oldRows, oldCols),
+      chutes: [],
+      levers: [],
+      start: null,
+      goal: null,
+    };
+    nst.chutes = st.chutes.map(ch => {
+      const p = rotPoint90CW(ch.col, ch.row, oldCols, oldRows);
+      return { ...ch, col: p.col, row: p.row, wall: rotWall90CW(ch.wall) };
+    });
+    nst.levers = st.levers.map(lv => {
+      const p = rotPoint90CW(lv.col, lv.row, oldCols, oldRows);
+      return { ...lv, col: p.col, row: p.row, corner: rotCorner90CW(lv.corner) };
+    });
+    if (st.start) {
+      const p = rotPoint90CW(st.start.col, st.start.row, oldCols, oldRows);
+      nst.start = { col: p.col, row: p.row };
+    }
+    if (st.goal) {
+      const p = rotPoint90CW(st.goal.col, st.goal.row, oldCols, oldRows);
+      nst.goal = { col: p.col, row: p.row };
+    }
+    return nst;
+  }
+  function getVisibleState(side, orient) {
+    let st = baseToState(cardData[side]);
+    const turns = (((orient % 360) + 360) % 360) / 90;
+    for (let i = 0; i < turns; i++) st = rotateState90CW(st);
+    return st;
+  }
+  function stateKey(s) {
+    return `${s.side}|${s.orient}|${s.col}|${s.row}`;
+  }
+  function visibleHasFloor(vis, col, row) {
+    return !!vis.grid[((row % vis.rows) + vis.rows) % vis.rows][((col % vis.cols) + vis.cols) % vis.cols].B;
+  }
+  function visibleHasCeiling(vis, col, row) {
+    const rr = ((row - 1) % vis.rows + vis.rows) % vis.rows;
+    const cc = ((col % vis.cols) + vis.cols) % vis.cols;
+    return !!vis.grid[rr][cc].B;
+  }
+  function visibleHasRightWall(vis, col, row) {
+    const rr = ((row % vis.rows) + vis.rows) % vis.rows;
+    const cc = ((col % vis.cols) + vis.cols) % vis.cols;
+    return !!vis.grid[rr][cc].R;
+  }
+  function gravity(state, col, row) {
+    const vis = getVisibleState(state.side, state.orient);
+    col = ((col % vis.cols) + vis.cols) % vis.cols;
+    row = ((row % vis.rows) + vis.rows) % vis.rows;
+    for (let i = 0; i < vis.rows + 1; i++) {
+      if (visibleHasFloor(vis, col, row)) return { col, row };
+      row = (row + 1) % vis.rows;
+    }
+    return { col, row };
+  }
+  function successors(state) {
+    const vis = getVisibleState(state.side, state.orient);
+    const out = [];
+
+    if (!visibleHasRightWall(vis, state.col, state.row)) {
+      const landed = gravity(state, (state.col + 1) % vis.cols, state.row);
+      out.push(['RUN', { side: state.side, orient: state.orient, col: landed.col, row: landed.row }]);
+    }
+
+    const upRow = (state.row - 1 + vis.rows) % vis.rows;
+    if (!visibleHasCeiling(vis, state.col, state.row) && !visibleHasRightWall(vis, state.col, upRow)) {
+      const landed = gravity(state, (state.col + 1) % vis.cols, upRow);
+      out.push(['JUMP', { side: state.side, orient: state.orient, col: landed.col, row: landed.row }]);
+    }
+
+    for (const ch of vis.chutes) {
+      if (ch.col !== state.col || ch.row !== state.row) continue;
+      if (!ALLOW_LEFT_WALL_CHUTE_ENTRY && ch.wall === 'L') continue;
+      const turnsNow = (((state.orient % 360) + 360) % 360) / 90;
+      const basePos = unrotatePointTurnsCW(ch.col, ch.row, vis.cols, vis.rows, turnsNow);
+      const baseWall = unrotateWallTurnsCW(ch.wall, turnsNow);
+      const targetBase = pairBaseChute({ col: basePos.col, row: basePos.row, wall: baseWall });
+      const otherSide = state.side === 'front' ? 'back' : 'front';
+      const extraTurns = (baseWall === 'T' || baseWall === 'B') ? 2 : 0;
+      const newOrient = (state.orient + extraTurns * 90) % 360;
+      const turnsNew = (((newOrient % 360) + 360) % 360) / 90;
+      const targetVis = rotatePointTurnsCW(targetBase.col, targetBase.row, BASE_COLS, BASE_ROWS, turnsNew);
+      let nextState = { side: otherSide, orient: newOrient, col: targetVis.col, row: targetVis.row };
+      const landed = gravity(nextState, nextState.col, nextState.row);
+      nextState = { side: nextState.side, orient: nextState.orient, col: landed.col, row: landed.row };
+      out.push([`CHUTE[${ch.wall}]`, nextState]);
+    }
+
+    for (const lv of vis.levers) {
+      if (lv.col !== state.col || lv.row !== state.row || lv.corner !== 'BR') continue;
+      const newOrient = (state.orient + 90) % 360;
+      const newCol = vis.rows - 1 - state.row;
+      const newRow = state.col;
+      let nextState = { side: state.side, orient: newOrient, col: newCol, row: newRow };
+      const landed = gravity(nextState, nextState.col, nextState.row);
+      nextState = { side: nextState.side, orient: nextState.orient, col: landed.col, row: landed.row };
+      out.push(['LEVER', nextState]);
+    }
+
+    return out;
+  }
+
+  const startBase = cardData.front?.start;
+  if (!startBase) return { found: false, reason: 'START is missing' };
+  const start = { side: 'front', orient: 0, col: startBase.col, row: startBase.row };
+  const queue = [{ state: start, path: [] }];
+  const seen = new Set([stateKey(start)]);
+
+  while (queue.length) {
+    const { state, path } = queue.shift();
+    const vis = getVisibleState(state.side, state.orient);
+    if (vis.goal && state.col === vis.goal.col && state.row === vis.goal.row) {
+      return { found: true, explored: seen.size, path, state };
+    }
+    for (const [act, nxt] of successors(state)) {
+      const k = stateKey(nxt);
+      if (seen.has(k)) continue;
+      seen.add(k);
+      queue.push({ state: nxt, path: path.concat(act) });
+    }
+  }
+
+  return { found: false, explored: seen.size };
+}
+
+function runSolver() {
+  savePuzzleMeta();
+  const res = solveCard({ card: exportCurrentCard(), initialOrientation: currentPuzzle().initialOrientation ?? 0 });
+  const el = document.getElementById('solver-out');
+  if (!res.found) {
+    el.textContent = `No solution found with the current rule assumptions.
+Explored states: ${res.explored || 0}${res.reason ? `
+Note: ${res.reason}` : ''}`;
+    return;
+  }
+  el.textContent = `Solution found.
+Length: ${res.path.length} moves
+Explored states: ${res.explored}
+
+${res.path.join(' → ')}`;
+}
+
+// ═══════════════════════════════════════════════════
+// STATS
+// ═══════════════════════════════════════════════════
+function updateStats() {
+  const s=S(); let w=0; const d = sideDims(s);
+  for(let r=0;r<d.rows;r++) for(let c=0;c<d.cols;c++) { if(s.walls[r][c].B)w++; if(s.walls[r][c].R)w++; }
+  document.getElementById('stats').innerHTML =
+    `<b>Walls:</b> ${w}<br><b>Chutes:</b> ${s.chutes.length}<br>` +
+    `<b>Levers:</b> ${s.levers.length}<br>` +
+    `<b>Start:</b> ${s.start?`(${s.start.col},${s.start.row})`:'—'}<br>` +
+    `<b>Goal:</b> ${s.goal?`(${s.goal.col},${s.goal.row})`:'—'}`;
+}
+
+// ═══════════════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════════════
+let toastT;
+function toast(m) {
+  const e=document.getElementById('toast');
+  e.textContent=m; e.classList.add('show');
+  clearTimeout(toastT); toastT=setTimeout(()=>e.classList.remove('show'),2000);
+}
+
+// ── Init ──
+buildGrid();
+refreshPuzzleUI();
+applyEditorOrientation();
+setTool('wall');
+</script>
+</body>
+</html>
