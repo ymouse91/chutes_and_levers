@@ -26,6 +26,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -44,11 +45,11 @@ header {
 }
 header h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   color: var(--gold);
   letter-spacing: 3px;
 }
-header .sub { font-size: 11px; color: var(--muted); }
+header .sub { font-size: 13px; color: var(--muted); }
 
 /* ── Layout ── */
 .workspace {
@@ -71,7 +72,7 @@ header .sub { font-size: 11px; color: var(--muted); }
 }
 .sidebar h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--gold);
   letter-spacing: 2px;
   border-bottom: 1px solid var(--border);
@@ -97,7 +98,7 @@ header .sub { font-size: 11px; color: var(--muted); }
 .tool-list { display: flex; flex-direction: column; gap: 4px; }
 .tool-btn {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   background: #1e0d00;
   color: var(--text);
   border: 1px solid var(--border);
@@ -123,9 +124,9 @@ header .sub { font-size: 11px; color: var(--muted); }
   background: #0d0500;
   border: 1px solid var(--border);
   padding: 7px 9px;
-  font-size: 10px;
+  font-size: 11px;
   color: var(--muted);
-  line-height: 1.9;
+  line-height: 1.8;
   border-radius: 2px;
 }
 .info-box b { color: var(--text); }
@@ -133,7 +134,7 @@ header .sub { font-size: 11px; color: var(--muted); }
 .act-btn {
   width: 100%;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   background: #1e0d00;
   color: var(--text);
   border: 1px solid var(--border);
@@ -153,19 +154,43 @@ header .sub { font-size: 11px; color: var(--muted); }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 16px;
   gap: 10px;
   overflow: auto;
 }
+.editor-content {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+}
+.board-panel {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+.right-panel {
+  width: 520px;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 0 0 520px;
+}
+@media (max-width: 1120px) {
+  .editor-content { flex-direction: column; align-items: center; }
+  .right-panel { width: 100%; max-width: 560px; flex-basis: auto; }
+}
 
 .card-label {
   font-family: 'Oswald', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 3px;
   color: var(--muted);
 }
-.card-label b { color: var(--accent); font-size: 17px; }
+.card-label b { color: var(--accent); font-size: 19px; }
 
 /* ── Grid ── */
 #gc-wrap {
@@ -207,6 +232,40 @@ header .sub { font-size: 11px; color: var(--muted); }
   letter-spacing: 0.5px;
 }
 
+/* Solution route overlay */
+.route-step {
+  position: absolute;
+  z-index: 40;
+  pointer-events: auto;
+  cursor: help;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(241,196,15,0.92);
+  color: #1a0a00;
+  border: 2px solid #1a0a00cc;
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  box-shadow: 0 2px 7px #0008;
+}
+.route-line { display: none; }
+
+.solution-faded {
+  opacity: 0.24 !important;
+  filter: grayscale(0.35);
+}
+
+.solution-faded-edge {
+  opacity: 0.82 !important;
+  filter: none !important;
+  background: #fff4d6 !important;
+  box-shadow: 0 0 0 1px #5a3a18, 0 0 7px #fff4d688;
+}
+
 /* Hover zones — shown dynamically */
 .hz {
   position: absolute;
@@ -217,25 +276,25 @@ header .sub { font-size: 11px; color: var(--muted); }
 .hz:hover { background: rgba(192,57,43,0.22) !important; }
 
 /* ── JSON ── */
-.json-wrap { width: 100%; max-width: 500px; }
+.json-wrap { width: 100%; max-width: none; }
 .json-bar  { display:flex; gap:6px; margin-bottom:3px; align-items:center; }
-.json-bar span { font-size:11px; color:var(--muted); flex:1; }
+.json-bar span { font-size:12px; color:var(--muted); flex:1; }
 .json-bar button {
-  font-family:'Share Tech Mono',monospace; font-size:11px;
+  font-family:'Share Tech Mono',monospace; font-size:12px;
   background:#1e0d00; color:var(--text); border:1px solid var(--border);
   padding:3px 9px; cursor:pointer; border-radius:2px;
 }
 .json-bar button:hover { border-color:var(--gold); color:var(--gold); }
 #json-out {
-  width:100%; height:100px;
+  width:100%; height:190px;
   background:#0a0300; color:#7ec8a0;
   border:1px solid var(--border);
-  font-family:'Share Tech Mono',monospace; font-size:10px;
+  font-family:'Share Tech Mono',monospace; font-size:12px;
   padding:7px; resize:vertical; border-radius:2px;
 }
 
 /* Stats */
-#stats { font-size:10px; color:var(--muted); line-height:1.9; }
+#stats { font-size:11px; color:var(--muted); line-height:1.9; }
 #stats b { color:var(--text); }
 
 /* Toast */
@@ -252,23 +311,73 @@ header .sub { font-size: 11px; color: var(--muted); }
 
 
 /* Puzzle manager + solver */
-.puzzle-bar { width:100%; max-width:500px; display:flex; gap:6px; align-items:center; }
+.puzzle-bar { width:100%; max-width:780px; display:flex; gap:6px; align-items:center; }
 .puzzle-bar select, .puzzle-bar input {
-  font-family:'Share Tech Mono',monospace; font-size:11px;
+  font-family:'Share Tech Mono',monospace; font-size:12px;
   background:#0a0300; color:var(--text); border:1px solid var(--border);
   padding:6px 7px; border-radius:2px;
 }
 .puzzle-bar select { flex:1; min-width:0; }
 .puzzle-bar input { width:150px; }
 .solver-box {
-  width:100%; max-width:500px; background:#0d0500; border:1px solid var(--border);
-  padding:8px 9px; border-radius:2px; font-size:10px; color:var(--muted); line-height:1.7;
+  width:100%; max-width:none; background:#0d0500; border:1px solid var(--border);
+  padding:10px 11px; border-radius:2px; font-size:12px; color:var(--muted); line-height:1.7;
 }
 .solver-box b { color:var(--text); }
 #solver-out {
   margin-top:6px; white-space:pre-wrap; word-break:break-word; color:#7ec8a0;
-  max-height:180px; overflow:auto; border-top:1px solid var(--border); padding-top:6px;
+  max-height:260px; overflow:auto; border-top:1px solid var(--border); padding-top:6px;
 }
+
+
+/* Generator settings */
+.generator-panel {
+  margin-top:8px;
+  border-top:1px solid var(--border);
+  padding-top:8px;
+}
+.generator-panel .generator-title {
+  display:flex;
+  gap:6px;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:6px;
+}
+.generator-panel label {
+  font-size:12px;
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.generator-grid {
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:5px;
+}
+.generator-panel input, .generator-panel select {
+  width:100%;
+  min-width:0;
+  font-family:'Share Tech Mono',monospace;
+  font-size:12px;
+  background:#0a0300;
+  color:var(--text);
+  border:1px solid var(--border);
+  padding:4px 5px;
+  border-radius:2px;
+}
+.generator-panel button {
+  font-family:'Share Tech Mono',monospace;
+  font-size:11px;
+  background:#1e0d00;
+  color:var(--text);
+  border:1px solid var(--border);
+  padding:5px 8px;
+  cursor:pointer;
+  border-radius:2px;
+}
+.generator-panel button:hover { border-color:var(--gold); color:var(--gold); }
+.generator-note { margin-top:5px; font-size:12px; color:var(--text); }
 
 </style>
 </head>
@@ -301,6 +410,8 @@ header .sub { font-size: 11px; color: var(--muted); }
       <div class="tool-sep"></div>
       <button class="tool-btn t-chute"       id="tool-chute"  onclick="setTool('chute')" style="color:#e74c3c">⬛ Chute</button>
       <button class="tool-btn t-lever"       id="tool-lever"  onclick="setTool('lever')" style="color:#9b59b6">◎ Lever (corner)</button>
+	  <button onclick="undoEdit()">Undo</button>
+      <button onclick="redoEdit()">Redo</button>
     </div>
   </div>
 
@@ -321,7 +432,7 @@ header .sub { font-size: 11px; color: var(--muted); }
   <div>
     <h2>ACTIONS</h2>
     <button class="act-btn" onclick="clearSide()">Clear this side</button>
-    <button class="act-btn" onclick="copyFB()">Copy FRONT → BACK</button>
+    <button class="act-btn" onclick="copyFB()" style="display: none">Copy FRONT → BACK</button>
     <button class="act-btn danger" onclick="clearAll()">Clear all</button>
   </div>
 
@@ -335,22 +446,54 @@ header .sub { font-size: 11px; color: var(--muted); }
 <div class="main">
   <div class="card-label">SIDE: <b id="side-lbl">FRONT</b> · LAYOUT: <b id="start-orient-lbl">Portrait</b></div>
   <div class="puzzle-bar">
-    <select id="puzzle-select" onchange="selectPuzzleByIndex(this.value)"></select>
-    <input id="puzzle-name" type="text" placeholder="Puzzle name">
+    <select id="puzzle-select"   style="width: 100%; max-width: 280px;" onchange="selectPuzzleByIndex(this.value)"></select>
+    <input id="puzzle-name" type="text" style="width: 100%; max-width: 280px;" placeholder="Puzzle name">
   </div>
   <div class="puzzle-bar">
     <button onclick="newPuzzle(0)">New portrait puzzle</button>
     <button onclick="newPuzzle(1)">New landscape puzzle</button>
     <button onclick="savePuzzleMeta()">Save puzzle</button>
+
     <button onclick="duplicatePuzzle()">Duplicate puzzle</button>
     <button onclick="deletePuzzle()">Delete puzzle</button>
   </div>
-  <div id="gc-wrap"><div id="gc"></div></div>
+  <div class="editor-content">
+    <div class="board-panel">
+      <div id="gc-wrap"><div id="gc"></div></div>
+    </div>
+    <div class="right-panel">
   <div class="solver-box">
     <div><b>Solver</b> — tries to solve the current puzzle using the visible rule assumptions.</div>
     <div style="margin-top:6px; display:flex; gap:6px; flex-wrap:wrap;">
       <button onclick="runSolver()">Solve current puzzle</button>
       <button onclick="clearSolverOut()">Clear result</button>
+
+    </div>
+    <div class="generator-panel">
+      <div class="generator-title">
+        <b>Generator</b>
+        <button onclick="generateCustomPuzzle()">Generate</button>
+      </div>
+      <div class="generator-grid">
+        <label>Min moves<input id="gen-min-moves" type="number" min="0" step="1" value="10"></label>
+        <label>Max moves<input id="gen-max-moves" type="number" min="0" step="1" value="50"></label>
+        <label>Max tries<input id="gen-tries" type="number" min="1" step="100" value="20000"></label>
+        <label>Min states<input id="gen-min-states" type="number" min="0" step="1" value="50"></label>
+        <label>Max states<input id="gen-max-states" type="number" min="0" step="1" value="9999"></label>
+        <label>Wall %<input id="gen-segment" type="number" min="5" max="95" step="1" value="30"></label>
+        <label>Min chutes<input id="gen-min-chutes" type="number" min="0" step="1" value="1"></label>
+        <label>Max chutes<input id="gen-max-chutes" type="number" min="0" step="1" value="20"></label>
+		<label>Required route chutes<input id="gen-required-chutes" type="number" min="0" step="1" value="1"></label>
+        <label>Min levers<input id="gen-min-levers" type="number" min="0" step="1" value="2"></label>
+        <label>Max levers<input id="gen-max-levers" type="number" min="0" step="1" value="24"></label>
+        <label>Required route levers<input id="gen-required-levers" type="number" min="0" step="1" value="2"></label>
+<label style="display:flex; flex-direction:row; align-items:center; gap:6px;">
+  Solution only
+  <input id="gen-solution-only" type="checkbox" style="width:auto; min-width:0;">
+</label>
+ 
+      </div>
+      <div class="generator-note">Wall % uses the same probability for horizontal floors/ceilings and vertical walls. Required route levers and chutes force the solver solution to include at least that many LEVER and CHUTE moves.</div>
     </div>
     <div id="solver-out">—</div>
   </div>
@@ -363,6 +506,8 @@ header .sub { font-size: 11px; color: var(--muted); }
       <button onclick="importJSON()">Import</button>
     </div>
     <textarea id="json-out" readonly spellcheck="false"></textarea>
+  </div>
+    </div>
   </div>
 </div>
 </div>
@@ -421,6 +566,14 @@ let puzzles = [makePuzzle('Puzzle 1', 0)];
 let currentPuzzleIndex = 0;
 let aSide   = 'front';
 let aTool   = 'wall';
+let solutionRoute = null;
+let lastSolverResult = null;
+let solutionUsage = null;
+
+let undoStack = [];
+let redoStack = [];
+const UNDO_LIMIT = 100;
+let restoringUndoState = false;
 
 function currentPuzzle() { return puzzles[currentPuzzleIndex]; }
 const card = () => currentPuzzle().card;
@@ -429,6 +582,73 @@ const WC = (r,c) => S().walls[r][c];
 const otherSide = side => side === 'front' ? 'back' : 'front';
 function currentDims() { return dimsForOrientation(currentPuzzle().initialOrientation ?? 0); }
 function sideDims(s) { return { rows: s.walls.length, cols: s.walls[0]?.length || 0 }; }
+
+function editorSnapshot() {
+  return JSON.stringify({
+    puzzles,
+    currentPuzzleIndex,
+    aSide,
+    aTool,
+    solutionRoute,
+    lastSolverResult
+  });
+}
+
+function pushUndoState() {
+  if (restoringUndoState) return;
+  const snap = editorSnapshot();
+  if (undoStack.length && undoStack[undoStack.length - 1] === snap) return;
+  undoStack.push(snap);
+  if (undoStack.length > UNDO_LIMIT) undoStack.shift();
+  redoStack = [];
+}
+
+function restoreEditorSnapshot(snap) {
+  if (!snap) return;
+  const data = JSON.parse(snap);
+  restoringUndoState = true;
+  puzzles = data.puzzles || [makePuzzle('Puzzle 1', 0)];
+  currentPuzzleIndex = Math.max(0, Math.min(data.currentPuzzleIndex || 0, puzzles.length - 1));
+  aSide = data.aSide || 'front';
+  aTool = data.aTool || 'wall';
+  solutionRoute = data.solutionRoute || null;
+  lastSolverResult = data.lastSolverResult || null;
+  solutionUsage = null;
+
+  document.getElementById('side-lbl').textContent = aSide.toUpperCase();
+  document.getElementById('btn-front').classList.toggle('active', aSide === 'front');
+  document.getElementById('btn-back').classList.toggle('active', aSide === 'back');
+
+  refreshPuzzleUI();
+  buildGrid();
+  applyEditorOrientation();
+  setTool(aTool);
+  render();
+  restoringUndoState = false;
+}
+
+function undoEdit() {
+  if (!undoStack.length) {
+    toast('Nothing to undo');
+    return;
+  }
+  redoStack.push(editorSnapshot());
+  const snap = undoStack.pop();
+  restoreEditorSnapshot(snap);
+  toast('Undo');
+}
+
+function redoEdit() {
+  if (!redoStack.length) {
+    toast('Nothing to redo');
+    return;
+  }
+  undoStack.push(editorSnapshot());
+  const snap = redoStack.pop();
+  restoreEditorSnapshot(snap);
+  toast('Redo');
+}
+
 
 function syncOrientationUI() {
   const o = normalizeOrientation(currentPuzzle().initialOrientation ?? 0);
@@ -453,6 +673,43 @@ function addOrReplaceChute(side, chute) {
   const i = arr.findIndex(ch => ch.col===chute.col && ch.row===chute.row && ch.wall===chute.wall);
   if (i >= 0) arr[i] = {...chute};
   else arr.push({...chute});
+}
+
+function wallCellForChute(ch, d) {
+  const col = ((ch.col % d.cols) + d.cols) % d.cols;
+  const row = ((ch.row % d.rows) + d.rows) % d.rows;
+  if (ch.wall === 'T') return { row:(row - 1 + d.rows) % d.rows, col, wt:'B' };
+  if (ch.wall === 'B') return { row, col, wt:'B' };
+  if (ch.wall === 'L') return { row, col:(col - 1 + d.cols) % d.cols, wt:'R' };
+  return { row, col, wt:'R' };
+}
+
+function ensureChuteWallOnSide(sideObj, ch, d) {
+  if (!sideObj || !ch) return;
+  const w = wallCellForChute(ch, d);
+  if (sideObj.walls[w.row] && sideObj.walls[w.row][w.col]) sideObj.walls[w.row][w.col][w.wt] = true;
+}
+
+function ensureChuteWall(sideName, ch) {
+  const d = currentDims();
+  ensureChuteWallOnSide(card()[sideName], ch, d);
+}
+
+function ensureLeverCornerWallsOnSide(sideObj, lv, d) {
+  if (!sideObj || !lv) return;
+  const col = ((lv.col % d.cols) + d.cols) % d.cols;
+  const row = ((lv.row % d.rows) + d.rows) % d.rows;
+  const setB = (r,c) => { sideObj.walls[((r % d.rows) + d.rows) % d.rows][((c % d.cols) + d.cols) % d.cols].B = true; };
+  const setR = (r,c) => { sideObj.walls[((r % d.rows) + d.rows) % d.rows][((c % d.cols) + d.cols) % d.cols].R = true; };
+  if (lv.corner === 'TL') { setB(row - 1, col); setR(row, col - 1); }
+  else if (lv.corner === 'TR') { setB(row - 1, col); setR(row, col); }
+  else if (lv.corner === 'BL') { setB(row, col); setR(row, col - 1); }
+  else { setB(row, col); setR(row, col); }
+}
+
+function ensureLeverCornerWalls(sideName, lv) {
+  const d = currentDims();
+  ensureLeverCornerWallsOnSide(card()[sideName], lv, d);
 }
 
 function removeChute(side, chute) {
@@ -530,6 +787,7 @@ function savePuzzleMeta() {
   updateJSON();
 }
 function newPuzzle(initialOrientation = 0) {
+  pushUndoState();
   savePuzzleMeta();
   puzzles.push(makePuzzle(`Puzzle ${puzzles.length+1}`, initialOrientation));
   currentPuzzleIndex = puzzles.length - 1;
@@ -542,6 +800,7 @@ function newPuzzle(initialOrientation = 0) {
 }
 
 function duplicatePuzzle() {
+  pushUndoState();
   savePuzzleMeta();
   const src = currentPuzzle();
   const clone = { id: `puzzle-${Date.now()}-${Math.random().toString(36).slice(2,8)}`, name: `${src.name || 'Puzzle'} copy`, initialOrientation: normalizeOrientation(src.initialOrientation ?? 0), card: JSON.parse(JSON.stringify(src.card)) };
@@ -554,6 +813,7 @@ function duplicatePuzzle() {
   toast('Puzzle duplicated');
 }
 function deletePuzzle() {
+  pushUndoState();
   if (puzzles.length === 1) {
     puzzles[0] = makePuzzle('Puzzle 1', 0);
     currentPuzzleIndex = 0;
@@ -568,7 +828,11 @@ function deletePuzzle() {
   toast('Puzzle deleted');
 }
 function clearSolverOut() {
+  solutionRoute = null;
+  lastSolverResult = null;
+  solutionUsage = null;
   document.getElementById('solver-out').textContent = '—';
+  render();
 }
 
 // ═══════════════════════════════════════════════════
@@ -685,10 +949,12 @@ function onHit(e) {
   // ── WALL / ERASE on wall line ──
   if (d.t === 'wall') {
     if (aTool === 'wall') {
+      pushUndoState();
       WC(r,c)[d.wt] = !WC(r,c)[d.wt];
       render(); return;
     }
     if (aTool === 'erase') {
+      pushUndoState();
       WC(r,c)[d.wt] = false;
       render(); return;
     }
@@ -700,17 +966,23 @@ function onHit(e) {
     const pair = oppositeCellForChute(here);
 
     if (aTool === 'chute') {
+      pushUndoState();
       const existsHere = S().chutes.some(ch => ch.col===here.col && ch.row===here.row && ch.wall===here.wall);
       if (existsHere) {
         removeChute(aSide, here);
         if (pair) removeChute(otherSide(aSide), pair);
       } else {
+        ensureChuteWall(aSide, here);
         addOrReplaceChute(aSide, here);
-        if (pair) addOrReplaceChute(otherSide(aSide), pair);
+        if (pair) {
+          ensureChuteWall(otherSide(aSide), pair);
+          addOrReplaceChute(otherSide(aSide), pair);
+        }
       }
       render(); return;
     }
     if (aTool === 'erase') {
+      pushUndoState();
       removeChute(aSide, here);
       if (pair) removeChute(otherSide(aSide), pair);
       render(); return;
@@ -719,9 +991,10 @@ function onHit(e) {
 
   // ── CELL center ──
   if (d.t === 'cell') {
-    if (aTool === 'start') { S().start = {col:c, row:r}; render(); return; }
-    if (aTool === 'goal')  { S().goal  = {col:c, row:r}; render(); return; }
+    if (aTool === 'start') { pushUndoState(); S().start = {col:c, row:r}; render(); return; }
+    if (aTool === 'goal')  { pushUndoState(); S().goal  = {col:c, row:r}; render(); return; }
     if (aTool === 'erase') {
+      pushUndoState();
       const s = S();
       if (s.start && s.start.col===c && s.start.row===r) s.start = null;
       if (s.goal  && s.goal.col===c  && s.goal.row===r)  s.goal  = null;
@@ -732,16 +1005,20 @@ function onHit(e) {
   // ── CORNER ──
   if (d.t === 'corner') {
     if (aTool === 'lever') {
+      pushUndoState();
       const exists = S().levers.some(lv => lv.col===c && lv.row===r && lv.corner===d.corner);
       if (exists) {
         S().levers = S().levers.filter(lv => !(lv.col===c && lv.row===r && lv.corner===d.corner));
       } else {
-        S().levers = S().levers.filter(lv => !(lv.col===c && lv.row===r && lv.corner===d.corner));
-        S().levers.push({col:c, row:r, corner:d.corner});
+        const lv = {col:c, row:r, corner:d.corner};
+        ensureLeverCornerWalls(aSide, lv);
+        S().levers = S().levers.filter(x => !(x.col===c && x.row===r && x.corner===d.corner));
+        S().levers.push(lv);
       }
       render(); return;
     }
     if (aTool === 'erase') {
+      pushUndoState();
       S().levers = S().levers.filter(lv => !(lv.col===c && lv.row===r && lv.corner===d.corner));
       render(); return;
     }
@@ -761,7 +1038,8 @@ function oppositeCellForChute(ch) {
 // ═══════════════════════════════════════════════════
 function render() {
   applyEditorOrientation();
-  gc.querySelectorAll('.ws,.sp').forEach(e=>e.remove());
+  solutionUsage = lastSolverResult ? getSolutionUsage(lastSolverResult, currentPuzzle().card, currentPuzzle().initialOrientation ?? 0) : null;
+  gc.querySelectorAll('.ws,.sp,.route-step,.route-line').forEach(e=>e.remove());
   renderWalls();
   renderSpecials();
   updateJSON();
@@ -778,12 +1056,18 @@ function renderWalls() {
         const seg = el('ws');
         seg.style.cssText = `position:absolute;background:var(--wall);z-index:6;pointer-events:none;border-radius:1px;` +
           `left:${c*CS}px;top:${(r+1)*CS - WT/2}px;width:${CS}px;height:${WT}px`;
+        if (solutionUsage && !solutionUsage.walls.has(`${aSide}:${r},${c}:B`)) {
+          seg.classList.add(r === d.rows - 1 ? 'solution-faded-edge' : 'solution-faded');
+        }
         gc.appendChild(seg);
       }
       if (w.R) {
         const seg = el('ws');
         seg.style.cssText = `position:absolute;background:var(--wall);z-index:6;pointer-events:none;border-radius:1px;` +
           `left:${(c+1)*CS - WT/2}px;top:${r*CS}px;width:${WT}px;height:${CS}px`;
+        if (solutionUsage && !solutionUsage.walls.has(`${aSide}:${r},${c}:R`)) {
+          seg.classList.add(c === d.cols - 1 ? 'solution-faded-edge' : 'solution-faded');
+        }
         gc.appendChild(seg);
       }
     }
@@ -814,6 +1098,87 @@ function renderSpecials() {
 
   // Levers — drawn in their corner
   s.levers.forEach(lv => renderLever(lv));
+
+  renderSolutionRoute();
+}
+
+function visibleDimsForOrientationTurns(turns) {
+  const base = currentDims();
+  let cols = base.cols, rows = base.rows;
+  turns = ((turns % 4) + 4) % 4;
+  for (let i = 0; i < turns; i++) {
+    const oldCols = cols;
+    cols = rows;
+    rows = oldCols;
+  }
+  return { cols, rows };
+}
+
+function unrotateRoutePointTurnsCW(col, row, turns) {
+  turns = ((turns % 4) + 4) % 4;
+  let dims = visibleDimsForOrientationTurns(turns);
+  let c = col, r = row, cc = dims.cols, rr = dims.rows;
+  for (let i = 0; i < turns; i++) {
+    const oldCols = rr;
+    const oldRows = cc;
+    const nc = r;
+    const nr = oldRows - 1 - c;
+    c = nc;
+    r = nr;
+    cc = oldCols;
+    rr = oldRows;
+  }
+  return { col:c, row:r };
+}
+
+function routeStateToBaseCell(st) {
+  if (!st || st.side !== aSide) return null;
+  const turns = (((st.orient % 360) + 360) % 360) / 90;
+  const p = unrotateRoutePointTurnsCW(st.col, st.row, turns);
+  const d = currentDims();
+  if (p.col < 0 || p.col >= d.cols || p.row < 0 || p.row >= d.rows) return null;
+  return p;
+}
+
+function routeActionForStep(stepIndex) {
+  if (!lastSolverResult || !Array.isArray(lastSolverResult.path)) return 'GOAL';
+  if (stepIndex >= lastSolverResult.path.length) return 'GOAL';
+  const raw = lastSolverResult.path[stepIndex];
+  return raw ? String(raw) : 'GOAL';
+}
+
+function renderSolutionRoute() {
+  if (!Array.isArray(solutionRoute) || solutionRoute.length === 0) return;
+
+  // Keep route marking deliberately simple: numbered dots only.
+  // Connecting lines quickly become misleading when the route wraps around,
+  // changes side through a chute, or rotates through a lever.
+  const pts = [];
+  const perCellCount = new Map();
+
+  solutionRoute.forEach((st, i) => {
+    const p = routeStateToBaseCell(st);
+    if (!p) return;
+    const key = `${p.col},${p.row}`;
+    const n = perCellCount.get(key) || 0;
+    perCellCount.set(key, n + 1);
+    pts.push({ ...p, index:i, repeat:n });
+  });
+
+  pts.forEach((p) => {
+    const d = el('route-step');
+    // If the same visible cell appears several times in the solution,
+    // offset the marker slightly instead of drawing markers exactly on top of each other.
+    const offsets = [ [0,0], [10,0], [-10,0], [0,10], [0,-10], [7,7], [-7,-7] ];
+    const off = offsets[p.repeat % offsets.length];
+    d.style.left = (p.col * CS + CS / 2 - 9 + off[0]) + 'px';
+    d.style.top  = (p.row * CS + CS / 2 - 9 + off[1]) + 'px';
+    d.textContent = String(p.index);
+    const action = routeActionForStep(p.index);
+    d.title = action;
+    d.setAttribute('aria-label', action);
+    gc.appendChild(d);
+  });
 }
 
 function renderCellLabel(col, row, label, color, bg) {
@@ -832,6 +1197,7 @@ function renderChute(ch) {
 
   const col = ch.col, row = ch.row;
   const wall = ch.wall;
+  const faded = solutionUsage && !solutionUsage.chutes.has(`${aSide}:${col},${row},${wall}`);
 
   const d = el('sp');
   d.style.position = 'absolute';
@@ -900,6 +1266,10 @@ function renderChute(ch) {
     arr.title = tip;
   }
 
+  if (faded) {
+    d.classList.add('solution-faded');
+    arr.classList.add('solution-faded');
+  }
   gc.appendChild(d);
   gc.appendChild(arr);
 }
@@ -908,6 +1278,7 @@ function renderLever(lv) {
   const SZ = 14; // dot size
   const M  = 3;  // margin from corner
   const col = lv.col, row = lv.row;
+  const faded = solutionUsage && !solutionUsage.levers.has(`${aSide}:${col},${row},${lv.corner}`);
   let x, y;
   switch (lv.corner) {
     case 'TL': x = col*CS + M;        y = row*CS + M;        break;
@@ -920,6 +1291,7 @@ function renderLever(lv) {
     `left:${x}px;top:${y}px;width:${SZ}px;height:${SZ}px;` +
     `background:var(--purple);border-radius:50%;` +
     `border:2px solid #fff5;`;
+  if (faded) d.classList.add('solution-faded');
   gc.appendChild(d);
 }
 
@@ -974,6 +1346,7 @@ function switchSide(s) {
 // ACTIONS
 // ═══════════════════════════════════════════════════
 function clearSide() {
+  pushUndoState();
   const d = currentDims();
   const old = card()[aSide];
   card()[aSide] = {
@@ -986,8 +1359,8 @@ function clearSide() {
   render();
   toast('Cleared side (chutes preserved)');
 }
-function clearAll()  { const d = currentDims(); card().front=emptyS(d.cols, d.rows); card().back=emptyS(d.cols, d.rows); render(); toast('All cleared'); }
-function copyFB()    { card().back=JSON.parse(JSON.stringify(card().front)); if(aSide==='back') render(); updateJSON(); toast('Copytu BACK:iin'); }
+function clearAll()  { pushUndoState(); const d = currentDims(); card().front=emptyS(d.cols, d.rows); card().back=emptyS(d.cols, d.rows); render(); toast('All cleared'); }
+function copyFB()    { pushUndoState(); card().back=JSON.parse(JSON.stringify(card().front)); if(aSide==='back') render(); updateJSON(); toast('Copytu BACK:iin'); }
 
 // ═══════════════════════════════════════════════════
 // JSON
@@ -999,6 +1372,7 @@ function exportJSON() {
 function importFrom(str) {
   try {
     const data = JSON.parse(str);
+    pushUndoState();
     if (Array.isArray(data.puzzles)) {
       puzzles = data.puzzles.map((p, i) => ({
         id: p.id || `puzzle-${i+1}`,
@@ -1275,20 +1649,20 @@ function solveCard(puzzleOrCard) {
   const startBase = cardData.front?.start;
   if (!startBase) return { found: false, reason: 'START is missing' };
   const start = { side: 'front', orient: 0, col: startBase.col, row: startBase.row };
-  const queue = [{ state: start, path: [] }];
+  const queue = [{ state: start, path: [], statePath: [start] }];
   const seen = new Set([stateKey(start)]);
 
   while (queue.length) {
-    const { state, path } = queue.shift();
+    const { state, path, statePath } = queue.shift();
     const vis = getVisibleState(state.side, state.orient);
     if (vis.goal && state.col === vis.goal.col && state.row === vis.goal.row) {
-      return { found: true, explored: seen.size, path, state };
+      return { found: true, explored: seen.size, path, states: statePath, state };
     }
     for (const [act, nxt] of successors(state)) {
       const k = stateKey(nxt);
       if (seen.has(k)) continue;
       seen.add(k);
-      queue.push({ state: nxt, path: path.concat(act) });
+      queue.push({ state: nxt, path: path.concat(act), statePath: statePath.concat(nxt) });
     }
   }
 
@@ -1300,16 +1674,633 @@ function runSolver() {
   const res = solveCard({ card: exportCurrentCard(), initialOrientation: currentPuzzle().initialOrientation ?? 0 });
   const el = document.getElementById('solver-out');
   if (!res.found) {
+    solutionRoute = null;
+    lastSolverResult = null;
+    solutionUsage = null;
+    render();
     el.textContent = `No solution found with the current rule assumptions.
 Explored states: ${res.explored || 0}${res.reason ? `
 Note: ${res.reason}` : ''}`;
     return;
   }
+  solutionRoute = Array.isArray(res.states) ? res.states : null;
+  lastSolverResult = res;
+  solutionUsage = getSolutionUsage(res, currentPuzzle().card, currentPuzzle().initialOrientation ?? 0);
+  render();
   el.textContent = `Solution found.
 Length: ${res.path.length} moves
 Explored states: ${res.explored}
+Used levers: ${generatedPathStats(res).usedLevers}
+Used chutes: ${generatedPathStats(res).usedChutes}
+Max RUN/JUMP streak: ${generatedPathStats(res).maxPlainStreak}
 
 ${res.path.join(' → ')}`;
+}
+
+
+// ═══════════════════════════════════════════════════
+function generatedPathStats(res) {
+  const path = Array.isArray(res && res.path) ? res.path : [];
+  let usedLevers = 0;
+  let usedChutes = 0;
+  let specialMoves = 0;
+  let maxPlainStreak = 0;
+  let plainStreak = 0;
+
+  for (const act of path) {
+    const a = String(act || "");
+    const isLever = a === "LEVER";
+    const isChute = a.startsWith("CHUTE");
+    const isPlain = (a === "RUN" || a === "JUMP");
+
+    if (isLever) usedLevers++;
+    if (isChute) usedChutes++;
+    if (isLever || isChute) specialMoves++;
+
+    if (isPlain) {
+      plainStreak++;
+      if (plainStreak > maxPlainStreak) maxPlainStreak = plainStreak;
+    } else {
+      plainStreak = 0;
+    }
+  }
+
+  return { usedLevers, usedChutes, specialMoves, maxPlainStreak };
+}
+
+function generatedPathUsesRequiredElements(res, cfg) {
+  const pst = generatedPathStats(res);
+  if (pst.usedLevers < (cfg.minUsedLevers || 0)) return false;
+  if (pst.usedChutes < (cfg.minUsedChutes || 0)) return false;
+  if (pst.specialMoves < (cfg.minSpecialMoves || 0)) return false;
+  if (pst.maxPlainStreak > (cfg.maxPlainStreak || 99)) return false;
+  return true;
+}
+
+function getSolutionUsage(res, cardData, initialOrientation = 0) {
+  const used = {
+    walls: new Set(),
+    chutes: new Set(),
+    levers: new Set(),
+  };
+  if (!res || !Array.isArray(res.states)) return used;
+
+  const baseD = dimsForOrientation(initialOrientation);
+  const addWall = (sideName, wallKey) => {
+    if (!sideName || !wallKey) return;
+    const r = ((wallKey.row % baseD.rows) + baseD.rows) % baseD.rows;
+    const c = ((wallKey.col % baseD.cols) + baseD.cols) % baseD.cols;
+    used.walls.add(`${sideName}:${r},${c}:${wallKey.wt}`);
+  };
+
+  // Every state in the route needs the floor it stands on.
+  res.states.forEach(st => {
+    if (!st || !cardData?.[st.side]) return;
+    const turns = (((st.orient % 360) + 360) % 360) / 90;
+    const baseFloor = visibleWallToBaseWallKey({ row: st.row, col: st.col, wt: 'B' }, turns, baseD);
+    addWall(st.side, baseFloor);
+  });
+
+  // Chutes and levers used by the path need their own structural walls.
+  for (let i = 0; i < (res.path || []).length; i++) {
+    const act = String(res.path[i] || '');
+    const st = res.states[i];
+    if (!st || !cardData?.[st.side]) continue;
+
+    const turns = (((st.orient % 360) + 360) % 360) / 90;
+    const basePos = unrotatePointTurnsCWWithBase(st.col, st.row, turns, baseD);
+
+    if (act.startsWith('CHUTE')) {
+      const m = act.match(/CHUTE\[([TBRL])\]/);
+      const visibleWall = m ? m[1] : 'R';
+      const baseWall = unrotateWallTurnsCWGlobal(visibleWall, turns);
+      const ch = { col: basePos.col, row: basePos.row, wall: baseWall };
+      const pair = generatorOppositeChute(ch, baseD);
+      const otherName = st.side === 'front' ? 'back' : 'front';
+      used.chutes.add(`${st.side}:${ch.col},${ch.row},${ch.wall}`);
+      used.chutes.add(`${otherName}:${pair.col},${pair.row},${pair.wall}`);
+      addWall(st.side, wallCellForChute(ch, baseD));
+      addWall(otherName, wallCellForChute(pair, baseD));
+    }
+
+    if (act === 'LEVER') {
+      const corner = unrotateCornerTurnsCWGlobal('BR', turns);
+      const lv = { col: basePos.col, row: basePos.row, corner };
+      used.levers.add(`${st.side}:${lv.col},${lv.row},${lv.corner}`);
+      leverCornerWallKeys(lv, baseD).forEach(w => addWall(st.side, w));
+    }
+  }
+
+  return used;
+}
+
+function leverCornerWallKeys(lv, d) {
+  const col = ((lv.col % d.cols) + d.cols) % d.cols;
+  const row = ((lv.row % d.rows) + d.rows) % d.rows;
+  const B = (r, c) => ({ row: ((r % d.rows) + d.rows) % d.rows, col: ((c % d.cols) + d.cols) % d.cols, wt: 'B' });
+  const R = (r, c) => ({ row: ((r % d.rows) + d.rows) % d.rows, col: ((c % d.cols) + d.cols) % d.cols, wt: 'R' });
+  if (lv.corner === 'TL') return [B(row - 1, col), R(row, col - 1)];
+  if (lv.corner === 'TR') return [B(row - 1, col), R(row, col)];
+  if (lv.corner === 'BL') return [B(row, col), R(row, col - 1)];
+  return [B(row, col), R(row, col)];
+}
+
+// PUZZLE GENERATOR — adjustable UI
+// ═══════════════════════════════════════════════════
+const DEFAULT_GENERATOR_CONFIG = {
+  label: 'Custom',
+  levelKey: 'custom',
+  moves: [4, 30],
+  states: [0, 9999],
+  tries: 20000,
+  segment: 0.30,
+  chutes: [0, 20],
+  levers: [2, 24],
+  minUsedLevers: 2,
+  minUsedChutes: 1,
+  minSpecialMoves: 0,
+  maxPlainStreak: 99,
+};
+
+function rand(a, b) { return Math.floor(Math.random() * (b - a + 1)) + a; }
+function choice(arr) { return arr[rand(0, arr.length - 1)]; }
+function chance(p) { return Math.random() < p; }
+function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
+function inRange(n, rg) { return n >= rg[0] && n <= rg[1]; }
+function scoreDistance(n, rg) {
+  if (inRange(n, rg)) return 0;
+  if (n < rg[0]) return rg[0] - n;
+  return n - rg[1];
+}
+
+function readGeneratorNumber(id, fallback, min = -Infinity, max = Infinity) {
+  const el = document.getElementById(id);
+  const n = el ? Number(el.value) : NaN;
+  if (!Number.isFinite(n)) return fallback;
+  return clamp(n, min, max);
+}
+
+function readGeneratorConfig() {
+  const minMoves = Math.round(readGeneratorNumber('gen-min-moves', DEFAULT_GENERATOR_CONFIG.moves[0], 0, 200));
+  const maxMoves = Math.round(readGeneratorNumber('gen-max-moves', DEFAULT_GENERATOR_CONFIG.moves[1], minMoves, 200));
+  const minStates = Math.round(readGeneratorNumber('gen-min-states', DEFAULT_GENERATOR_CONFIG.states[0], 0, 100000));
+  const maxStates = Math.round(readGeneratorNumber('gen-max-states', DEFAULT_GENERATOR_CONFIG.states[1], minStates, 100000));
+  const minChutes = Math.round(readGeneratorNumber('gen-min-chutes', DEFAULT_GENERATOR_CONFIG.chutes[0], 0, 40));
+  const maxChutes = Math.round(readGeneratorNumber('gen-max-chutes', DEFAULT_GENERATOR_CONFIG.chutes[1], minChutes, 40));
+  const minLevers = Math.round(readGeneratorNumber('gen-min-levers', DEFAULT_GENERATOR_CONFIG.levers[0], 0, 40));
+  const maxLevers = Math.round(readGeneratorNumber('gen-max-levers', DEFAULT_GENERATOR_CONFIG.levers[1], minLevers, 40));
+  const requiredRouteLevers = Math.round(readGeneratorNumber('gen-required-levers', DEFAULT_GENERATOR_CONFIG.minUsedLevers, 0, 100));
+  const requiredRouteChutes = Math.round(readGeneratorNumber('gen-required-chutes', DEFAULT_GENERATOR_CONFIG.minUsedChutes, 0, 100));
+  return {
+    label: 'Custom',
+    levelKey: 'custom',
+    moves: [minMoves, maxMoves],
+    states: [minStates, maxStates],
+    tries: Math.round(readGeneratorNumber('gen-tries', DEFAULT_GENERATOR_CONFIG.tries, 1, 50000)),
+    segment: readGeneratorNumber('gen-segment', Math.round(DEFAULT_GENERATOR_CONFIG.segment * 100), 5, 95) / 100,
+    chutes: [minChutes, maxChutes],
+    levers: [minLevers, maxLevers],
+    minUsedLevers: requiredRouteLevers,
+    minUsedChutes: requiredRouteChutes,
+    solutionOnly: !!document.getElementById('gen-solution-only')?.checked,
+    minSpecialMoves: 0,
+    maxPlainStreak: 99,
+  };
+}
+
+function generateCustomPuzzle() {
+  generateWithConfig(readGeneratorConfig());
+}
+
+function generateWithConfig(cfg) {
+  pushUndoState();
+  savePuzzleMeta();
+  const oldPuzzle = JSON.parse(JSON.stringify(currentPuzzle()));
+  const oldSide = aSide;
+  const oldTool = aTool;
+  const out = document.getElementById('solver-out');
+  out.textContent = `Generating ${cfg.label} candidate...\nMoves: ${cfg.moves[0]}–${cfg.moves[1]}, states: ${cfg.states[0]}–${cfg.states[1]}, tries: ${cfg.tries}
+Wall/Floor density: ${Math.round((cfg.segment || 0) * 100)}%
+Chute pairs: ${cfg.chutes[0]}–${cfg.chutes[1]}, levers: ${cfg.levers[0]}–${cfg.levers[1]}
+Required route levers: ${cfg.minUsedLevers || 0}
+Required route chutes: ${cfg.minUsedChutes || 0}
+Solution only: ${cfg.solutionOnly ? 'yes' : 'no'}`;
+
+  let best = null;
+  for (let i = 1; i <= cfg.tries; i++) {
+    let candidate = makeRandomCandidate(cfg, cfg.levelKey || 'custom', i);
+    let res = solveCard({ card: exportCardOf(candidate.card), initialOrientation: candidate.initialOrientation });
+    if (!res.found) continue;
+
+    if (cfg.solutionOnly) {
+      const pruned = JSON.parse(JSON.stringify(candidate));
+      pruneCandidateToSolutionOnly(pruned, res);
+      const prunedRes = solveCard({ card: exportCardOf(pruned.card), initialOrientation: pruned.initialOrientation });
+      if (!prunedRes.found) continue;
+      candidate = pruned;
+      res = prunedRes;
+    }
+
+    const moves = res.path.length;
+    const states = res.explored || 0;
+    const pst = generatedPathStats(res);
+    const missingLeverPenalty = Math.max(0, (cfg.minUsedLevers || 0) - pst.usedLevers) * 12000;
+    const missingChutePenalty = Math.max(0, (cfg.minUsedChutes || 0) - pst.usedChutes) * 6000;
+    const missingSpecialPenalty = Math.max(0, (cfg.minSpecialMoves || 0) - pst.specialMoves) * 3000;
+    const plainStreakPenalty = Math.max(0, pst.maxPlainStreak - (cfg.maxPlainStreak || 99)) * 2500;
+    const routePenalty = missingLeverPenalty + missingChutePenalty + missingSpecialPenalty + plainStreakPenalty;
+    const penalty = routePenalty + scoreDistance(moves, cfg.moves) * 100 + scoreDistance(states, cfg.states);
+    // A closest candidate is still allowed to miss the move/state range, but it
+    // must satisfy required route elements such as Required route levers.
+    if ((!best || penalty < best.penalty) && routePenalty === 0) {
+      best = { candidate, res, penalty, attempt:i };
+    }
+
+    if (inRange(moves, cfg.moves) && inRange(states, cfg.states) && generatedPathUsesRequiredElements(res, cfg)) {
+      applyGeneratedPuzzle(candidate, res, cfg, i, true);
+      return;
+    }
+  }
+
+  if (best) {
+    applyGeneratedPuzzle(best.candidate, best.res, cfg, best.attempt, false);
+    toast(`${cfg.label}: closest candidate used`);
+  } else {
+    puzzles[currentPuzzleIndex] = oldPuzzle;
+    solutionRoute = null;
+    lastSolverResult = null;
+    solutionUsage = null;
+    aSide = oldSide;
+    refreshPuzzleUI();
+    buildGrid();
+    applyEditorOrientation();
+    setTool(oldTool);
+    render();
+    out.textContent = `No ${cfg.label} candidate found. Try again or loosen the ranges.`;
+    toast('Generation failed');
+  }
+}
+
+function applyGeneratedPuzzle(candidate, res, cfg, attempt, exact) {
+  puzzles[currentPuzzleIndex] = candidate;
+  aSide = 'front';
+  refreshPuzzleUI();
+  buildGrid();
+  applyEditorOrientation();
+  setTool('wall');
+  solutionRoute = Array.isArray(res.states) ? res.states : null;
+  lastSolverResult = res;
+  solutionUsage = getSolutionUsage(res, candidate.card, candidate.initialOrientation ?? 0);
+  render();
+  const out = document.getElementById('solver-out');
+  out.textContent = `${exact ? 'Generated' : 'Generated closest'} ${cfg.label} puzzle.
+Attempt: ${attempt}
+Length: ${res.path.length} moves
+Explored states: ${res.explored}
+Used levers: ${generatedPathStats(res).usedLevers}
+Used chutes: ${generatedPathStats(res).usedChutes}
+Solution only: ${cfg.solutionOnly ? 'yes' : 'no'}
+
+${res.path.join(' → ')}`;
+  toast(`${cfg.label}: ${res.path.length} moves, ${res.explored} states`);
+}
+
+
+function rotateWallKeyCW(w, cols, rows) {
+  const newCols = rows;
+  const newRows = cols;
+  if (w.wt === 'R') {
+    return { row: w.col, col: rows - 1 - w.row, wt: 'B', cols: newCols, rows: newRows };
+  }
+  const nc = rows - 1 - w.row;
+  return { row: w.col, col: (nc - 1 + newCols) % newCols, wt: 'R', cols: newCols, rows: newRows };
+}
+
+function rotateWallKeyTurnsCW(w, turns, baseD) {
+  turns = ((turns % 4) + 4) % 4;
+  let out = { row: w.row, col: w.col, wt: w.wt };
+  let cols = baseD.cols, rows = baseD.rows;
+  for (let i = 0; i < turns; i++) {
+    const r = rotateWallKeyCW(out, cols, rows);
+    out = { row: r.row, col: r.col, wt: r.wt };
+    cols = r.cols; rows = r.rows;
+  }
+  return out;
+}
+
+function visibleWallToBaseWallKey(visWall, turns, baseD) {
+  turns = ((turns % 4) + 4) % 4;
+  for (let r = 0; r < baseD.rows; r++) {
+    for (let c = 0; c < baseD.cols; c++) {
+      for (const wt of ['B','R']) {
+        const baseWall = { row:r, col:c, wt };
+        const rotated = rotateWallKeyTurnsCW(baseWall, turns, baseD);
+        if (rotated.row === visWall.row && rotated.col === visWall.col && rotated.wt === visWall.wt) return baseWall;
+      }
+    }
+  }
+  return null;
+}
+
+function setWallByKey(sideObj, wallKey, d) {
+  if (!sideObj || !wallKey) return;
+  const r = ((wallKey.row % d.rows) + d.rows) % d.rows;
+  const c = ((wallKey.col % d.cols) + d.cols) % d.cols;
+  if (sideObj.walls[r] && sideObj.walls[r][c]) sideObj.walls[r][c][wallKey.wt] = true;
+}
+
+function visibleDimsForTurnsWithBase(baseD, turns) {
+  let cols = baseD.cols, rows = baseD.rows;
+  turns = ((turns % 4) + 4) % 4;
+  for (let i = 0; i < turns; i++) {
+    const oldCols = cols;
+    cols = rows;
+    rows = oldCols;
+  }
+  return { cols, rows };
+}
+
+function unrotatePointTurnsCWWithBase(col, row, turns, baseD) {
+  turns = ((turns % 4) + 4) % 4;
+  const vd = visibleDimsForTurnsWithBase(baseD, turns);
+  let c = col, r = row, cc = vd.cols, rr = vd.rows;
+  for (let i = 0; i < turns; i++) {
+    const oldCols = rr;
+    const oldRows = cc;
+    const nc = r;
+    const nr = oldRows - 1 - c;
+    c = nc; r = nr;
+    cc = oldCols; rr = oldRows;
+  }
+  return { col: c, row: r };
+}
+
+function unrotateWallTurnsCWGlobal(w, turns) {
+  const ccw = { T:'L', L:'B', B:'R', R:'T' };
+  turns = ((turns % 4) + 4) % 4;
+  let out = w;
+  for (let i = 0; i < turns; i++) out = ccw[out] || out;
+  return out;
+}
+
+function unrotateCornerTurnsCWGlobal(corner, turns) {
+  const ccw = { TL:'BL', BL:'BR', BR:'TR', TR:'TL' };
+  turns = ((turns % 4) + 4) % 4;
+  let out = corner;
+  for (let i = 0; i < turns; i++) out = ccw[out] || out;
+  return out;
+}
+
+function addStandingFloorForRouteState(cardData, st, baseD) {
+  if (!st || !cardData[st.side]) return;
+  const turns = (((st.orient % 360) + 360) % 360) / 90;
+  const baseWall = visibleWallToBaseWallKey({ row: st.row, col: st.col, wt: 'B' }, turns, baseD);
+  setWallByKey(cardData[st.side], baseWall, baseD);
+}
+
+function pruneCandidateToSolutionOnly(candidate, res) {
+  if (!candidate || !candidate.card || !Array.isArray(res && res.states)) return candidate;
+  const baseD = dimsForOrientation(candidate.initialOrientation ?? 0);
+  const oldCard = candidate.card;
+  const newCard = { front: emptyS(baseD.cols, baseD.rows), back: emptyS(baseD.cols, baseD.rows) };
+
+  newCard.front.start = oldCard.front.start ? { ...oldCard.front.start } : null;
+  newCard.front.goal  = oldCard.front.goal  ? { ...oldCard.front.goal }  : null;
+  newCard.back.start  = oldCard.back.start  ? { ...oldCard.back.start }  : null;
+  newCard.back.goal   = oldCard.back.goal   ? { ...oldCard.back.goal }   : null;
+
+  res.states.forEach(st => addStandingFloorForRouteState(newCard, st, baseD));
+
+  for (let i = 0; i < (res.path || []).length; i++) {
+    const act = String(res.path[i] || '');
+    const st = res.states[i];
+    if (!st || !newCard[st.side]) continue;
+    const turns = (((st.orient % 360) + 360) % 360) / 90;
+    const basePos = unrotatePointTurnsCWWithBase(st.col, st.row, turns, baseD);
+
+    if (act.startsWith('CHUTE')) {
+      const m = act.match(/CHUTE\[([TBRL])\]/);
+      const visibleWall = m ? m[1] : 'R';
+      const baseWall = unrotateWallTurnsCWGlobal(visibleWall, turns);
+      const ch = { col: basePos.col, row: basePos.row, wall: baseWall };
+      const pair = generatorOppositeChute(ch, baseD);
+      const otherName = st.side === 'front' ? 'back' : 'front';
+
+      if (canAddChuteOnSide(newCard[st.side], ch, baseD) && canAddChuteOnSide(newCard[otherName], pair, baseD)) {
+        addUniqueChute(newCard[st.side], ch);
+        addUniqueChute(newCard[otherName], pair);
+        ensureChuteWallOnSide(newCard[st.side], ch, baseD);
+        ensureChuteWallOnSide(newCard[otherName], pair, baseD);
+      }
+    } else if (act === 'LEVER') {
+      const corner = unrotateCornerTurnsCWGlobal('BR', turns);
+      const lv = { col: basePos.col, row: basePos.row, corner };
+      if (!newCard[st.side].levers.some(x => x.col === lv.col && x.row === lv.row && x.corner === lv.corner)) newCard[st.side].levers.push(lv);
+      ensureLeverCornerWallsOnSide(newCard[st.side], lv, baseD);
+    }
+  }
+
+  candidate.card = newCard;
+  return candidate;
+}
+
+function makeRandomCandidate(cfg, levelKey, attempt) {
+  const initialOrientation = chance(0.5) ? 0 : 1;
+  const d = dimsForOrientation(initialOrientation);
+  const p = makePuzzle(`${cfg.label} candidate`, initialOrientation);
+  p.name = `${cfg.label} candidate (${Date.now().toString().slice(-5)}-${attempt})`;
+
+  randomizeSideForGenerator(p.card.front, d, cfg, 'front');
+  randomizeSideForGenerator(p.card.back,  d, cfg, 'back');
+
+  ensureAtLeastOneFloorEveryColumn(p.card.front, d);
+  ensureAtLeastOneFloorEveryColumn(p.card.back, d);
+
+  const frontFloors = floorCells(p.card.front, d);
+  const backFloors  = floorCells(p.card.back, d);
+  if (!frontFloors.length) p.card.front.walls[d.rows - 1][rand(0, d.cols - 1)].B = true;
+  if (!backFloors.length)  p.card.back.walls[d.rows - 1][rand(0, d.cols - 1)].B = true;
+
+  const start = choice(floorCells(p.card.front, d));
+  p.card.front.start = { col:start.col, row:start.row };
+
+  const goalSide = (levelKey === 'easy') ? 'front' : (chance(0.55) ? 'back' : 'front');
+  const goalPool = floorCells(p.card[goalSide], d).filter(cell => !(goalSide === 'front' && cell.col === start.col && cell.row === start.row));
+  const goal = choice(goalPool.length ? goalPool : floorCells(p.card[goalSide], d));
+  p.card[goalSide].goal = { col:goal.col, row:goal.row };
+
+  const chuteCount = rand(cfg.chutes[0], cfg.chutes[1]);
+  for (let i = 0; i < chuteCount; i++) addRandomChutePair(p, d, cfg);
+
+  const leverCount = rand(cfg.levers[0], cfg.levers[1]);
+  for (let i = 0; i < leverCount; i++) addRandomLever(p, d, cfg);
+  addRouteBendingLeverBias(p, d, cfg, levelKey);
+
+  addGeneratorGuards(p.card.front, d, cfg, levelKey);
+  addGeneratorGuards(p.card.back, d, cfg, levelKey);
+  ensureStandingCell(p.card.front, p.card.front.start, d);
+  if (p.card.front.goal) ensureStandingCell(p.card.front, p.card.front.goal, d);
+  if (p.card.back.goal) ensureStandingCell(p.card.back, p.card.back.goal, d);
+
+  if (!validateGeneratorChuteRules(p.card, d)) return makeRandomCandidate(cfg, levelKey, attempt + '-retry');
+  return p;
+}
+
+function randomizeSideForGenerator(side, d, cfg, sideName) {
+  side.walls = Array.from({length:d.rows}, () => Array.from({length:d.cols}, () => ({B:false,R:false})));
+  side.start = null;
+  side.goal = null;
+  side.chutes = [];
+  side.levers = [];
+
+  for (let r = 0; r < d.rows; r++) {
+    for (let c = 0; c < d.cols; c++) {
+      const floorBoost = (r === d.rows - 1) ? 0.18 : 0;
+      side.walls[r][c].B = chance(clamp((cfg.segment || 0.47) + floorBoost, 0.15, 0.88));
+      side.walls[r][c].R = chance(cfg.segment || 0.47);
+    }
+  }
+}
+
+function ensureAtLeastOneFloorEveryColumn(side, d) {
+  for (let c = 0; c < d.cols; c++) {
+    let ok = false;
+    for (let r = 0; r < d.rows; r++) if (side.walls[r][c].B) ok = true;
+    if (!ok) side.walls[rand(1, d.rows) - 1][c].B = true;
+  }
+}
+
+function floorCells(side, d) {
+  const cells = [];
+  for (let r = 0; r < d.rows; r++) {
+    for (let c = 0; c < d.cols; c++) {
+      if (side.walls[r][c].B) cells.push({col:c, row:r});
+    }
+  }
+  return cells;
+}
+
+function ensureStandingCell(side, cell, d) {
+  if (!cell) return;
+  if (cell.row >= 0 && cell.row < d.rows && cell.col >= 0 && cell.col < d.cols) {
+    side.walls[cell.row][cell.col].B = true;
+  }
+}
+
+function addRandomChutePair(p, d, cfg) {
+  // Generator rule: a cell may contain at most one chute, and a single physical
+  // wall/floor/ceiling segment may not have chute markings on both sides of it.
+  // The paired chute on the opposite card side is still required.
+  const walls = ['T','R','B']; // L is intentionally avoided: solver currently blocks left-wall chute entry.
+
+  for (let tries = 0; tries < 80; tries++) {
+    const sideName = chance(0.5) ? 'front' : 'back';
+    const otherName = sideName === 'front' ? 'back' : 'front';
+    const side = p.card[sideName];
+    const other = p.card[otherName];
+    const ch = { col: rand(0, d.cols - 1), row: rand(0, d.rows - 1), wall: choice(walls) };
+    const pair = generatorOppositeChute(ch, d);
+
+    if (!canAddChuteOnSide(side, ch, d)) continue;
+    if (!canAddChuteOnSide(other, pair, d)) continue;
+
+    ensureChuteWallOnSide(side, ch, d);
+    ensureChuteWallOnSide(other, pair, d);
+    addUniqueChute(side, ch);
+    addUniqueChute(other, pair);
+    ensureStandingCell(side, ch, d);
+    ensureStandingCell(other, pair, d);
+    return true;
+  }
+  return false;
+}
+
+function chuteWallKey(ch, d) {
+  const w = wallCellForChute(ch, d);
+  return `${w.row},${w.col},${w.wt}`;
+}
+
+function canAddChuteOnSide(side, ch, d) {
+  if (!side || !Array.isArray(side.chutes)) return false;
+  // One chute per visible cell.
+  if (side.chutes.some(x => x.col === ch.col && x.row === ch.row)) return false;
+  // One chute per physical wall segment. This prevents e.g. B on one cell and
+  // T on the neighbouring cell marking the same wall/floor from both sides.
+  const key = chuteWallKey(ch, d);
+  if (side.chutes.some(x => chuteWallKey(x, d) === key)) return false;
+  return true;
+}
+
+function validateGeneratorChuteRules(cardData, d) {
+  for (const sideName of ['front', 'back']) {
+    const side = cardData[sideName];
+    const cells = new Set();
+    const walls = new Set();
+    for (const ch of side.chutes || []) {
+      const ck = `${ch.col},${ch.row}`;
+      const wk = chuteWallKey(ch, d);
+      if (cells.has(ck) || walls.has(wk)) return false;
+      cells.add(ck);
+      walls.add(wk);
+    }
+  }
+  return true;
+}
+
+function generatorOppositeChute(ch, d) {
+  return {
+    col: d.cols - 1 - ch.col,
+    row: ch.row,
+    wall: ({ L:'R', R:'L' }[ch.wall] || ch.wall)
+  };
+}
+
+function addUniqueChute(side, ch) {
+  if (!side.chutes.some(x => x.col === ch.col && x.row === ch.row && x.wall === ch.wall)) {
+    side.chutes.push({ ...ch });
+  }
+}
+
+function addRandomLever(p, d, cfg) {
+  const side = chance(0.5) ? p.card.front : p.card.back;
+  // Use all four physical corners. After the card rotates, different stored
+  // corners become the active visible BR corner, so using only BR made most
+  // generated levers irrelevant.
+  const lv = { col: rand(0, d.cols - 1), row: rand(0, d.rows - 1), corner: choice(['TL','TR','BL','BR']) };
+  ensureLeverCornerWallsOnSide(side, lv, d);
+  if (!side.levers.some(x => x.col === lv.col && x.row === lv.row && x.corner === lv.corner)) side.levers.push(lv);
+  ensureStandingCell(side, lv, d);
+}
+
+function addRouteBendingLeverBias(p, d, cfg, levelKey) {
+  // Medium/Hard should not feel like a straight run+jump corridor.
+  // Add a few levers directly to standing cells, using mixed stored corners,
+  // so that solver has realistic orientation-changing options along the route.
+  const n = levelKey === 'hard' ? 8 : levelKey === 'medium' ? 4 : 0;
+  if (!n) return;
+  const corners = ['TL','TR','BL','BR'];
+  for (let i = 0; i < n; i++) {
+    const sideName = chance(0.5) ? 'front' : 'back';
+    const side = p.card[sideName];
+    const cells = floorCells(side, d);
+    if (!cells.length) continue;
+    const cell = choice(cells);
+    const lv = { col: cell.col, row: cell.row, corner: choice(corners) };
+    ensureLeverCornerWallsOnSide(side, lv, d);
+    if (!side.levers.some(x => x.col === lv.col && x.row === lv.row && x.corner === lv.corner)) {
+      side.levers.push(lv);
+    }
+  }
+}
+
+function addGeneratorGuards(side, d, cfg, levelKey) {
+  const extra = levelKey === 'easy' ? 2 : levelKey === 'medium' ? 5 : 9;
+  for (let i = 0; i < extra; i++) {
+    const r = rand(0, d.rows - 1);
+    const c = rand(0, d.cols - 1);
+    if (chance(0.6)) side.walls[r][c].R = true;
+    else side.walls[r][c].B = true;
+  }
 }
 
 // ═══════════════════════════════════════════════════
@@ -1334,6 +2325,17 @@ function toast(m) {
   e.textContent=m; e.classList.add('show');
   clearTimeout(toastT); toastT=setTimeout(()=>e.classList.remove('show'),2000);
 }
+
+document.addEventListener('keydown', (e) => {
+  const key = String(e.key || '').toLowerCase();
+  if ((e.ctrlKey || e.metaKey) && key === 'z' && !e.shiftKey) {
+    e.preventDefault();
+    undoEdit();
+  } else if ((e.ctrlKey || e.metaKey) && (key === 'y' || (key === 'z' && e.shiftKey))) {
+    e.preventDefault();
+    redoEdit();
+  }
+});
 
 // ── Init ──
 buildGrid();

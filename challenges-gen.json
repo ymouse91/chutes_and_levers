@@ -1,0 +1,589 @@
+{
+  "puzzles": [
+    {
+      "id": "puzzle-1777038286948-0rf9k8",
+      "name": "One sided (17/27)",
+      "initialOrientation": 1,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 6,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 6,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 5,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 5,
+              "B": true
+            }
+          ],
+          "start": {
+            "col": 6,
+            "row": 3
+          },
+          "goal": {
+            "col": 6,
+            "row": 0
+          },
+          "chutes": [],
+          "levers": [
+            {
+              "col": 3,
+              "row": 0,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "BR"
+            },
+            {
+              "col": 6,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "corner": "TL"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "corner": "BL"
+            },
+            {
+              "col": 6,
+              "row": 2,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "corner": "TR"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "corner": "TL"
+            }
+          ]
+        },
+        "back": {
+          "walls": [],
+          "start": null,
+          "goal": null,
+          "chutes": [],
+          "levers": []
+        }
+      }
+    },
+    {
+      "id": "puzzle-1777096685178-5cwk4z",
+      "name": "One sided (15/29)",
+      "initialOrientation": 1,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 6,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 6,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 5,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 5,
+              "B": true
+            }
+          ],
+          "start": {
+            "col": 6,
+            "row": 0
+          },
+          "goal": {
+            "col": 0,
+            "row": 1
+          },
+          "chutes": [],
+          "levers": [
+            {
+              "col": 3,
+              "row": 0,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "BR"
+            },
+            {
+              "col": 6,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "corner": "TL"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "corner": "BL"
+            },
+            {
+              "col": 6,
+              "row": 2,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "corner": "TR"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "corner": "TL"
+            }
+          ]
+        },
+        "back": {
+          "walls": [],
+          "start": null,
+          "goal": null,
+          "chutes": [],
+          "levers": []
+        }
+      }
+    },
+    {
+      "id": "puzzle-1777096854833-p6omhw",
+      "name": "One sided (14/29)",
+      "initialOrientation": 1,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 6,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 6,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 5,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 5,
+              "B": true
+            }
+          ],
+          "start": {
+            "col": 3,
+            "row": 0
+          },
+          "goal": {
+            "col": 0,
+            "row": 1
+          },
+          "chutes": [],
+          "levers": [
+            {
+              "col": 3,
+              "row": 0,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "BR"
+            },
+            {
+              "col": 6,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "corner": "TL"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "corner": "BL"
+            },
+            {
+              "col": 6,
+              "row": 2,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "corner": "TR"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "corner": "TL"
+            }
+          ]
+        },
+        "back": {
+          "walls": [],
+          "start": null,
+          "goal": null,
+          "chutes": [],
+          "levers": []
+        }
+      }
+    }
+  ]
+}
