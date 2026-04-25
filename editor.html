@@ -479,7 +479,7 @@ header .sub { font-size: 13px; color: var(--muted); }
         <label>Max moves<input id="gen-max-moves" type="number" min="0" step="1" value="50"></label>
         <label>Max tries<input id="gen-tries" type="number" min="1" step="100" value="20000"></label>
         <label>Min states<input id="gen-min-states" type="number" min="0" step="1" value="50"></label>
-        <label>Max states<input id="gen-max-states" type="number" min="0" step="1" value="9999"></label>
+        <label>Max states<input id="gen-max-states" type="number" min="0" step="1" value="280"></label>
         <label>Wall %<input id="gen-segment" type="number" min="5" max="95" step="1" value="30"></label>
         <label>Min chutes<input id="gen-min-chutes" type="number" min="0" step="1" value="1"></label>
         <label>Max chutes<input id="gen-max-chutes" type="number" min="0" step="1" value="20"></label>
@@ -493,7 +493,9 @@ header .sub { font-size: 13px; color: var(--muted); }
 </label>
  
       </div>
-      <div class="generator-note">Wall % uses the same probability for horizontal floors/ceilings and vertical walls. Required route levers and chutes force the solver solution to include at least that many LEVER and CHUTE moves.</div>
+      <div class="generator-note">Formula for difficulty:
+moves * 2 + states * 0.4 + (routeBranching - 1) * 30 + (maxBranching - 1) * 8 + usedLevers * 10 + usedChutes * 6 - maxPlainStreak * 2
+</div>
     </div>
     <div id="solver-out">—</div>
   </div>
@@ -1651,14 +1653,46 @@ function solveCard(puzzleOrCard) {
   const start = { side: 'front', orient: 0, col: startBase.col, row: startBase.row };
   const queue = [{ state: start, path: [], statePath: [start] }];
   const seen = new Set([stateKey(start)]);
+  const branchingByState = new Map();
+  let maxBranching = 0;
+
+  function countBranchingOptions(state) {
+    const succ = successors(state);
+    branchingByState.set(stateKey(state), succ.length);
+    if (succ.length > maxBranching) maxBranching = succ.length;
+    return succ;
+  }
+
+  function routeBranchingFor(statePath) {
+    if (!Array.isArray(statePath) || statePath.length <= 1) return 0;
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < statePath.length - 1; i++) {
+      const st = statePath[i];
+      const key = stateKey(st);
+      let b = branchingByState.get(key);
+      if (typeof b !== 'number') b = successors(st).length;
+      sum += b;
+      count++;
+    }
+    return count ? (sum / count) : 0;
+  }
 
   while (queue.length) {
     const { state, path, statePath } = queue.shift();
     const vis = getVisibleState(state.side, state.orient);
     if (vis.goal && state.col === vis.goal.col && state.row === vis.goal.row) {
-      return { found: true, explored: seen.size, path, states: statePath, state };
+      return {
+        found: true,
+        explored: seen.size,
+        path,
+        states: statePath,
+        state,
+        routeBranching: routeBranchingFor(statePath),
+        maxBranching
+      };
     }
-    for (const [act, nxt] of successors(state)) {
+    for (const [act, nxt] of countBranchingOptions(state)) {
       const k = stateKey(nxt);
       if (seen.has(k)) continue;
       seen.add(k);
@@ -1666,7 +1700,7 @@ function solveCard(puzzleOrCard) {
     }
   }
 
-  return { found: false, explored: seen.size };
+  return { found: false, explored: seen.size, routeBranching: 0, maxBranching };
 }
 
 function runSolver() {
@@ -1679,7 +1713,8 @@ function runSolver() {
     solutionUsage = null;
     render();
     el.textContent = `No solution found with the current rule assumptions.
-Explored states: ${res.explored || 0}${res.reason ? `
+Explored states: ${res.explored || 0}
+Max branching: ${formatMetric(res.maxBranching || 0)}${res.reason ? `
 Note: ${res.reason}` : ''}`;
     return;
   }
@@ -1687,14 +1722,39 @@ Note: ${res.reason}` : ''}`;
   lastSolverResult = res;
   solutionUsage = getSolutionUsage(res, currentPuzzle().card, currentPuzzle().initialOrientation ?? 0);
   render();
+  const stats = generatedPathStats(res);
+  const difficulty = calculateDifficulty(res);
   el.textContent = `Solution found.
 Length: ${res.path.length} moves
 Explored states: ${res.explored}
-Used levers: ${generatedPathStats(res).usedLevers}
-Used chutes: ${generatedPathStats(res).usedChutes}
-Max RUN/JUMP streak: ${generatedPathStats(res).maxPlainStreak}
+Route branching: ${formatMetric(res.routeBranching || 0)}
+Max branching: ${formatMetric(res.maxBranching || 0)}
+Used levers: ${stats.usedLevers}
+Used chutes: ${stats.usedChutes}
+Max RUN/JUMP streak: ${stats.maxPlainStreak}
+Difficulty: ${formatMetric(difficulty)}
 
 ${res.path.join(' → ')}`;
+}
+
+function formatMetric(n) {
+  const v = Number(n || 0);
+  return Number.isInteger(v) ? String(v) : v.toFixed(1);
+}
+
+function calculateDifficulty(res) {
+  const stats = generatedPathStats(res);
+  const moves = Array.isArray(res && res.path) ? res.path.length : 0;
+  const states = Number(res && res.explored) || 0;
+  const routeBranching = Number(res && res.routeBranching) || 0;
+  const maxBranching = Number(res && res.maxBranching) || 0;
+  return Math.round(moves * 2
+    + states * 0.4
+    + (routeBranching - 1) * 30
+    + (maxBranching - 1) * 8
+    + stats.usedLevers * 10
+    + stats.usedChutes * 6
+    - stats.maxPlainStreak * 2);
 }
 
 
