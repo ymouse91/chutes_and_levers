@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cl-studio-v1';
+const CACHE_NAME = 'cl-studio-v2';
 const APP_SHELL = [
   './',
   './index.html',

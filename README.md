@@ -14,6 +14,7 @@ Chutes & Levers Studio combines four things into one project:
 * **Editor** – build your own puzzles visually
 * **Solver** – validate and analyze solutions
 * **Generator** – generate solvable puzzles
+* **Printer** – print 9 (3x3) poker size puzzles on A4
 
 The game is based on a two-sided card system where flipping the board is a core mechanic.
 
@@ -51,6 +52,7 @@ Sounds simple — but requires:
 * Support for horizontal and vertical starting orientations
 * Color-coded chute pairs for clarity
 * Mobile-first design (iPad / iPhone compatible)
+* PDF printer for 9 poker sized cards on A4
 
 ---
 
@@ -61,6 +63,7 @@ Sounds simple — but requires:
 /editor.html       # Puzzle editor
 /challenges.json   # Puzzle definitions
 +                  # Graphics and icons
+/print/chutes_levers_cards_to_pdf.py #PDF Printer
 ```
 
 ---
@@ -98,7 +101,7 @@ This project is:
 * Procedural puzzle generation
 * Puzzle sharing system
 * Improved animations and visual feedback
-* Printing puzzle cards
+
 ---
 
 ## 📜 License

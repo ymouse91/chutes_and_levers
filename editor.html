@@ -772,6 +772,7 @@ function importCardObj(data, initialOrientation = 0) {
 function selectPuzzleByIndex(v) {
   const idx = +v;
   if (!(idx >= 0 && idx < puzzles.length)) return;
+  resetSolverState();
   savePuzzleMeta();
   currentPuzzleIndex = idx;
   aSide = 'front';
@@ -790,6 +791,7 @@ function savePuzzleMeta() {
 }
 function newPuzzle(initialOrientation = 0) {
   pushUndoState();
+  resetSolverState();
   savePuzzleMeta();
   puzzles.push(makePuzzle(`Puzzle ${puzzles.length+1}`, initialOrientation));
   currentPuzzleIndex = puzzles.length - 1;
@@ -803,6 +805,7 @@ function newPuzzle(initialOrientation = 0) {
 
 function duplicatePuzzle() {
   pushUndoState();
+  resetSolverState();
   savePuzzleMeta();
   const src = currentPuzzle();
   const clone = { id: `puzzle-${Date.now()}-${Math.random().toString(36).slice(2,8)}`, name: `${src.name || 'Puzzle'} copy`, initialOrientation: normalizeOrientation(src.initialOrientation ?? 0), card: JSON.parse(JSON.stringify(src.card)) };
@@ -816,6 +819,7 @@ function duplicatePuzzle() {
 }
 function deletePuzzle() {
   pushUndoState();
+  resetSolverState();
   if (puzzles.length === 1) {
     puzzles[0] = makePuzzle('Puzzle 1', 0);
     currentPuzzleIndex = 0;
@@ -829,11 +833,16 @@ function deletePuzzle() {
   render();
   toast('Puzzle deleted');
 }
-function clearSolverOut() {
+function resetSolverState() {
   solutionRoute = null;
   lastSolverResult = null;
   solutionUsage = null;
-  document.getElementById('solver-out').textContent = '—';
+  const out = document.getElementById('solver-out');
+  if (out) out.textContent = '—';
+}
+
+function clearSolverOut() {
+  resetSolverState();
   render();
 }
 
