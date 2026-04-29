@@ -8,7 +8,7 @@ Chutes & Levers Studio is a complete toolkit for designing, playing, and solving
 
 ## 🎮 What is this?
 
-Chutes & Levers Studio combines four things into one project:
+Chutes & Levers Studio combines five things into one project:
 
 * **Game** – play handcrafted puzzles
 * **Editor** – build your own puzzles visually

@@ -480,7 +480,8 @@ header .sub { font-size: 13px; color: var(--muted); }
         <label>Max tries<input id="gen-tries" type="number" min="1" step="100" value="20000"></label>
         <label>Min states<input id="gen-min-states" type="number" min="0" step="1" value="50"></label>
         <label>Max states<input id="gen-max-states" type="number" min="0" step="1" value="280"></label>
-        <label>Wall %<input id="gen-segment" type="number" min="5" max="95" step="1" value="30"></label>
+        <label>Wall %<input id="gen-segment" type="number" min="5" max="95" step="1" value="30"></label>        
+        <label>Max plain streak<input id="gen-max-plain-streak" type="number" min="1" step="1" value="5"></label>
         <label>Min chutes<input id="gen-min-chutes" type="number" min="0" step="1" value="1"></label>
         <label>Max chutes<input id="gen-max-chutes" type="number" min="0" step="1" value="20"></label>
 		<label>Required route chutes<input id="gen-required-chutes" type="number" min="0" step="1" value="1"></label>
@@ -1376,8 +1377,43 @@ function copyFB()    { pushUndoState(); card().back=JSON.parse(JSON.stringify(ca
 // ═══════════════════════════════════════════════════
 // JSON
 // ═══════════════════════════════════════════════════
+function compactJSON(value, level = 0) {
+  const IND = '  ';
+  const pad = IND.repeat(level);
+  const padIn = IND.repeat(level + 1);
+
+  function isPrimitive(v) {
+    return v === null || typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean';
+  }
+
+  function isCompactObject(v) {
+    return v && typeof v === 'object' && !Array.isArray(v) && Object.values(v).every(isPrimitive);
+  }
+
+  function compactObject(v) {
+    const parts = Object.entries(v).map(([k, val]) => `${JSON.stringify(k)}: ${JSON.stringify(val)}`);
+    return `{ ${parts.join(', ')} }`;
+  }
+
+  if (isPrimitive(value)) return JSON.stringify(value);
+
+  if (Array.isArray(value)) {
+    if (!value.length) return '[]';
+    if (value.every(isCompactObject)) {
+      return `[\n${value.map(item => padIn + compactObject(item)).join(',\n')}\n${pad}]`;
+    }
+    return `[\n${value.map(item => padIn + compactJSON(item, level + 1)).join(',\n')}\n${pad}]`;
+  }
+
+  if (isCompactObject(value)) return compactObject(value);
+
+  const entries = Object.entries(value || {});
+  if (!entries.length) return '{}';
+  return `{\n${entries.map(([k, val]) => `${padIn}${JSON.stringify(k)}: ${compactJSON(val, level + 1)}`).join(',\n')}\n${pad}}`;
+}
+
 function exportJSON() {
-  return JSON.stringify(exportPuzzleSet(), null, 2);
+  return compactJSON(exportPuzzleSet(), 0);
 }
 
 function importFrom(str) {
@@ -1604,11 +1640,17 @@ function solveCard(puzzleOrCard) {
     const vis = getVisibleState(state.side, state.orient);
     col = ((col % vis.cols) + vis.cols) % vis.cols;
     row = ((row % vis.rows) + vis.rows) % vis.rows;
-    for (let i = 0; i < vis.rows + 1; i++) {
+
+    // Toroidal board: if this visible column has no floor at all,
+    // falling would wrap forever and produce a fake/hovering state.
+    // Treat that move as invalid instead.
+    const startRow = row;
+    for (let i = 0; i < vis.rows; i++) {
       if (visibleHasFloor(vis, col, row)) return { col, row };
       row = (row + 1) % vis.rows;
+      if (row === startRow) break;
     }
-    return { col, row };
+    return null;
   }
   function successors(state) {
     const vis = getVisibleState(state.side, state.orient);
@@ -1616,13 +1658,13 @@ function solveCard(puzzleOrCard) {
 
     if (!visibleHasRightWall(vis, state.col, state.row)) {
       const landed = gravity(state, (state.col + 1) % vis.cols, state.row);
-      out.push(['RUN', { side: state.side, orient: state.orient, col: landed.col, row: landed.row }]);
+      if (landed) out.push(['RUN', { side: state.side, orient: state.orient, col: landed.col, row: landed.row }]);
     }
 
     const upRow = (state.row - 1 + vis.rows) % vis.rows;
     if (!visibleHasCeiling(vis, state.col, state.row) && !visibleHasRightWall(vis, state.col, upRow)) {
       const landed = gravity(state, (state.col + 1) % vis.cols, upRow);
-      out.push(['JUMP', { side: state.side, orient: state.orient, col: landed.col, row: landed.row }]);
+      if (landed) out.push(['JUMP', { side: state.side, orient: state.orient, col: landed.col, row: landed.row }]);
     }
 
     for (const ch of vis.chutes) {
@@ -1639,6 +1681,7 @@ function solveCard(puzzleOrCard) {
       const targetVis = rotatePointTurnsCW(targetBase.col, targetBase.row, BASE_COLS, BASE_ROWS, turnsNew);
       let nextState = { side: otherSide, orient: newOrient, col: targetVis.col, row: targetVis.row };
       const landed = gravity(nextState, nextState.col, nextState.row);
+      if (!landed) continue;
       nextState = { side: nextState.side, orient: nextState.orient, col: landed.col, row: landed.row };
       out.push([`CHUTE[${ch.wall}]`, nextState]);
     }
@@ -1650,6 +1693,7 @@ function solveCard(puzzleOrCard) {
       const newRow = state.col;
       let nextState = { side: state.side, orient: newOrient, col: newCol, row: newRow };
       const landed = gravity(nextState, nextState.col, nextState.row);
+      if (!landed) continue;
       nextState = { side: nextState.side, orient: nextState.orient, col: landed.col, row: landed.row };
       out.push(['LEVER', nextState]);
     }
@@ -1888,7 +1932,7 @@ const DEFAULT_GENERATOR_CONFIG = {
   minUsedLevers: 2,
   minUsedChutes: 1,
   minSpecialMoves: 0,
-  maxPlainStreak: 99,
+  maxPlainStreak: 5,
 };
 
 function rand(a, b) { return Math.floor(Math.random() * (b - a + 1)) + a; }
@@ -1933,7 +1977,7 @@ function readGeneratorConfig() {
     minUsedChutes: requiredRouteChutes,
     solutionOnly: !!document.getElementById('gen-solution-only')?.checked,
     minSpecialMoves: 0,
-    maxPlainStreak: 99,
+    maxPlainStreak: Math.round(readGeneratorNumber('gen-max-plain-streak', DEFAULT_GENERATOR_CONFIG.maxPlainStreak, 1, 100)),
   };
 }
 
@@ -1953,6 +1997,7 @@ Wall/Floor density: ${Math.round((cfg.segment || 0) * 100)}%
 Chute pairs: ${cfg.chutes[0]}–${cfg.chutes[1]}, levers: ${cfg.levers[0]}–${cfg.levers[1]}
 Required route levers: ${cfg.minUsedLevers || 0}
 Required route chutes: ${cfg.minUsedChutes || 0}
+Max RUN/JUMP streak: ${cfg.maxPlainStreak || 99}
 Solution only: ${cfg.solutionOnly ? 'yes' : 'no'}`;
 
   let best = null;
@@ -2013,6 +2058,12 @@ Solution only: ${cfg.solutionOnly ? 'yes' : 'no'}`;
 function applyGeneratedPuzzle(candidate, res, cfg, attempt, exact) {
   puzzles[currentPuzzleIndex] = candidate;
   aSide = 'front';
+  const sideLbl = document.getElementById('side-lbl');
+  if (sideLbl) sideLbl.textContent = 'FRONT';
+  const btnFront = document.getElementById('btn-front');
+  const btnBack = document.getElementById('btn-back');
+  if (btnFront) btnFront.classList.add('active');
+  if (btnBack) btnBack.classList.remove('active');
   refreshPuzzleUI();
   buildGrid();
   applyEditorOrientation();
@@ -2028,6 +2079,7 @@ Length: ${res.path.length} moves
 Explored states: ${res.explored}
 Used levers: ${generatedPathStats(res).usedLevers}
 Used chutes: ${generatedPathStats(res).usedChutes}
+Max RUN/JUMP streak: ${generatedPathStats(res).maxPlainStreak}
 Solution only: ${cfg.solutionOnly ? 'yes' : 'no'}
 
 ${res.path.join(' → ')}`;
@@ -2169,6 +2221,9 @@ function pruneCandidateToSolutionOnly(candidate, res) {
     }
   }
 
+  ensureNoFloorlessColumnsInAllRotations(newCard.front, baseD);
+  ensureNoFloorlessColumnsInAllRotations(newCard.back, baseD);
+
   candidate.card = newCard;
   return candidate;
 }
@@ -2182,8 +2237,8 @@ function makeRandomCandidate(cfg, levelKey, attempt) {
   randomizeSideForGenerator(p.card.front, d, cfg, 'front');
   randomizeSideForGenerator(p.card.back,  d, cfg, 'back');
 
-  ensureAtLeastOneFloorEveryColumn(p.card.front, d);
-  ensureAtLeastOneFloorEveryColumn(p.card.back, d);
+  ensureNoFloorlessColumnsInAllRotations(p.card.front, d);
+  ensureNoFloorlessColumnsInAllRotations(p.card.back, d);
 
   const frontFloors = floorCells(p.card.front, d);
   const backFloors  = floorCells(p.card.back, d);
@@ -2211,6 +2266,12 @@ function makeRandomCandidate(cfg, levelKey, attempt) {
   if (p.card.front.goal) ensureStandingCell(p.card.front, p.card.front.goal, d);
   if (p.card.back.goal) ensureStandingCell(p.card.back, p.card.back.goal, d);
 
+  // Chutes/levers/guards can change the wall distribution after the initial
+  // random fill. Re-check both normal and rotated gravity directions.
+  ensureNoFloorlessColumnsInAllRotations(p.card.front, d);
+  ensureNoFloorlessColumnsInAllRotations(p.card.back, d);
+
+  if (!validateNoFloorlessColumnsInAllRotations(p.card, d)) return makeRandomCandidate(cfg, levelKey, attempt + '-retry');
   if (!validateGeneratorChuteRules(p.card, d)) return makeRandomCandidate(cfg, levelKey, attempt + '-retry');
   return p;
 }
@@ -2237,6 +2298,48 @@ function ensureAtLeastOneFloorEveryColumn(side, d) {
     for (let r = 0; r < d.rows; r++) if (side.walls[r][c].B) ok = true;
     if (!ok) side.walls[rand(1, d.rows) - 1][c].B = true;
   }
+}
+
+function ensureAtLeastOneRightWallEveryRow(side, d) {
+  // A 90°/270° card rotation turns visible rows into gravity columns.
+  // In the rotated view, original R-walls become B-floors. Therefore
+  // every original row must contain at least one R-wall too.
+  for (let r = 0; r < d.rows; r++) {
+    let ok = false;
+    for (let c = 0; c < d.cols; c++) if (side.walls[r][c].R) ok = true;
+    if (!ok) side.walls[r][rand(0, d.cols - 1)].R = true;
+  }
+}
+
+function validateNoFloorlessColumnsInAllRotationsForSide(side, d) {
+  if (!side || !Array.isArray(side.walls)) return false;
+
+  // 0° / 180°: every base column needs at least one B-floor.
+  for (let c = 0; c < d.cols; c++) {
+    let hasB = false;
+    for (let r = 0; r < d.rows; r++) if (side.walls[r]?.[c]?.B) hasB = true;
+    if (!hasB) return false;
+  }
+
+  // 90° / 270°: every base row needs at least one R-wall, because
+  // after rotation those R-walls are the floors in the visible columns.
+  for (let r = 0; r < d.rows; r++) {
+    let hasR = false;
+    for (let c = 0; c < d.cols; c++) if (side.walls[r]?.[c]?.R) hasR = true;
+    if (!hasR) return false;
+  }
+
+  return true;
+}
+
+function validateNoFloorlessColumnsInAllRotations(cardData, d) {
+  return validateNoFloorlessColumnsInAllRotationsForSide(cardData.front, d) &&
+         validateNoFloorlessColumnsInAllRotationsForSide(cardData.back, d);
+}
+
+function ensureNoFloorlessColumnsInAllRotations(side, d) {
+  ensureAtLeastOneFloorEveryColumn(side, d);
+  ensureAtLeastOneRightWallEveryRow(side, d);
 }
 
 function floorCells(side, d) {

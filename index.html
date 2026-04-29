@@ -340,6 +340,7 @@ let _orient = 0;              // 0, 90, 180, 270 for visible side
 let _started = false;
 let _puzzles = [];
 let _currentPuzzleIndex = -1;
+const LAST_PUZZLE_STORAGE_KEY = 'cl_last_puzzle_index_v1';
 let _initialOrientation = 0;
 let _baseCols = 5;
 let _baseRows = 7;
@@ -614,6 +615,28 @@ async function moveAlong(path, stepMs=160, label='') {
   await animatePath(path, { stepMs, msg: label });
 }
 
+function saveLastPuzzleIndex() {
+  if (_currentPuzzleIndex >= 0) {
+    try {
+      localStorage.setItem(LAST_PUZZLE_STORAGE_KEY, String(_currentPuzzleIndex));
+    } catch (err) {
+      console.warn('Could not save last puzzle index:', err);
+    }
+  }
+}
+
+function loadLastPuzzleIndex() {
+  try {
+    const raw = localStorage.getItem(LAST_PUZZLE_STORAGE_KEY);
+    if (raw === null) return null;
+    const idx = Number(raw);
+    return Number.isInteger(idx) ? idx : null;
+  } catch (err) {
+    console.warn('Could not read last puzzle index:', err);
+    return null;
+  }
+}
+
 // ═══════════════════════════════════════════════════
 // LOAD / RESET
 // ═══════════════════════════════════════════════════
@@ -674,6 +697,7 @@ function loadPuzzleByIndex(idx) {
   idx = Number(idx);
   if (!Number.isInteger(idx) || idx < 0 || idx >= _puzzles.length) return;
   _currentPuzzleIndex = idx;
+  saveLastPuzzleIndex();
   const sel = document.getElementById('puzzle-select');
   if (sel) sel.value = String(idx);
   const puzzle = _puzzles[idx];
@@ -695,7 +719,12 @@ async function loadChallenges() {
     if (!puzzles.length) throw new Error('No puzzles found');
     _puzzles = puzzles;
     fillPuzzleSelect(_puzzles);
-    loadPuzzleByIndex(0);
+    const savedIdx = loadLastPuzzleIndex();
+    if (savedIdx !== null && savedIdx >= 0 && savedIdx < _puzzles.length) {
+      loadPuzzleByIndex(savedIdx);
+    } else {
+      loadPuzzleByIndex(0);
+    }
   } catch (err) {
     console.error('Challenges load failed:', err);
     msg('Failed to load challenges.json', 'bad');
