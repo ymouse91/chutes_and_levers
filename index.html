@@ -549,7 +549,7 @@ function snapshotState() {
     moves: S.moves,
     currentSide: _currentSide,
     orient: _orient,
-    peeking: S.peeking,
+
   };
 }
 
@@ -557,7 +557,7 @@ function restoreSnapshot(ss) {
   if (!ss) return;
   _currentSide = ss.currentSide;
   _orient = ss.orient;
-  S.peeking = !!ss.peeking;
+
   applyVisibleState();
   S.pc = ss.pc;
   S.pr = ss.pr;
