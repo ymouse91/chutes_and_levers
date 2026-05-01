@@ -184,6 +184,7 @@ button.alt:hover { background:#35203a; border-color:#c39bd3; }
   background:#0d0500; border-top:1px solid #333; justify-content:center; flex-wrap:wrap;
 }
 #acts button { font-size:12px; padding:7px 12px; min-width:74px; }
+#acts .peek-btn { min-width:38px; padding:7px 9px; font-size:18px; line-height:1; font-weight:bold; }
 
 /* ── overlays ── */
 .ov { display:none; position:fixed; inset:0; background:#000c; z-index:80; align-items:center; justify-content:center; }
@@ -211,7 +212,7 @@ button.alt:hover { background:#35203a; border-color:#c39bd3; }
   <select id="puzzle-select" onchange="onPuzzleSelectChange()">
     <option value="">Loading puzzles…</option>
   </select>
-  <button onclick="resetLevel()">Reset</button>
+  <button onclick="resetLevel()" title="START again">Reset</button>
   <button onclick="showHelp()">Help</button>
 
   <div id="mv">Moves: <b id="mc">0</b></div>
@@ -224,12 +225,13 @@ button.alt:hover { background:#35203a; border-color:#c39bd3; }
 <div id="msg" class="inf">Loading puzzles…</div>
 
 <div id="acts">
-  <button onclick="doRun()">▶ RUN</button>
-  <button onclick="doJump()">↗ JUMP</button>
-  <button id="btn-ch" onclick="doChute()">⬛ CHUTE</button>
-  <button id="btn-lv" onclick="doLever()">↻ LEVER</button>
-  <button id="btn-undo" class="alt" onclick="undoMove()">⤺ UNDO</button>
-    <button id="btn-peek" class="alt" onclick="togglePeek()">Peek at BACK</button>
+  <button onclick="doRun()" title="MOVE right">▶ RUN</button>
+  <button onclick="doJump()" title="MOVE up/right">↗ JUMP</button>
+  <button id="btn-ch" onclick="doChute()" title="FLIP and GO to other side">⬛ CHUTE</button>
+  <button id="btn-lv" onclick="doLever()" title="TURN 90 degrees">↻ LEVER</button>
+  <button id="btn-undo" class="alt" onclick="undoMove()" title="UNDO move">⤺</button>
+    <button id="btn-peek-v" class="alt peek-btn" onclick="togglePeek('v')" title="Flip vertically to peek the other side">↕</button>
+    <button id="btn-peek-h" class="alt peek-btn" onclick="togglePeek('h')" title="Flip horizontally to peek the other side">↔</button>
 </div>
 
 <!-- win -->
@@ -345,6 +347,7 @@ let _initialOrientation = 0;
 let _baseCols = 5;
 let _baseRows = 7;
 let _pairColorMap = new Map();
+let _peekReturn = null;
 
 // ═══════════════════════════════════════════════════
 // HELPERS
@@ -458,8 +461,11 @@ function normalizeRow(r) {
 function updateHdr() {
   document.getElementById('side-lbl').textContent = sideLabel();
   document.getElementById('or-lbl').innerHTML = _orient + '°' + (S.peeking ? ' · <span id="peek-note">PEEKING</span>' : '');
-  const btn = document.getElementById('btn-peek');
-  if (btn) btn.textContent = S.peeking ? 'Back to play' : `Peek at ${_currentSide === 'front' ? 'BACK' : 'FRONT'}`;
+  const btnV = document.getElementById('btn-peek-v');
+  const btnH = document.getElementById('btn-peek-h');
+  const title = S.peeking ? 'Back to play side' : `Peek at ${_currentSide === 'front' ? 'BACK' : 'FRONT'}`;
+  if (btnV) btnV.title = `${title} — vertical hinge flip`;
+  if (btnH) btnH.title = `${title} — horizontal hinge flip`;
 }
 
 function baseToState(sd) {
@@ -652,6 +658,7 @@ function loadCard(cardJSON, initialOrientation = 0) {
   S.busy = false;
   S.history = [];
   S.peeking = false;
+  _peekReturn = null;
   _started = true;
 
   const vis = getVisibleState(_currentSide, _orient);
@@ -947,20 +954,35 @@ function undoMove() {
   msg('Move undone', 'inf');
 }
 
-function togglePeek() {
+function togglePeek(axis = 'h') {
   if (!_started || S.busy) return;
   const cw = document.getElementById('cw');
+  const flipClass = axis === 'v' ? 'fv' : 'fh';
   S.busy = true;
-  cw.classList.add('fh');
+  cw.classList.add(flipClass);
+
   setTimeout(() => {
-    cw.classList.remove('fh');
+    cw.classList.remove('fv', 'fh');
+
     if (!S.peeking) {
+      _peekReturn = { side: _currentSide, orient: _orient };
       S.peeking = true;
       _currentSide = (_currentSide === 'front') ? 'back' : 'front';
+      // Match the physical card/chute logic:
+      // ↔ = hinge around the vertical axis, other side keeps the same orientation.
+      // ↕ = hinge around the horizontal axis, other side is upside down.
+      if (axis === 'v') _orient = (_orient + 180) % 360;
     } else {
       S.peeking = false;
-      _currentSide = (_currentSide === 'front') ? 'back' : 'front';
+      if (_peekReturn) {
+        _currentSide = _peekReturn.side;
+        _orient = _peekReturn.orient;
+      } else {
+        _currentSide = (_currentSide === 'front') ? 'back' : 'front';
+      }
+      _peekReturn = null;
     }
+
     applyVisibleState();
     renderAll();
     S.busy = false;
@@ -1149,7 +1171,7 @@ document.addEventListener('keydown', e => {
   else if (e.key==='c') doChute();
   else if (e.key==='l') doLever();
   else if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase()==='z') { e.preventDefault(); undoMove(); }
-  else if (e.key==='p') { e.preventDefault(); togglePeek(); }
+  else if (e.key==='p') { e.preventDefault(); togglePeek('h'); }
 });
 
 let tx=0, ty=0;
