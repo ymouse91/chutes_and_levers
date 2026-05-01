@@ -954,6 +954,18 @@ function undoMove() {
   msg('Move undone', 'inf');
 }
 
+function peekOrientAfterHinge(axis) {
+  // The hinge must be evaluated from the card's CURRENT visible orientation.
+  // Convert the requested screen-direction flip back to the card's base direction.
+  const turnsNow = (((_orient % 360) + 360) % 360) / 90;
+  const visibleWall = axis === 'v' ? 'T' : 'R'; // ↕ = screen top/bottom, ↔ = screen left/right
+  const baseWall = unrotateWallTurnsCW(visibleWall, turnsNow);
+
+  // Same physical rule as chutes: top/bottom exits flip the back 180°, left/right exits do not.
+  const extraTurns = (baseWall === 'T' || baseWall === 'B') ? 2 : 0;
+  return (_orient + extraTurns * 90) % 360;
+}
+
 function togglePeek(axis = 'h') {
   if (!_started || S.busy) return;
   const cw = document.getElementById('cw');
@@ -966,12 +978,10 @@ function togglePeek(axis = 'h') {
 
     if (!S.peeking) {
       _peekReturn = { side: _currentSide, orient: _orient };
+      const nextOrient = peekOrientAfterHinge(axis);
       S.peeking = true;
       _currentSide = (_currentSide === 'front') ? 'back' : 'front';
-      // Match the physical card/chute logic:
-      // ↔ = hinge around the vertical axis, other side keeps the same orientation.
-      // ↕ = hinge around the horizontal axis, other side is upside down.
-      if (axis === 'v') _orient = (_orient + 180) % 360;
+      _orient = nextOrient;
     } else {
       S.peeking = false;
       if (_peekReturn) {
@@ -989,7 +999,7 @@ function togglePeek(axis = 'h') {
     msg(S.peeking ? 'Peeking at the other side' : 'Back to the play side', 'inf');
   }, 560);
 }
-
+// ═══════════════════════════════════════════════════
 // ═══════════════════════════════════════════════════
 // WIN CHECK
 // ═══════════════════════════════════════════════════
