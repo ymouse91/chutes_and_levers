@@ -1,1713 +1,540 @@
 {
   "puzzles": [
     {
-      "id": "puzzle-1777540931573-61m5u7",
-      "name": "Generated editor-15-wall (25/60/158)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true},
-            {"r": 0, "c": 2, "R": true},
-            {"r": 0, "c": 4, "B": true, "R": true},
-            {"r": 1, "c": 1, "R": true},
-            {"r": 1, "c": 2, "R": true},
-            {"r": 1, "c": 3, "B": true, "R": true},
-            {"r": 2, "c": 0, "B": true, "R": true},
-            {"r": 2, "c": 1, "B": true},
-            {"r": 2, "c": 2, "B": true},
-            {"r": 2, "c": 3, "B": true},
-            {"r": 3, "c": 0, "B": true, "R": true},
-            {"r": 3, "c": 1, "B": true, "R": true},
-            {"r": 3, "c": 2, "B": true, "R": true},
-            {"r": 3, "c": 3, "B": true},
-            {"r": 3, "c": 4, "B": true},
-            {"r": 4, "c": 0, "R": true},
-            {"r": 4, "c": 1, "B": true, "R": true},
-            {"r": 4, "c": 2, "B": true, "R": true},
-            {"r": 4, "c": 4, "B": true},
-            {"r": 5, "c": 1, "B": true},
-            {"r": 5, "c": 2, "B": true},
-            {"r": 5, "c": 4, "B": true, "R": true},
-            {"r": 6, "c": 0, "R": true},
-            {"r": 6, "c": 1, "B": true},
-            {"r": 6, "c": 2, "R": true},
-            {"r": 6, "c": 4, "B": true, "R": true}
-          ],
-          "start": {"col": 1, "row": 2},
-          "goal": null,
-          "chutes": [
-            {"col": 1, "row": 6, "wall": "L"},
-            {"col": 0, "row": 0, "wall": "L"},
-            {"col": 1, "row": 3, "wall": "B"},
-            {"col": 0, "row": 3, "wall": "R"}
-          ],
-          "levers": [
-            {"col": 1, "row": 6, "corner": "TL"},
-            {"col": 1, "row": 3, "corner": "BL"},
-            {"col": 1, "row": 3, "corner": "TL"},
-            {"col": 0, "row": 2, "corner": "BR"}
-          ]
-        },
-        "back": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true, "R": true},
-            {"r": 0, "c": 1, "B": true},
-            {"r": 0, "c": 3, "R": true},
-            {"r": 0, "c": 4, "B": true, "R": true},
-            {"r": 1, "c": 0, "B": true},
-            {"r": 1, "c": 1, "R": true},
-            {"r": 1, "c": 2, "B": true},
-            {"r": 1, "c": 3, "R": true},
-            {"r": 1, "c": 4, "B": true},
-            {"r": 2, "c": 3, "R": true},
-            {"r": 2, "c": 4, "B": true, "R": true},
-            {"r": 3, "c": 0, "R": true},
-            {"r": 3, "c": 2, "B": true},
-            {"r": 3, "c": 3, "B": true, "R": true},
-            {"r": 3, "c": 4, "B": true},
-            {"r": 4, "c": 1, "R": true},
-            {"r": 4, "c": 2, "B": true, "R": true},
-            {"r": 4, "c": 3, "B": true},
-            {"r": 4, "c": 4, "R": true},
-            {"r": 5, "c": 0, "B": true, "R": true},
-            {"r": 5, "c": 2, "B": true, "R": true},
-            {"r": 5, "c": 4, "B": true},
-            {"r": 6, "c": 0, "B": true, "R": true},
-            {"r": 6, "c": 3, "B": true, "R": true},
-            {"r": 6, "c": 4, "B": true, "R": true}
-          ],
-          "start": null,
-          "goal": {"col": 4, "row": 0},
-          "chutes": [
-            {"col": 3, "row": 6, "wall": "R"},
-            {"col": 4, "row": 0, "wall": "R"},
-            {"col": 3, "row": 3, "wall": "B"},
-            {"col": 4, "row": 3, "wall": "L"}
-          ],
-          "levers": [
-            {"col": 4, "row": 3, "corner": "BL"},
-            {"col": 4, "row": 3, "corner": "TL"}
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777540982665-gozeq2",
-      "name": "Generated editor-10-wall (22/72/159)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true},
-            {"r": 0, "c": 1, "R": true},
-            {"r": 0, "c": 2, "B": true},
-            {"r": 0, "c": 3, "B": true, "R": true},
-            {"r": 0, "c": 4, "B": true, "R": true},
-            {"r": 1, "c": 1, "B": true},
-            {"r": 1, "c": 2, "R": true},
-            {"r": 1, "c": 3, "B": true},
-            {"r": 1, "c": 4, "B": true, "R": true},
-            {"r": 2, "c": 1, "B": true},
-            {"r": 2, "c": 2, "B": true, "R": true},
-            {"r": 2, "c": 3, "B": true, "R": true},
-            {"r": 2, "c": 4, "B": true},
-            {"r": 3, "c": 0, "B": true, "R": true},
-            {"r": 3, "c": 1, "B": true},
-            {"r": 3, "c": 3, "B": true, "R": true},
-            {"r": 3, "c": 4, "B": true},
-            {"r": 4, "c": 0, "B": true},
-            {"r": 4, "c": 2, "B": true, "R": true},
-            {"r": 4, "c": 3, "B": true},
-            {"r": 4, "c": 4, "R": true},
-            {"r": 5, "c": 0, "R": true},
-            {"r": 5, "c": 1, "B": true, "R": true},
-            {"r": 5, "c": 3, "R": true},
-            {"r": 5, "c": 4, "B": true},
-            {"r": 6, "c": 0, "B": true},
-            {"r": 6, "c": 1, "B": true},
-            {"r": 6, "c": 2, "B": true},
-            {"r": 6, "c": 3, "B": true},
-            {"r": 6, "c": 4, "B": true, "R": true}
-          ],
-          "start": {"col": 0, "row": 0},
-          "goal": {"col": 2, "row": 0},
-          "chutes": [
-            {"col": 3, "row": 1, "wall": "T"},
-            {"col": 1, "row": 1, "wall": "B"},
-            {"col": 2, "row": 0, "wall": "T"},
-            {"col": 2, "row": 2, "wall": "R"},
-            {"col": 4, "row": 1, "wall": "T"},
-            {"col": 1, "row": 6, "wall": "T"},
-            {"col": 0, "row": 4, "wall": "L"},
-            {"col": 0, "row": 3, "wall": "B"}
-          ],
-          "levers": [
-            {"col": 4, "row": 1, "corner": "BR"},
-            {"col": 2, "row": 0, "corner": "TL"},
-            {"col": 4, "row": 2, "corner": "TL"},
-            {"col": 0, "row": 0, "corner": "TL"},
-            {"col": 1, "row": 5, "corner": "BL"},
-            {"col": 0, "row": 3, "corner": "BR"},
-            {"col": 1, "row": 3, "corner": "TL"},
-            {"col": 4, "row": 2, "corner": "BL"},
-            {"col": 3, "row": 3, "corner": "TR"}
-          ]
-        },
-        "back": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true, "R": true},
-            {"r": 0, "c": 1, "B": true},
-            {"r": 0, "c": 2, "B": true, "R": true},
-            {"r": 1, "c": 0, "B": true, "R": true},
-            {"r": 1, "c": 1, "B": true},
-            {"r": 1, "c": 3, "B": true},
-            {"r": 1, "c": 4, "B": true, "R": true},
-            {"r": 2, "c": 0, "B": true},
-            {"r": 2, "c": 1, "B": true, "R": true},
-            {"r": 2, "c": 2, "B": true, "R": true},
-            {"r": 2, "c": 3, "R": true},
-            {"r": 2, "c": 4, "R": true},
-            {"r": 3, "c": 0, "B": true, "R": true},
-            {"r": 3, "c": 1, "R": true},
-            {"r": 3, "c": 2, "B": true},
-            {"r": 3, "c": 3, "R": true},
-            {"r": 3, "c": 4, "B": true},
-            {"r": 4, "c": 0, "B": true},
-            {"r": 4, "c": 4, "B": true, "R": true},
-            {"r": 5, "c": 0, "B": true, "R": true},
-            {"r": 5, "c": 2, "R": true},
-            {"r": 5, "c": 3, "B": true, "R": true},
-            {"r": 5, "c": 4, "B": true},
-            {"r": 6, "c": 0, "B": true},
-            {"r": 6, "c": 1, "R": true},
-            {"r": 6, "c": 2, "B": true, "R": true},
-            {"r": 6, "c": 3, "B": true}
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            {"col": 1, "row": 1, "wall": "T"},
-            {"col": 3, "row": 1, "wall": "B"},
-            {"col": 2, "row": 0, "wall": "T"},
-            {"col": 2, "row": 2, "wall": "L"},
-            {"col": 0, "row": 1, "wall": "T"},
-            {"col": 3, "row": 6, "wall": "T"},
-            {"col": 4, "row": 4, "wall": "R"},
-            {"col": 4, "row": 3, "wall": "B"}
-          ],
-          "levers": [
-            {"col": 2, "row": 6, "corner": "BR"},
-            {"col": 4, "row": 1, "corner": "BR"},
-            {"col": 2, "row": 3, "corner": "TL"},
-            {"col": 2, "row": 6, "corner": "BL"},
-            {"col": 3, "row": 6, "corner": "BL"},
-            {"col": 0, "row": 0, "corner": "BR"},
-            {"col": 0, "row": 4, "corner": "BL"}
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777541005156-mm49ot",
-      "name": "Generated editor-15-wall (31/91/197)",
-      "initialOrientation": 1,
-      "card": {
-        "front": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true, "R": true},
-            {"r": 0, "c": 1, "B": true},
-            {"r": 0, "c": 2, "R": true},
-            {"r": 0, "c": 3, "B": true},
-            {"r": 0, "c": 5, "B": true},
-            {"r": 1, "c": 0, "B": true, "R": true},
-            {"r": 1, "c": 1, "B": true, "R": true},
-            {"r": 1, "c": 2, "B": true},
-            {"r": 1, "c": 3, "R": true},
-            {"r": 1, "c": 4, "B": true},
-            {"r": 1, "c": 6, "B": true, "R": true},
-            {"r": 2, "c": 0, "B": true, "R": true},
-            {"r": 2, "c": 1, "B": true},
-            {"r": 2, "c": 2, "B": true, "R": true},
-            {"r": 2, "c": 5, "R": true},
-            {"r": 3, "c": 0, "B": true},
-            {"r": 3, "c": 1, "B": true, "R": true},
-            {"r": 3, "c": 2, "B": true, "R": true},
-            {"r": 3, "c": 3, "B": true},
-            {"r": 3, "c": 4, "R": true},
-            {"r": 3, "c": 6, "B": true},
-            {"r": 4, "c": 0, "B": true, "R": true},
-            {"r": 4, "c": 1, "B": true, "R": true},
-            {"r": 4, "c": 2, "B": true},
-            {"r": 4, "c": 3, "B": true},
-            {"r": 4, "c": 4, "B": true, "R": true},
-            {"r": 4, "c": 5, "B": true},
-            {"r": 4, "c": 6, "B": true}
-          ],
-          "start": {"col": 0, "row": 0},
-          "goal": {"col": 2, "row": 3},
-          "chutes": [
-            {"col": 0, "row": 1, "wall": "R"},
-            {"col": 4, "row": 4, "wall": "B"},
-            {"col": 3, "row": 3, "wall": "L"},
-            {"col": 1, "row": 3, "wall": "B"},
-            {"col": 0, "row": 0, "wall": "T"},
-            {"col": 3, "row": 4, "wall": "B"},
-            {"col": 5, "row": 0, "wall": "T"},
-            {"col": 2, "row": 4, "wall": "B"},
-            {"col": 0, "row": 3, "wall": "T"},
-            {"col": 4, "row": 1, "wall": "L"},
-            {"col": 6, "row": 4, "wall": "T"},
-            {"col": 3, "row": 0, "wall": "L"},
-            {"col": 1, "row": 0, "wall": "T"},
-            {"col": 2, "row": 3, "wall": "T"}
-          ],
-          "levers": [
-            {"col": 3, "row": 0, "corner": "BL"},
-            {"col": 4, "row": 4, "corner": "BR"},
-            {"col": 1, "row": 0, "corner": "TL"},
-            {"col": 6, "row": 1, "corner": "BR"},
-            {"col": 2, "row": 3, "corner": "BR"},
-            {"col": 0, "row": 4, "corner": "BR"},
-            {"col": 2, "row": 4, "corner": "BL"}
-          ]
-        },
-        "back": {
-          "walls": [
-            {"r": 0, "c": 1, "B": true, "R": true},
-            {"r": 0, "c": 2, "B": true, "R": true},
-            {"r": 0, "c": 3, "B": true, "R": true},
-            {"r": 0, "c": 5, "B": true},
-            {"r": 0, "c": 6, "B": true},
-            {"r": 1, "c": 2, "B": true, "R": true},
-            {"r": 1, "c": 5, "B": true, "R": true},
-            {"r": 1, "c": 6, "B": true},
-            {"r": 2, "c": 0, "R": true},
-            {"r": 2, "c": 3, "B": true, "R": true},
-            {"r": 2, "c": 4, "B": true, "R": true},
-            {"r": 2, "c": 5, "B": true, "R": true},
-            {"r": 2, "c": 6, "B": true},
-            {"r": 3, "c": 0, "B": true},
-            {"r": 3, "c": 1, "B": true, "R": true},
-            {"r": 3, "c": 2, "R": true},
-            {"r": 3, "c": 3, "B": true, "R": true},
-            {"r": 3, "c": 4, "B": true},
-            {"r": 3, "c": 5, "B": true},
-            {"r": 3, "c": 6, "B": true, "R": true},
-            {"r": 4, "c": 0, "B": true, "R": true},
-            {"r": 4, "c": 1, "B": true, "R": true},
-            {"r": 4, "c": 2, "B": true},
-            {"r": 4, "c": 3, "B": true, "R": true},
-            {"r": 4, "c": 4, "B": true, "R": true},
-            {"r": 4, "c": 5, "B": true, "R": true},
-            {"r": 4, "c": 6, "B": true, "R": true}
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            {"col": 6, "row": 1, "wall": "L"},
-            {"col": 2, "row": 4, "wall": "B"},
-            {"col": 3, "row": 3, "wall": "R"},
-            {"col": 5, "row": 3, "wall": "B"},
-            {"col": 6, "row": 0, "wall": "T"},
-            {"col": 3, "row": 4, "wall": "B"},
-            {"col": 1, "row": 0, "wall": "T"},
-            {"col": 4, "row": 4, "wall": "B"},
-            {"col": 6, "row": 3, "wall": "T"},
-            {"col": 2, "row": 1, "wall": "R"},
-            {"col": 0, "row": 4, "wall": "T"},
-            {"col": 3, "row": 0, "wall": "R"},
-            {"col": 5, "row": 0, "wall": "T"},
-            {"col": 4, "row": 3, "wall": "T"}
-          ],
-          "levers": [
-            {"col": 3, "row": 0, "corner": "TL"},
-            {"col": 3, "row": 4, "corner": "BR"},
-            {"col": 0, "row": 3, "corner": "BL"},
-            {"col": 1, "row": 3, "corner": "BR"},
-            {"col": 4, "row": 4, "corner": "TL"}
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777541016621-3ixk2a",
-      "name": "Generated chute-heavy (21/77/157)",
-      "initialOrientation": 1,
-      "card": {
-        "front": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true},
-            {"r": 0, "c": 2, "B": true, "R": true},
-            {"r": 0, "c": 4, "B": true, "R": true},
-            {"r": 0, "c": 5, "R": true},
-            {"r": 0, "c": 6, "B": true},
-            {"r": 1, "c": 1, "B": true},
-            {"r": 1, "c": 2, "R": true},
-            {"r": 1, "c": 3, "B": true},
-            {"r": 1, "c": 4, "B": true, "R": true},
-            {"r": 1, "c": 5, "B": true, "R": true},
-            {"r": 1, "c": 6, "B": true, "R": true},
-            {"r": 2, "c": 1, "B": true, "R": true},
-            {"r": 2, "c": 2, "B": true},
-            {"r": 2, "c": 3, "B": true, "R": true},
-            {"r": 2, "c": 4, "B": true},
-            {"r": 2, "c": 5, "B": true, "R": true},
-            {"r": 3, "c": 0, "B": true},
-            {"r": 3, "c": 1, "B": true, "R": true},
-            {"r": 3, "c": 4, "B": true, "R": true},
-            {"r": 3, "c": 5, "B": true},
-            {"r": 3, "c": 6, "B": true},
-            {"r": 4, "c": 0, "B": true},
-            {"r": 4, "c": 2, "B": true},
-            {"r": 4, "c": 3, "B": true, "R": true},
-            {"r": 4, "c": 4, "B": true, "R": true}
-          ],
-          "start": {"col": 6, "row": 3},
-          "goal": null,
-          "chutes": [
-            {"col": 1, "row": 2, "wall": "B"},
-            {"col": 0, "row": 4, "wall": "T"},
-            {"col": 5, "row": 2, "wall": "B"},
-            {"col": 5, "row": 3, "wall": "B"},
-            {"col": 3, "row": 1, "wall": "L"},
-            {"col": 2, "row": 0, "wall": "T"},
-            {"col": 6, "row": 3, "wall": "B"},
-            {"col": 4, "row": 1, "wall": "T"},
-            {"col": 1, "row": 1, "wall": "B"},
-            {"col": 1, "row": 3, "wall": "B"},
-            {"col": 3, "row": 2, "wall": "B"},
-            {"col": 4, "row": 4, "wall": "T"},
-            {"col": 0, "row": 0, "wall": "B"},
-            {"col": 4, "row": 2, "wall": "B"},
-            {"col": 2, "row": 2, "wall": "B"},
-            {"col": 6, "row": 0, "wall": "L"}
-          ],
-          "levers": [
-            {"col": 1, "row": 3, "corner": "BR"},
-            {"col": 1, "row": 2, "corner": "TR"},
-            {"col": 4, "row": 4, "corner": "BR"},
-            {"col": 4, "row": 2, "corner": "TL"},
-            {"col": 2, "row": 0, "corner": "BR"}
-          ]
-        },
-        "back": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true, "R": true},
-            {"r": 0, "c": 1, "R": true},
-            {"r": 0, "c": 2, "B": true, "R": true},
-            {"r": 0, "c": 3, "B": true, "R": true},
-            {"r": 0, "c": 4, "B": true},
-            {"r": 0, "c": 5, "B": true, "R": true},
-            {"r": 0, "c": 6, "B": true},
-            {"r": 1, "c": 0, "B": true},
-            {"r": 1, "c": 2, "B": true},
-            {"r": 1, "c": 3, "B": true, "R": true},
-            {"r": 1, "c": 4, "R": true},
-            {"r": 1, "c": 5, "B": true, "R": true},
-            {"r": 2, "c": 1, "B": true},
-            {"r": 2, "c": 2, "B": true},
-            {"r": 2, "c": 3, "B": true, "R": true},
-            {"r": 2, "c": 4, "B": true, "R": true},
-            {"r": 2, "c": 5, "B": true},
-            {"r": 3, "c": 0, "B": true, "R": true},
-            {"r": 3, "c": 1, "B": true, "R": true},
-            {"r": 3, "c": 2, "B": true},
-            {"r": 3, "c": 5, "B": true},
-            {"r": 3, "c": 6, "B": true},
-            {"r": 4, "c": 0, "R": true},
-            {"r": 4, "c": 2, "B": true},
-            {"r": 4, "c": 4, "B": true},
-            {"r": 4, "c": 6, "B": true}
-          ],
-          "start": null,
-          "goal": {"col": 5, "row": 1},
-          "chutes": [
-            {"col": 5, "row": 2, "wall": "B"},
-            {"col": 6, "row": 4, "wall": "T"},
-            {"col": 1, "row": 2, "wall": "B"},
-            {"col": 1, "row": 3, "wall": "B"},
-            {"col": 3, "row": 1, "wall": "R"},
-            {"col": 4, "row": 0, "wall": "T"},
-            {"col": 0, "row": 3, "wall": "B"},
-            {"col": 2, "row": 1, "wall": "T"},
-            {"col": 5, "row": 1, "wall": "B"},
-            {"col": 5, "row": 3, "wall": "B"},
-            {"col": 3, "row": 2, "wall": "B"},
-            {"col": 2, "row": 4, "wall": "T"},
-            {"col": 6, "row": 0, "wall": "B"},
-            {"col": 2, "row": 2, "wall": "B"},
-            {"col": 4, "row": 2, "wall": "B"},
-            {"col": 0, "row": 0, "wall": "R"}
-          ],
-          "levers": [
-            {"col": 5, "row": 1, "corner": "TL"},
-            {"col": 3, "row": 2, "corner": "TR"}
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777541045094-qcy7ys",
-      "name": "Generated editor-10-wall (18/61/159)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true, "R": true},
-            {"r": 0, "c": 1, "R": true},
-            {"r": 1, "c": 0, "R": true},
-            {"r": 1, "c": 1, "B": true, "R": true},
-            {"r": 1, "c": 4, "B": true},
-            {"r": 2, "c": 0, "B": true},
-            {"r": 2, "c": 1, "R": true},
-            {"r": 2, "c": 2, "B": true},
-            {"r": 2, "c": 4, "B": true},
-            {"r": 3, "c": 0, "B": true},
-            {"r": 3, "c": 2, "B": true, "R": true},
-            {"r": 3, "c": 3, "B": true},
-            {"r": 3, "c": 4, "B": true, "R": true},
-            {"r": 4, "c": 0, "B": true, "R": true},
-            {"r": 4, "c": 1, "B": true},
-            {"r": 4, "c": 2, "B": true},
-            {"r": 5, "c": 0, "B": true, "R": true},
-            {"r": 5, "c": 1, "B": true, "R": true},
-            {"r": 5, "c": 4, "B": true},
-            {"r": 6, "c": 2, "B": true},
-            {"r": 6, "c": 3, "B": true, "R": true},
-            {"r": 6, "c": 4, "B": true}
-          ],
-          "start": {"col": 3, "row": 6},
-          "goal": {"col": 4, "row": 3},
-          "chutes": [
-            {"col": 3, "row": 3, "wall": "B"},
-            {"col": 0, "row": 5, "wall": "T"},
-            {"col": 2, "row": 3, "wall": "T"},
-            {"col": 0, "row": 3, "wall": "T"},
-            {"col": 2, "row": 4, "wall": "T"},
-            {"col": 4, "row": 3, "wall": "B"}
-          ],
-          "levers": [
-            {"col": 2, "row": 3, "corner": "BR"},
-            {"col": 0, "row": 4, "corner": "TR"},
-            {"col": 0, "row": 3, "corner": "BL"},
-            {"col": 0, "row": 4, "corner": "BR"},
-            {"col": 0, "row": 5, "corner": "BR"},
-            {"col": 4, "row": 6, "corner": "TL"}
-          ]
-        },
-        "back": {
-          "walls": [
-            {"r": 0, "c": 1, "B": true, "R": true},
-            {"r": 0, "c": 3, "R": true},
-            {"r": 0, "c": 4, "B": true},
-            {"r": 1, "c": 0, "B": true},
-            {"r": 1, "c": 2, "R": true},
-            {"r": 1, "c": 3, "B": true, "R": true},
-            {"r": 1, "c": 4, "B": true},
-            {"r": 2, "c": 1, "B": true},
-            {"r": 2, "c": 2, "B": true, "R": true},
-            {"r": 2, "c": 4, "B": true},
-            {"r": 3, "c": 0, "B": true},
-            {"r": 3, "c": 1, "B": true},
-            {"r": 3, "c": 2, "B": true},
-            {"r": 3, "c": 3, "B": true, "R": true},
-            {"r": 3, "c": 4, "B": true, "R": true},
-            {"r": 4, "c": 2, "B": true, "R": true},
-            {"r": 4, "c": 3, "B": true, "R": true},
-            {"r": 4, "c": 4, "B": true},
-            {"r": 5, "c": 0, "R": true},
-            {"r": 5, "c": 3, "B": true, "R": true},
-            {"r": 5, "c": 4, "B": true},
-            {"r": 6, "c": 0, "B": true},
-            {"r": 6, "c": 2, "B": true},
-            {"r": 6, "c": 4, "R": true}
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            {"col": 1, "row": 3, "wall": "B"},
-            {"col": 4, "row": 5, "wall": "T"},
-            {"col": 2, "row": 3, "wall": "T"},
-            {"col": 4, "row": 3, "wall": "T"},
-            {"col": 2, "row": 4, "wall": "T"},
-            {"col": 0, "row": 3, "wall": "B"}
-          ],
-          "levers": [
-            {"col": 4, "row": 3, "corner": "BR"}
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777541045128-7oi54w",
-      "name": "Generated editor-10-wall (17/63/164)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true, "R": true},
-            {"r": 0, "c": 1, "B": true, "R": true},
-            {"r": 0, "c": 3, "B": true, "R": true},
-            {"r": 0, "c": 4, "R": true},
-            {"r": 1, "c": 0, "R": true},
-            {"r": 1, "c": 3, "B": true, "R": true},
-            {"r": 1, "c": 4, "B": true},
-            {"r": 2, "c": 2, "B": true},
-            {"r": 2, "c": 3, "R": true},
-            {"r": 3, "c": 0, "B": true},
-            {"r": 3, "c": 2, "R": true},
-            {"r": 3, "c": 3, "B": true},
-            {"r": 3, "c": 4, "R": true},
-            {"r": 4, "c": 0, "B": true, "R": true},
-            {"r": 4, "c": 1, "R": true},
-            {"r": 4, "c": 2, "R": true},
-            {"r": 4, "c": 3, "B": true, "R": true},
-            {"r": 4, "c": 4, "B": true, "R": true},
-            {"r": 5, "c": 0, "R": true},
-            {"r": 5, "c": 1, "B": true},
-            {"r": 5, "c": 2, "B": true},
-            {"r": 5, "c": 4, "B": true, "R": true},
-            {"r": 6, "c": 0, "R": true},
-            {"r": 6, "c": 1, "B": true, "R": true},
-            {"r": 6, "c": 2, "B": true},
-            {"r": 6, "c": 3, "R": true},
-            {"r": 6, "c": 4, "B": true}
-          ],
-          "start": {"col": 3, "row": 4},
-          "goal": null,
-          "chutes": [
-            {"col": 3, "row": 1, "wall": "T"},
-            {"col": 3, "row": 0, "wall": "R"},
-            {"col": 4, "row": 1, "wall": "B"},
-            {"col": 2, "row": 2, "wall": "B"},
-            {"col": 3, "row": 4, "wall": "R"},
-            {"col": 4, "row": 6, "wall": "T"},
-            {"col": 0, "row": 3, "wall": "L"},
-            {"col": 2, "row": 6, "wall": "B"}
-          ],
-          "levers": [
-            {"col": 4, "row": 4, "corner": "BL"},
-            {"col": 3, "row": 0, "corner": "BR"},
-            {"col": 4, "row": 4, "corner": "BR"},
-            {"col": 2, "row": 6, "corner": "TL"}
-          ]
-        },
-        "back": {
-          "walls": [
-            {"r": 0, "c": 0, "R": true},
-            {"r": 0, "c": 1, "B": true, "R": true},
-            {"r": 0, "c": 2, "B": true},
-            {"r": 0, "c": 3, "B": true},
-            {"r": 1, "c": 0, "B": true},
-            {"r": 1, "c": 1, "B": true},
-            {"r": 1, "c": 2, "B": true, "R": true},
-            {"r": 1, "c": 3, "B": true, "R": true},
-            {"r": 1, "c": 4, "B": true},
-            {"r": 2, "c": 2, "B": true},
-            {"r": 2, "c": 4, "B": true, "R": true},
-            {"r": 3, "c": 0, "B": true, "R": true},
-            {"r": 3, "c": 4, "B": true, "R": true},
-            {"r": 4, "c": 0, "B": true, "R": true},
-            {"r": 4, "c": 1, "B": true},
-            {"r": 4, "c": 2, "B": true, "R": true},
-            {"r": 5, "c": 0, "B": true},
-            {"r": 5, "c": 1, "R": true},
-            {"r": 5, "c": 2, "B": true},
-            {"r": 5, "c": 4, "R": true},
-            {"r": 6, "c": 0, "B": true},
-            {"r": 6, "c": 1, "B": true},
-            {"r": 6, "c": 2, "B": true, "R": true},
-            {"r": 6, "c": 3, "B": true}
-          ],
-          "start": null,
-          "goal": {"col": 0, "row": 6},
-          "chutes": [
-            {"col": 1, "row": 1, "wall": "T"},
-            {"col": 1, "row": 0, "wall": "L"},
-            {"col": 0, "row": 1, "wall": "B"},
-            {"col": 2, "row": 2, "wall": "B"},
-            {"col": 1, "row": 4, "wall": "L"},
-            {"col": 0, "row": 6, "wall": "T"},
-            {"col": 4, "row": 3, "wall": "R"},
-            {"col": 2, "row": 6, "wall": "B"}
-          ],
-          "levers": [
-            {"col": 2, "row": 6, "corner": "TR"},
-            {"col": 4, "row": 3, "corner": "TR"},
-            {"col": 1, "row": 0, "corner": "TR"},
-            {"col": 2, "row": 4, "corner": "BR"}
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777541046869-dq9dtg",
-      "name": "Generated editor-15-wall (24/87/172)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true},
-            {"r": 0, "c": 2, "B": true, "R": true},
-            {"r": 0, "c": 3, "B": true},
-            {"r": 0, "c": 4, "R": true},
-            {"r": 1, "c": 0, "B": true, "R": true},
-            {"r": 1, "c": 1, "B": true},
-            {"r": 1, "c": 2, "R": true},
-            {"r": 1, "c": 3, "B": true, "R": true},
-            {"r": 2, "c": 0, "B": true, "R": true},
-            {"r": 2, "c": 1, "B": true, "R": true},
-            {"r": 2, "c": 3, "R": true},
-            {"r": 2, "c": 4, "B": true},
-            {"r": 3, "c": 0, "B": true, "R": true},
-            {"r": 3, "c": 1, "R": true},
-            {"r": 3, "c": 2, "B": true, "R": true},
-            {"r": 3, "c": 3, "B": true},
-            {"r": 4, "c": 0, "B": true},
-            {"r": 4, "c": 1, "B": true, "R": true},
-            {"r": 4, "c": 2, "B": true, "R": true},
-            {"r": 4, "c": 3, "B": true},
-            {"r": 5, "c": 0, "B": true},
-            {"r": 5, "c": 1, "B": true},
-            {"r": 5, "c": 2, "B": true, "R": true},
-            {"r": 5, "c": 3, "B": true, "R": true},
-            {"r": 5, "c": 4, "B": true, "R": true},
-            {"r": 6, "c": 0, "B": true},
-            {"r": 6, "c": 1, "R": true},
-            {"r": 6, "c": 3, "B": true, "R": true}
-          ],
-          "start": {"col": 1, "row": 5},
-          "goal": {"col": 1, "row": 2},
-          "chutes": [
-            {"col": 0, "row": 6, "wall": "B"},
-            {"col": 3, "row": 0, "wall": "T"},
-            {"col": 0, "row": 5, "wall": "T"},
-            {"col": 3, "row": 4, "wall": "T"},
-            {"col": 3, "row": 6, "wall": "R"},
-            {"col": 1, "row": 2, "wall": "L"},
-            {"col": 1, "row": 4, "wall": "R"},
-            {"col": 2, "row": 5, "wall": "T"},
-            {"col": 3, "row": 5, "wall": "T"},
-            {"col": 4, "row": 5, "wall": "B"},
-            {"col": 3, "row": 1, "wall": "B"},
-            {"col": 2, "row": 0, "wall": "R"}
-          ],
-          "levers": [
-            {"col": 2, "row": 0, "corner": "BR"},
-            {"col": 4, "row": 5, "corner": "BL"},
-            {"col": 3, "row": 0, "corner": "BL"},
-            {"col": 2, "row": 5, "corner": "BR"},
-            {"col": 4, "row": 2, "corner": "BL"}
-          ]
-        },
-        "back": {
-          "walls": [
-            {"r": 0, "c": 1, "B": true, "R": true},
-            {"r": 0, "c": 2, "B": true},
-            {"r": 0, "c": 4, "B": true, "R": true},
-            {"r": 1, "c": 1, "B": true},
-            {"r": 1, "c": 4, "B": true, "R": true},
-            {"r": 2, "c": 0, "B": true, "R": true},
-            {"r": 2, "c": 2, "R": true},
-            {"r": 2, "c": 3, "B": true, "R": true},
-            {"r": 3, "c": 1, "B": true, "R": true},
-            {"r": 3, "c": 2, "B": true, "R": true},
-            {"r": 3, "c": 3, "R": true},
-            {"r": 3, "c": 4, "B": true},
-            {"r": 4, "c": 1, "B": true, "R": true},
-            {"r": 4, "c": 2, "B": true, "R": true},
-            {"r": 4, "c": 3, "B": true},
-            {"r": 4, "c": 4, "B": true},
-            {"r": 5, "c": 0, "B": true, "R": true},
-            {"r": 5, "c": 1, "B": true},
-            {"r": 5, "c": 2, "B": true},
-            {"r": 5, "c": 4, "B": true},
-            {"r": 6, "c": 0, "R": true},
-            {"r": 6, "c": 1, "B": true},
-            {"r": 6, "c": 2, "B": true},
-            {"r": 6, "c": 3, "B": true, "R": true},
-            {"r": 6, "c": 4, "B": true}
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            {"col": 4, "row": 6, "wall": "B"},
-            {"col": 1, "row": 0, "wall": "T"},
-            {"col": 4, "row": 5, "wall": "T"},
-            {"col": 1, "row": 4, "wall": "T"},
-            {"col": 1, "row": 6, "wall": "L"},
-            {"col": 3, "row": 2, "wall": "R"},
-            {"col": 3, "row": 4, "wall": "L"},
-            {"col": 2, "row": 5, "wall": "T"},
-            {"col": 1, "row": 5, "wall": "T"},
-            {"col": 0, "row": 5, "wall": "B"},
-            {"col": 1, "row": 1, "wall": "B"},
-            {"col": 2, "row": 0, "wall": "L"}
-          ],
-          "levers": [
-            {"col": 1, "row": 4, "corner": "TR"},
-            {"col": 1, "row": 5, "corner": "BL"},
-            {"col": 1, "row": 0, "corner": "BR"},
-            {"col": 3, "row": 6, "corner": "BR"},
-            {"col": 4, "row": 1, "corner": "TR"},
-            {"col": 1, "row": 5, "corner": "TL"}
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777541060200-3cdj13",
-      "name": "Generated editor-10-wall (23/72/190)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true},
-            {"r": 0, "c": 2, "B": true, "R": true},
-            {"r": 0, "c": 3, "B": true, "R": true},
-            {"r": 0, "c": 4, "B": true, "R": true},
-            {"r": 1, "c": 1, "R": true},
-            {"r": 1, "c": 2, "B": true},
-            {"r": 1, "c": 3, "B": true, "R": true},
-            {"r": 1, "c": 4, "B": true},
-            {"r": 2, "c": 0, "B": true},
-            {"r": 2, "c": 1, "B": true},
-            {"r": 2, "c": 2, "B": true, "R": true},
-            {"r": 2, "c": 4, "B": true},
-            {"r": 3, "c": 0, "B": true},
-            {"r": 3, "c": 1, "B": true, "R": true},
-            {"r": 3, "c": 2, "B": true},
-            {"r": 3, "c": 4, "R": true},
-            {"r": 4, "c": 0, "R": true},
-            {"r": 4, "c": 3, "B": true},
-            {"r": 5, "c": 0, "B": true},
-            {"r": 5, "c": 1, "B": true},
-            {"r": 5, "c": 3, "R": true},
-            {"r": 5, "c": 4, "B": true},
-            {"r": 6, "c": 0, "B": true},
-            {"r": 6, "c": 1, "B": true},
-            {"r": 6, "c": 3, "B": true},
-            {"r": 6, "c": 4, "B": true, "R": true}
-          ],
-          "start": {"col": 3, "row": 4},
-          "goal": {"col": 1, "row": 6},
-          "chutes": [
-            {"col": 1, "row": 6, "wall": "T"},
-            {"col": 2, "row": 2, "wall": "T"},
-            {"col": 4, "row": 2, "wall": "T"},
-            {"col": 4, "row": 1, "wall": "T"},
-            {"col": 0, "row": 2, "wall": "B"},
-            {"col": 2, "row": 3, "wall": "L"},
-            {"col": 4, "row": 6, "wall": "B"},
-            {"col": 3, "row": 0, "wall": "R"},
-            {"col": 0, "row": 6, "wall": "T"},
-            {"col": 3, "row": 4, "wall": "B"}
-          ],
-          "levers": [
-            {"col": 3, "row": 0, "corner": "BL"},
-            {"col": 4, "row": 6, "corner": "TR"}
-          ]
-        },
-        "back": {
-          "walls": [
-            {"r": 0, "c": 0, "B": true, "R": true},
-            {"r": 0, "c": 1, "B": true, "R": true},
-            {"r": 0, "c": 2, "B": true, "R": true},
-            {"r": 0, "c": 4, "R": true},
-            {"r": 1, "c": 0, "B": true, "R": true},
-            {"r": 1, "c": 1, "B": true},
-            {"r": 1, "c": 2, "B": true, "R": true},
-            {"r": 1, "c": 4, "B": true},
-            {"r": 2, "c": 0, "B": true},
-            {"r": 2, "c": 2, "B": true, "R": true},
-            {"r": 2, "c": 3, "R": true},
-            {"r": 2, "c": 4, "B": true},
-            {"r": 3, "c": 2, "B": true, "R": true},
-            {"r": 3, "c": 3, "R": true},
-            {"r": 3, "c": 4, "B": true},
-            {"r": 4, "c": 0, "R": true},
-            {"r": 4, "c": 1, "B": true},
-            {"r": 4, "c": 2, "B": true, "R": true},
-            {"r": 4, "c": 3, "R": true},
-            {"r": 5, "c": 0, "R": true},
-            {"r": 5, "c": 1, "R": true},
-            {"r": 5, "c": 2, "B": true},
-            {"r": 5, "c": 3, "B": true, "R": true},
-            {"r": 5, "c": 4, "B": true},
-            {"r": 6, "c": 0, "B": true, "R": true},
-            {"r": 6, "c": 2, "B": true},
-            {"r": 6, "c": 3, "B": true},
-            {"r": 6, "c": 4, "B": true}
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            {"col": 3, "row": 6, "wall": "T"},
-            {"col": 2, "row": 2, "wall": "T"},
-            {"col": 0, "row": 2, "wall": "T"},
-            {"col": 0, "row": 1, "wall": "T"},
-            {"col": 4, "row": 2, "wall": "B"},
-            {"col": 2, "row": 3, "wall": "R"},
-            {"col": 0, "row": 6, "wall": "B"},
-            {"col": 1, "row": 0, "wall": "L"},
-            {"col": 4, "row": 6, "wall": "T"},
-            {"col": 1, "row": 4, "wall": "B"}
-          ],
-          "levers": [
-            {"col": 4, "row": 5, "corner": "BL"},
-            {"col": 4, "row": 2, "corner": "BL"},
-            {"col": 0, "row": 6, "corner": "BR"},
-            {"col": 4, "row": 2, "corner": "TL"},
-            {"col": 0, "row": 1, "corner": "BR"}
-          ]
-        }
-      }
-    },
-	{
-      "id": "puzzle-1777392717864-359ufa",
-      "name": "Generated editor-10-wall (32/68/197)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true },
-            { "r": 0, "c": 1, "B": true, "R": true },
-            { "r": 0, "c": 2, "R": true },
-            { "r": 0, "c": 3, "B": true },
-            { "r": 1, "c": 0, "B": true },
-            { "r": 1, "c": 2, "R": true },
-            { "r": 1, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 4, "B": true },
-            { "r": 2, "c": 0, "B": true, "R": true },
-            { "r": 2, "c": 1, "B": true, "R": true },
-            { "r": 2, "c": 2, "B": true },
-            { "r": 2, "c": 3, "B": true, "R": true },
-            { "r": 2, "c": 4, "R": true },
-            { "r": 3, "c": 0, "B": true, "R": true },
-            { "r": 3, "c": 1, "B": true, "R": true },
-            { "r": 3, "c": 2, "B": true, "R": true },
-            { "r": 3, "c": 4, "R": true },
-            { "r": 4, "c": 0, "B": true },
-            { "r": 4, "c": 1, "R": true },
-            { "r": 4, "c": 2, "B": true },
-            { "r": 4, "c": 3, "B": true },
-            { "r": 4, "c": 4, "B": true, "R": true },
-            { "r": 5, "c": 1, "B": true },
-            { "r": 5, "c": 2, "B": true, "R": true },
-            { "r": 5, "c": 3, "B": true },
-            { "r": 5, "c": 4, "B": true },
-            { "r": 6, "c": 0, "B": true },
-            { "r": 6, "c": 2, "B": true, "R": true },
-            { "r": 6, "c": 3, "B": true },
-            { "r": 6, "c": 4, "R": true }
-          ],
-          "start": { "col": 2, "row": 5 },
-          "goal": { "col": 0, "row": 4 },
-          "chutes": [
-            { "col": 1, "row": 0, "wall": "R" },
-            { "col": 1, "row": 2, "wall": "L" },
-            { "col": 2, "row": 2, "wall": "B" },
-            { "col": 4, "row": 5, "wall": "T" },
-            { "col": 2, "row": 5, "wall": "B" },
-            { "col": 0, "row": 0, "wall": "T" },
-            { "col": 3, "row": 0, "wall": "T" }
-          ],
-          "levers": []
-        },
-        "back": {
-          "walls": [
-            { "r": 0, "c": 0, "R": true },
-            { "r": 0, "c": 1, "B": true },
-            { "r": 0, "c": 2, "R": true },
-            { "r": 0, "c": 3, "B": true },
-            { "r": 0, "c": 4, "B": true, "R": true },
-            { "r": 1, "c": 0, "R": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 3, "R": true },
-            { "r": 1, "c": 4, "B": true, "R": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true, "R": true },
-            { "r": 2, "c": 4, "B": true, "R": true },
-            { "r": 3, "c": 1, "B": true },
-            { "r": 3, "c": 2, "B": true, "R": true },
-            { "r": 3, "c": 3, "B": true, "R": true },
-            { "r": 3, "c": 4, "B": true, "R": true },
-            { "r": 4, "c": 0, "B": true, "R": true },
-            { "r": 4, "c": 1, "B": true },
-            { "r": 4, "c": 2, "B": true, "R": true },
-            { "r": 4, "c": 3, "R": true },
-            { "r": 4, "c": 4, "B": true, "R": true },
-            { "r": 5, "c": 0, "B": true },
-            { "r": 5, "c": 1, "B": true },
-            { "r": 5, "c": 2, "B": true, "R": true },
-            { "r": 5, "c": 4, "B": true },
-            { "r": 6, "c": 1, "B": true, "R": true },
-            { "r": 6, "c": 2, "B": true, "R": true },
-            { "r": 6, "c": 3, "B": true, "R": true },
-            { "r": 6, "c": 4, "B": true, "R": true }
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            { "col": 3, "row": 0, "wall": "L" },
-            { "col": 3, "row": 2, "wall": "R" },
-            { "col": 2, "row": 2, "wall": "B" },
-            { "col": 0, "row": 5, "wall": "T" },
-            { "col": 2, "row": 5, "wall": "B" },
-            { "col": 4, "row": 0, "wall": "T" },
-            { "col": 1, "row": 0, "wall": "T" }
-          ],
-          "levers": []
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777392460601-bl60uv",
-      "name": "Generated editor-10-wall (32/56/195)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            { "r": 0, "c": 0, "R": true },
-            { "r": 0, "c": 1, "B": true },
-            { "r": 0, "c": 2, "B": true },
-            { "r": 0, "c": 3, "B": true },
-            { "r": 0, "c": 4, "B": true, "R": true },
-            { "r": 1, "c": 0, "B": true, "R": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 4, "R": true },
-            { "r": 2, "c": 0, "B": true },
-            { "r": 2, "c": 1, "B": true },
-            { "r": 2, "c": 3, "R": true },
-            { "r": 2, "c": 4, "B": true, "R": true },
-            { "r": 3, "c": 3, "R": true },
-            { "r": 3, "c": 4, "B": true },
-            { "r": 4, "c": 0, "B": true },
-            { "r": 4, "c": 1, "R": true },
-            { "r": 4, "c": 4, "R": true },
-            { "r": 5, "c": 0, "B": true },
-            { "r": 5, "c": 1, "R": true },
-            { "r": 5, "c": 2, "B": true },
-            { "r": 6, "c": 0, "B": true },
-            { "r": 6, "c": 1, "R": true },
-            { "r": 6, "c": 2, "B": true },
-            { "r": 6, "c": 4, "B": true }
-          ],
-          "start": { "col": 2, "row": 6 },
-          "goal": { "col": 3, "row": 1 },
-          "chutes": [
-            { "col": 4, "row": 0, "wall": "T" },
-            { "col": 0, "row": 2, "wall": "T" },
-            { "col": 2, "row": 0, "wall": "T" },
-            { "col": 2, "row": 5, "wall": "B" }
-          ],
-          "levers": [
-            { "col": 0, "row": 2, "corner": "BL" }
-          ]
-        },
-        "back": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true },
-            { "r": 0, "c": 1, "B": true },
-            { "r": 0, "c": 2, "B": true },
-            { "r": 0, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 0, "B": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 2, "B": true },
-            { "r": 1, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 4, "B": true, "R": true },
-            { "r": 2, "c": 0, "B": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true },
-            { "r": 2, "c": 4, "B": true, "R": true },
-            { "r": 3, "c": 0, "B": true },
-            { "r": 3, "c": 2, "B": true, "R": true },
-            { "r": 4, "c": 0, "B": true, "R": true },
-            { "r": 4, "c": 1, "B": true, "R": true },
-            { "r": 4, "c": 2, "B": true },
-            { "r": 5, "c": 0, "B": true },
-            { "r": 5, "c": 1, "R": true },
-            { "r": 5, "c": 2, "B": true, "R": true },
-            { "r": 5, "c": 3, "R": true },
-            { "r": 5, "c": 4, "B": true, "R": true },
-            { "r": 6, "c": 0, "B": true, "R": true },
-            { "r": 6, "c": 1, "R": true },
-            { "r": 6, "c": 2, "B": true, "R": true },
-            { "r": 6, "c": 3, "B": true, "R": true },
-            { "r": 6, "c": 4, "B": true, "R": true }
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            { "col": 0, "row": 0, "wall": "T" },
-            { "col": 4, "row": 2, "wall": "T" },
-            { "col": 2, "row": 0, "wall": "T" },
-            { "col": 2, "row": 5, "wall": "B" }
-          ],
-          "levers": [
-            { "col": 0, "row": 5, "corner": "TL" },
-            { "col": 2, "row": 5, "corner": "TL" },
-            { "col": 4, "row": 2, "corner": "BR" },
-            { "col": 4, "row": 1, "corner": "BL" }
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777391950888-hfmvgn",
-      "name": "Generated chute-heavy (32/71/185)",
-      "initialOrientation": 1,
-      "card": {
-        "front": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true, "R": true },
-            { "r": 0, "c": 1, "B": true, "R": true },
-            { "r": 0, "c": 3, "B": true, "R": true },
-            { "r": 0, "c": 4, "B": true },
-            { "r": 0, "c": 5, "B": true },
-            { "r": 0, "c": 6, "B": true, "R": true },
-            { "r": 1, "c": 0, "B": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 4, "B": true },
-            { "r": 1, "c": 5, "B": true },
-            { "r": 1, "c": 6, "B": true, "R": true },
-            { "r": 2, "c": 0, "B": true, "R": true },
-            { "r": 2, "c": 1, "B": true, "R": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true, "R": true },
-            { "r": 2, "c": 4, "B": true },
-            { "r": 2, "c": 6, "R": true },
-            { "r": 3, "c": 3, "B": true, "R": true },
-            { "r": 3, "c": 4, "B": true },
-            { "r": 3, "c": 5, "B": true, "R": true },
-            { "r": 3, "c": 6, "B": true, "R": true },
-            { "r": 4, "c": 0, "B": true },
-            { "r": 4, "c": 1, "B": true, "R": true },
-            { "r": 4, "c": 2, "B": true },
-            { "r": 4, "c": 3, "B": true },
-            { "r": 4, "c": 4, "B": true },
-            { "r": 4, "c": 5, "B": true, "R": true },
-            { "r": 4, "c": 6, "B": true }
-          ],
-          "start": { "col": 4, "row": 0 },
-          "goal": null,
-          "chutes": [
-            { "col": 2, "row": 2, "wall": "B" },
-            { "col": 1, "row": 4, "wall": "R" },
-            { "col": 5, "row": 1, "wall": "T" },
-            { "col": 4, "row": 1, "wall": "L" },
-            { "col": 6, "row": 1, "wall": "T" },
-            { "col": 6, "row": 4, "wall": "T" },
-            { "col": 4, "row": 0, "wall": "B" },
-            { "col": 0, "row": 1, "wall": "T" },
-            { "col": 3, "row": 0, "wall": "B" }
-          ],
-          "levers": []
-        },
-        "back": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true, "R": true },
-            { "r": 0, "c": 1, "B": true },
-            { "r": 0, "c": 2, "B": true },
-            { "r": 0, "c": 3, "B": true, "R": true },
-            { "r": 0, "c": 4, "R": true },
-            { "r": 0, "c": 5, "B": true, "R": true },
-            { "r": 0, "c": 6, "B": true, "R": true },
-            { "r": 1, "c": 0, "B": true, "R": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 2, "B": true, "R": true },
-            { "r": 1, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 4, "B": true, "R": true },
-            { "r": 1, "c": 5, "B": true },
-            { "r": 1, "c": 6, "B": true },
-            { "r": 2, "c": 1, "B": true, "R": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true },
-            { "r": 2, "c": 4, "B": true, "R": true },
-            { "r": 2, "c": 5, "B": true, "R": true },
-            { "r": 2, "c": 6, "B": true },
-            { "r": 3, "c": 0, "B": true },
-            { "r": 3, "c": 1, "B": true, "R": true },
-            { "r": 3, "c": 2, "B": true, "R": true },
-            { "r": 3, "c": 3, "B": true, "R": true },
-            { "r": 3, "c": 5, "R": true },
-            { "r": 4, "c": 0, "B": true },
-            { "r": 4, "c": 1, "B": true },
-            { "r": 4, "c": 2, "R": true },
-            { "r": 4, "c": 3, "B": true },
-            { "r": 4, "c": 4, "B": true, "R": true },
-            { "r": 4, "c": 5, "B": true },
-            { "r": 4, "c": 6, "B": true }
-          ],
-          "start": null,
-          "goal": { "col": 3, "row": 2 },
-          "chutes": [
-            { "col": 4, "row": 2, "wall": "B" },
-            { "col": 5, "row": 4, "wall": "L" },
-            { "col": 1, "row": 1, "wall": "T" },
-            { "col": 2, "row": 1, "wall": "R" },
-            { "col": 0, "row": 1, "wall": "T" },
-            { "col": 0, "row": 4, "wall": "T" },
-            { "col": 2, "row": 0, "wall": "B" },
-            { "col": 6, "row": 1, "wall": "T" },
-            { "col": 3, "row": 0, "wall": "B" }
-          ],
-          "levers": []
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777392585356-0k7jzy",
-      "name": "Generated editor-10-wall (32/63/168)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            { "r": 0, "c": 1, "B": true, "R": true },
-            { "r": 0, "c": 3, "B": true },
-            { "r": 0, "c": 4, "R": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 0, "B": true, "R": true },
-            { "r": 2, "c": 4, "B": true },
-            { "r": 3, "c": 0, "B": true, "R": true },
-            { "r": 3, "c": 2, "B": true },
-            { "r": 3, "c": 3, "B": true },
-            { "r": 3, "c": 4, "B": true, "R": true },
-            { "r": 4, "c": 0, "R": true },
-            { "r": 4, "c": 1, "B": true },
-            { "r": 4, "c": 2, "B": true },
-            { "r": 4, "c": 4, "B": true, "R": true },
-            { "r": 5, "c": 0, "B": true, "R": true },
-            { "r": 5, "c": 1, "B": true },
-            { "r": 5, "c": 3, "B": true },
-            { "r": 5, "c": 4, "B": true },
-            { "r": 6, "c": 1, "B": true, "R": true },
-            { "r": 6, "c": 3, "B": true }
-          ],
-          "start": { "col": 4, "row": 2 },
-          "goal": { "col": 0, "row": 5 },
-          "chutes": [
-            { "col": 3, "row": 0, "wall": "T" },
-            { "col": 1, "row": 0, "wall": "R" },
-            { "col": 1, "row": 1, "wall": "B" },
-            { "col": 1, "row": 4, "wall": "L" }
-          ],
-          "levers": []
-        },
-        "back": {
-          "walls": [
-            { "r": 0, "c": 0, "R": true },
-            { "r": 0, "c": 1, "B": true, "R": true },
-            { "r": 0, "c": 2, "B": true, "R": true },
-            { "r": 0, "c": 3, "B": true },
-            { "r": 1, "c": 3, "B": true },
-            { "r": 1, "c": 4, "R": true },
-            { "r": 2, "c": 0, "B": true },
-            { "r": 2, "c": 2, "R": true },
-            { "r": 2, "c": 3, "B": true },
-            { "r": 2, "c": 4, "B": true },
-            { "r": 3, "c": 0, "B": true, "R": true },
-            { "r": 3, "c": 1, "B": true, "R": true },
-            { "r": 3, "c": 2, "B": true, "R": true },
-            { "r": 3, "c": 4, "B": true },
-            { "r": 4, "c": 2, "B": true },
-            { "r": 4, "c": 3, "B": true, "R": true },
-            { "r": 4, "c": 4, "B": true },
-            { "r": 5, "c": 0, "B": true, "R": true },
-            { "r": 5, "c": 1, "B": true, "R": true },
-            { "r": 5, "c": 2, "B": true, "R": true },
-            { "r": 5, "c": 3, "B": true },
-            { "r": 5, "c": 4, "B": true },
-            { "r": 6, "c": 0, "B": true },
-            { "r": 6, "c": 1, "B": true },
-            { "r": 6, "c": 3, "B": true, "R": true },
-            { "r": 6, "c": 4, "R": true }
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            { "col": 1, "row": 0, "wall": "T" },
-            { "col": 3, "row": 0, "wall": "L" },
-            { "col": 3, "row": 1, "wall": "B" },
-            { "col": 3, "row": 4, "wall": "R" }
-          ],
-          "levers": [
-            { "col": 3, "row": 5, "corner": "BL" },
-            { "col": 1, "row": 0, "corner": "BR" }
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777392296428-kuxw3i",
-      "name": "Generated editor-15-wall (31/64/194)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true, "R": true },
-            { "r": 0, "c": 4, "B": true, "R": true },
-            { "r": 1, "c": 0, "B": true, "R": true },
-            { "r": 1, "c": 1, "R": true },
-            { "r": 1, "c": 3, "B": true },
-            { "r": 1, "c": 4, "R": true },
-            { "r": 2, "c": 1, "R": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true },
-            { "r": 3, "c": 0, "R": true },
-            { "r": 3, "c": 1, "B": true, "R": true },
-            { "r": 3, "c": 2, "B": true },
-            { "r": 3, "c": 3, "B": true, "R": true },
-            { "r": 3, "c": 4, "B": true },
-            { "r": 4, "c": 0, "B": true, "R": true },
-            { "r": 4, "c": 1, "B": true, "R": true },
-            { "r": 4, "c": 2, "R": true },
-            { "r": 4, "c": 3, "B": true },
-            { "r": 4, "c": 4, "B": true, "R": true },
-            { "r": 5, "c": 0, "B": true, "R": true },
-            { "r": 5, "c": 1, "B": true, "R": true },
-            { "r": 5, "c": 2, "R": true },
-            { "r": 5, "c": 3, "B": true, "R": true },
-            { "r": 5, "c": 4, "B": true },
-            { "r": 6, "c": 2, "B": true, "R": true },
-            { "r": 6, "c": 3, "B": true }
-          ],
-          "start": { "col": 2, "row": 2 },
-          "goal": { "col": 2, "row": 6 },
-          "chutes": [
-            { "col": 2, "row": 2, "wall": "L" },
-            { "col": 0, "row": 1, "wall": "B" },
-            { "col": 3, "row": 1, "wall": "B" }
-          ],
-          "levers": [
-            { "col": 3, "row": 6, "corner": "TL" },
-            { "col": 0, "row": 1, "corner": "TR" },
-            { "col": 0, "row": 1, "corner": "BR" }
-          ]
-        },
-        "back": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true, "R": true },
-            { "r": 0, "c": 4, "B": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 2, "R": true },
-            { "r": 1, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 4, "B": true },
-            { "r": 2, "c": 0, "B": true },
-            { "r": 2, "c": 1, "B": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true, "R": true },
-            { "r": 3, "c": 0, "R": true },
-            { "r": 3, "c": 1, "B": true, "R": true },
-            { "r": 3, "c": 2, "B": true, "R": true },
-            { "r": 3, "c": 3, "B": true, "R": true },
-            { "r": 4, "c": 0, "B": true, "R": true },
-            { "r": 4, "c": 1, "B": true },
-            { "r": 4, "c": 2, "R": true },
-            { "r": 4, "c": 3, "B": true, "R": true },
-            { "r": 4, "c": 4, "R": true },
-            { "r": 5, "c": 0, "B": true },
-            { "r": 5, "c": 1, "B": true },
-            { "r": 5, "c": 2, "R": true },
-            { "r": 5, "c": 3, "B": true },
-            { "r": 5, "c": 4, "B": true },
-            { "r": 6, "c": 0, "B": true, "R": true },
-            { "r": 6, "c": 1, "B": true },
-            { "r": 6, "c": 2, "B": true, "R": true },
-            { "r": 6, "c": 3, "B": true }
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            { "col": 2, "row": 2, "wall": "R" },
-            { "col": 4, "row": 1, "wall": "B" },
-            { "col": 1, "row": 1, "wall": "B" }
-          ],
-          "levers": [
-            { "col": 0, "row": 4, "corner": "BL" },
-            { "col": 0, "row": 4, "corner": "BR" }
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777392434545-xslz9h",
-      "name": "Generated editor-10-wall (31/63/194)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true, "R": true },
-            { "r": 0, "c": 1, "B": true, "R": true },
-            { "r": 0, "c": 2, "B": true, "R": true },
-            { "r": 0, "c": 3, "R": true },
-            { "r": 0, "c": 4, "B": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 2, "R": true },
-            { "r": 1, "c": 3, "R": true },
-            { "r": 1, "c": 4, "B": true },
-            { "r": 2, "c": 0, "B": true },
-            { "r": 2, "c": 1, "B": true },
-            { "r": 2, "c": 2, "R": true },
-            { "r": 2, "c": 4, "B": true, "R": true },
-            { "r": 3, "c": 0, "R": true },
-            { "r": 3, "c": 1, "B": true, "R": true },
-            { "r": 3, "c": 3, "B": true, "R": true },
-            { "r": 4, "c": 0, "B": true },
-            { "r": 4, "c": 2, "B": true, "R": true },
-            { "r": 4, "c": 3, "B": true },
-            { "r": 4, "c": 4, "R": true },
-            { "r": 5, "c": 0, "B": true },
-            { "r": 5, "c": 1, "B": true, "R": true },
-            { "r": 5, "c": 2, "B": true },
-            { "r": 5, "c": 3, "R": true },
-            { "r": 5, "c": 4, "B": true, "R": true },
-            { "r": 6, "c": 0, "B": true, "R": true },
-            { "r": 6, "c": 1, "B": true, "R": true },
-            { "r": 6, "c": 4, "B": true, "R": true }
-          ],
-          "start": { "col": 0, "row": 5 },
-          "goal": { "col": 1, "row": 1 },
-          "chutes": [
-            { "col": 1, "row": 3, "wall": "R" },
-            { "col": 1, "row": 1, "wall": "T" },
-            { "col": 2, "row": 0, "wall": "L" }
-          ],
-          "levers": [
-            { "col": 1, "row": 3, "corner": "BL" },
-            { "col": 2, "row": 5, "corner": "TL" },
-            { "col": 4, "row": 6, "corner": "TR" },
-            { "col": 0, "row": 2, "corner": "BL" },
-            { "col": 1, "row": 5, "corner": "BR" }
-          ]
-        },
-        "back": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true, "R": true },
-            { "r": 0, "c": 2, "B": true, "R": true },
-            { "r": 0, "c": 3, "B": true, "R": true },
-            { "r": 0, "c": 4, "B": true },
-            { "r": 1, "c": 0, "B": true, "R": true },
-            { "r": 1, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 4, "R": true },
-            { "r": 2, "c": 0, "B": true, "R": true },
-            { "r": 2, "c": 1, "R": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true },
-            { "r": 2, "c": 4, "B": true, "R": true },
-            { "r": 3, "c": 1, "R": true },
-            { "r": 3, "c": 2, "B": true, "R": true },
-            { "r": 3, "c": 3, "B": true },
-            { "r": 4, "c": 0, "B": true, "R": true },
-            { "r": 4, "c": 1, "B": true },
-            { "r": 4, "c": 2, "B": true, "R": true },
-            { "r": 4, "c": 4, "B": true },
-            { "r": 5, "c": 0, "B": true },
-            { "r": 5, "c": 2, "R": true },
-            { "r": 5, "c": 3, "R": true },
-            { "r": 5, "c": 4, "B": true, "R": true },
-            { "r": 6, "c": 2, "B": true, "R": true },
-            { "r": 6, "c": 3, "B": true, "R": true },
-            { "r": 6, "c": 4, "B": true, "R": true }
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            { "col": 3, "row": 3, "wall": "L" },
-            { "col": 3, "row": 1, "wall": "T" },
-            { "col": 2, "row": 0, "wall": "R" }
-          ],
-          "levers": [
-            { "col": 0, "row": 4, "corner": "BR" }
-          ]
-        }
-      }
-    },
-    {
       "id": "puzzle-1777392380676-ygqw1r",
-      "name": "Generated editor-10-wall (31/46/184)",
+      "name": "1 (31/117/238)",
       "initialOrientation": 0,
       "card": {
         "front": {
           "walls": [
-            { "r": 0, "c": 0, "B": true, "R": true },
-            { "r": 0, "c": 1, "B": true, "R": true },
-            { "r": 0, "c": 2, "R": true },
-            { "r": 0, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 0, "B": true, "R": true },
-            { "r": 1, "c": 1, "R": true },
-            { "r": 1, "c": 2, "B": true, "R": true },
-            { "r": 1, "c": 3, "B": true },
-            { "r": 1, "c": 4, "B": true, "R": true },
-            { "r": 2, "c": 0, "B": true },
-            { "r": 2, "c": 1, "R": true },
-            { "r": 2, "c": 2, "B": true },
-            { "r": 2, "c": 3, "B": true, "R": true },
-            { "r": 2, "c": 4, "B": true, "R": true },
-            { "r": 3, "c": 0, "B": true },
-            { "r": 3, "c": 1, "R": true },
-            { "r": 3, "c": 2, "B": true },
-            { "r": 4, "c": 0, "B": true },
-            { "r": 4, "c": 3, "B": true, "R": true },
-            { "r": 4, "c": 4, "B": true },
-            { "r": 5, "c": 1, "B": true },
-            { "r": 5, "c": 2, "B": true, "R": true },
-            { "r": 5, "c": 3, "B": true, "R": true },
-            { "r": 6, "c": 0, "B": true, "R": true },
-            { "r": 6, "c": 1, "B": true },
-            { "r": 6, "c": 2, "R": true },
-            { "r": 6, "c": 4, "R": true }
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "R": true
+            }
           ],
-          "start": { "col": 0, "row": 0 },
+          "start": {
+            "col": 0,
+            "row": 0
+          },
           "goal": null,
           "chutes": [
-            { "col": 0, "row": 0, "wall": "T" },
-            { "col": 2, "row": 5, "wall": "R" },
-            { "col": 2, "row": 1, "wall": "R" },
-            { "col": 0, "row": 4, "wall": "B" }
+            {
+              "col": 0,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "R"
+            },
+            {
+              "col": 2,
+              "row": 1,
+              "wall": "R"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "wall": "L"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "wall": "L"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "R"
+            },
+            {
+              "col": 3,
+              "row": 4,
+              "wall": "R"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "wall": "L"
+            },
+            {
+              "col": 0,
+              "row": 2,
+              "wall": "R"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 6,
+              "wall": "L"
+            }
           ],
           "levers": [
-            { "col": 3, "row": 0, "corner": "BR" },
-            { "col": 3, "row": 0, "corner": "BL" },
-            { "col": 1, "row": 6, "corner": "TL" }
+            {
+              "col": 3,
+              "row": 0,
+              "corner": "BR"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "corner": "BL"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "corner": "TL"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "corner": "BR"
+            },
+            {
+              "col": 3,
+              "row": 4,
+              "corner": "BR"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "corner": "TL"
+            }
           ]
         },
         "back": {
           "walls": [
-            { "r": 0, "c": 1, "R": true },
-            { "r": 0, "c": 2, "B": true, "R": true },
-            { "r": 0, "c": 4, "B": true },
-            { "r": 1, "c": 0, "B": true },
-            { "r": 1, "c": 1, "R": true },
-            { "r": 1, "c": 2, "B": true },
-            { "r": 1, "c": 4, "B": true, "R": true },
-            { "r": 2, "c": 0, "B": true, "R": true },
-            { "r": 2, "c": 1, "B": true, "R": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "R": true },
-            { "r": 2, "c": 4, "B": true },
-            { "r": 3, "c": 1, "B": true, "R": true },
-            { "r": 3, "c": 2, "B": true, "R": true },
-            { "r": 3, "c": 4, "B": true },
-            { "r": 4, "c": 0, "B": true, "R": true },
-            { "r": 4, "c": 1, "B": true, "R": true },
-            { "r": 4, "c": 2, "B": true },
-            { "r": 4, "c": 4, "B": true },
-            { "r": 5, "c": 0, "R": true },
-            { "r": 5, "c": 1, "R": true },
-            { "r": 5, "c": 2, "B": true },
-            { "r": 5, "c": 3, "B": true },
-            { "r": 5, "c": 4, "B": true, "R": true },
-            { "r": 6, "c": 2, "B": true },
-            { "r": 6, "c": 3, "B": true, "R": true },
-            { "r": 6, "c": 4, "B": true, "R": true }
+            {
+              "r": 0,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true
+            }
           ],
           "start": null,
-          "goal": { "col": 3, "row": 5 },
+          "goal": {
+            "col": 3,
+            "row": 5
+          },
           "chutes": [
-            { "col": 4, "row": 0, "wall": "T" },
-            { "col": 2, "row": 5, "wall": "L" },
-            { "col": 2, "row": 1, "wall": "L" },
-            { "col": 4, "row": 4, "wall": "B" }
+            {
+              "col": 4,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "L"
+            },
+            {
+              "col": 2,
+              "row": 1,
+              "wall": "L"
+            },
+            {
+              "col": 4,
+              "row": 4,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "wall": "R"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "wall": "R"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "R"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "wall": "L"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "wall": "R"
+            },
+            {
+              "col": 4,
+              "row": 2,
+              "wall": "L"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 6,
+              "wall": "R"
+            }
           ],
           "levers": [
-            { "col": 1, "row": 3, "corner": "TR" }
-          ]
-        }
-      }
-    },
-    {
-      "id": "puzzle-1777392059345-hfn2a3",
-      "name": "Generated editor-10-wall (31/62/166)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true, "R": true },
-            { "r": 0, "c": 1, "B": true },
-            { "r": 0, "c": 2, "B": true },
-            { "r": 0, "c": 4, "B": true, "R": true },
-            { "r": 1, "c": 0, "B": true, "R": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 2, "R": true },
-            { "r": 2, "c": 0, "B": true },
-            { "r": 2, "c": 1, "B": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true, "R": true },
-            { "r": 2, "c": 4, "R": true },
-            { "r": 3, "c": 0, "B": true },
-            { "r": 3, "c": 2, "B": true },
-            { "r": 3, "c": 3, "B": true, "R": true },
-            { "r": 3, "c": 4, "B": true },
-            { "r": 4, "c": 1, "B": true, "R": true },
-            { "r": 4, "c": 3, "B": true },
-            { "r": 4, "c": 4, "B": true },
-            { "r": 5, "c": 0, "B": true, "R": true },
-            { "r": 5, "c": 1, "B": true, "R": true },
-            { "r": 5, "c": 3, "B": true },
-            { "r": 5, "c": 4, "R": true },
-            { "r": 6, "c": 0, "B": true, "R": true },
-            { "r": 6, "c": 1, "R": true },
-            { "r": 6, "c": 2, "B": true },
-            { "r": 6, "c": 4, "B": true }
-          ],
-          "start": { "col": 3, "row": 3 },
-          "goal": null,
-          "chutes": [
-            { "col": 4, "row": 4, "wall": "T" },
-            { "col": 3, "row": 3, "wall": "T" },
-            { "col": 0, "row": 3, "wall": "T" },
-            { "col": 1, "row": 1, "wall": "T" },
-            { "col": 2, "row": 2, "wall": "R" }
-          ],
-          "levers": [
-            { "col": 1, "row": 0, "corner": "BL" }
-          ]
-        },
-        "back": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true },
-            { "r": 0, "c": 2, "B": true, "R": true },
-            { "r": 0, "c": 3, "B": true },
-            { "r": 0, "c": 4, "B": true, "R": true },
-            { "r": 1, "c": 1, "R": true },
-            { "r": 1, "c": 3, "B": true },
-            { "r": 1, "c": 4, "B": true },
-            { "r": 2, "c": 0, "R": true },
-            { "r": 2, "c": 1, "B": true, "R": true },
-            { "r": 2, "c": 2, "B": true },
-            { "r": 2, "c": 3, "B": true, "R": true },
-            { "r": 2, "c": 4, "B": true },
-            { "r": 3, "c": 0, "B": true },
-            { "r": 3, "c": 1, "B": true },
-            { "r": 3, "c": 4, "B": true, "R": true },
-            { "r": 4, "c": 0, "B": true, "R": true },
-            { "r": 4, "c": 1, "B": true },
-            { "r": 4, "c": 2, "R": true },
-            { "r": 4, "c": 3, "R": true },
-            { "r": 4, "c": 4, "R": true },
-            { "r": 5, "c": 1, "B": true, "R": true },
-            { "r": 5, "c": 4, "B": true },
-            { "r": 6, "c": 0, "B": true, "R": true },
-            { "r": 6, "c": 1, "B": true },
-            { "r": 6, "c": 2, "B": true },
-            { "r": 6, "c": 3, "R": true },
-            { "r": 6, "c": 4, "B": true, "R": true }
-          ],
-          "start": null,
-          "goal": { "col": 1, "row": 4 },
-          "chutes": [
-            { "col": 0, "row": 4, "wall": "T" },
-            { "col": 1, "row": 3, "wall": "T" },
-            { "col": 4, "row": 3, "wall": "T" },
-            { "col": 3, "row": 1, "wall": "T" },
-            { "col": 2, "row": 2, "wall": "L" }
-          ],
-          "levers": [
-            { "col": 0, "row": 4, "corner": "BR" }
+            {
+              "col": 1,
+              "row": 3,
+              "corner": "TR"
+            },
+            {
+              "col": 4,
+              "row": 2,
+              "corner": "BL"
+            },
+            {
+              "col": 2,
+              "row": 6,
+              "corner": "BR"
+            }
           ]
         }
       }
     },
     {
       "id": "puzzle-1777392736965-f357v1",
-      "name": "Generated editor-10-wall (31/64/166)",
-      "initialOrientation": 0,
-      "card": {
-        "front": {
-          "walls": [
-            { "r": 0, "c": 0, "B": true },
-            { "r": 0, "c": 1, "B": true, "R": true },
-            { "r": 0, "c": 2, "B": true, "R": true },
-            { "r": 0, "c": 3, "B": true },
-            { "r": 0, "c": 4, "B": true },
-            { "r": 1, "c": 0, "B": true },
-            { "r": 1, "c": 1, "B": true, "R": true },
-            { "r": 1, "c": 3, "B": true, "R": true },
-            { "r": 1, "c": 4, "B": true },
-            { "r": 2, "c": 0, "R": true },
-            { "r": 2, "c": 1, "B": true, "R": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true },
-            { "r": 3, "c": 0, "B": true },
-            { "r": 3, "c": 1, "B": true },
-            { "r": 3, "c": 4, "R": true },
-            { "r": 4, "c": 0, "B": true },
-            { "r": 4, "c": 2, "B": true, "R": true },
-            { "r": 4, "c": 3, "B": true },
-            { "r": 4, "c": 4, "R": true },
-            { "r": 5, "c": 0, "B": true, "R": true },
-            { "r": 5, "c": 1, "B": true },
-            { "r": 5, "c": 3, "B": true, "R": true },
-            { "r": 5, "c": 4, "B": true, "R": true },
-            { "r": 6, "c": 0, "B": true },
-            { "r": 6, "c": 1, "R": true }
-          ],
-          "start": { "col": 0, "row": 4 },
-          "goal": { "col": 2, "row": 2 },
-          "chutes": [
-            { "col": 0, "row": 6, "wall": "T" },
-            { "col": 2, "row": 2, "wall": "L" },
-            { "col": 2, "row": 0, "wall": "L" },
-            { "col": 1, "row": 3, "wall": "T" },
-            { "col": 3, "row": 2, "wall": "T" },
-            { "col": 4, "row": 5, "wall": "R" }
-          ],
-          "levers": [
-            { "col": 0, "row": 4, "corner": "TL" }
-          ]
-        },
-        "back": {
-          "walls": [
-            { "r": 0, "c": 1, "B": true },
-            { "r": 0, "c": 2, "B": true, "R": true },
-            { "r": 0, "c": 3, "B": true },
-            { "r": 0, "c": 4, "B": true, "R": true },
-            { "r": 1, "c": 0, "R": true },
-            { "r": 1, "c": 1, "B": true },
-            { "r": 1, "c": 2, "R": true },
-            { "r": 1, "c": 3, "B": true },
-            { "r": 1, "c": 4, "B": true, "R": true },
-            { "r": 2, "c": 1, "B": true },
-            { "r": 2, "c": 2, "B": true, "R": true },
-            { "r": 2, "c": 3, "B": true, "R": true },
-            { "r": 3, "c": 0, "B": true },
-            { "r": 3, "c": 2, "R": true },
-            { "r": 3, "c": 3, "B": true },
-            { "r": 3, "c": 4, "R": true },
-            { "r": 4, "c": 4, "B": true, "R": true },
-            { "r": 5, "c": 0, "B": true, "R": true },
-            { "r": 5, "c": 1, "B": true },
-            { "r": 5, "c": 3, "R": true },
-            { "r": 5, "c": 4, "B": true, "R": true },
-            { "r": 6, "c": 0, "B": true, "R": true },
-            { "r": 6, "c": 1, "B": true },
-            { "r": 6, "c": 2, "B": true },
-            { "r": 6, "c": 4, "B": true }
-          ],
-          "start": null,
-          "goal": null,
-          "chutes": [
-            { "col": 4, "row": 6, "wall": "T" },
-            { "col": 2, "row": 2, "wall": "R" },
-            { "col": 2, "row": 0, "wall": "R" },
-            { "col": 3, "row": 3, "wall": "T" },
-            { "col": 1, "row": 2, "wall": "T" },
-            { "col": 0, "row": 5, "wall": "L" }
-          ],
-          "levers": [
-            { "col": 3, "row": 3, "corner": "BL" }
-          ]
-        }
-      }
-    },
-	{
-      "id": "puzzle-1777480037623-tyn5cr",
-      "name": "Optimized (42/121/342)",
+      "name": "2 (44/104/240)",
       "initialOrientation": 0,
       "card": {
         "front": {
@@ -1725,7 +552,18 @@
             },
             {
               "r": 0,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
               "c": 3,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 4,
               "B": true
             },
             {
@@ -1740,12 +578,6 @@
             },
             {
               "r": 1,
-              "c": 2,
-              "B": true,
-              "R": true
-            },
-            {
-              "r": 1,
               "c": 3,
               "B": true,
               "R": true
@@ -1753,45 +585,39 @@
             {
               "r": 1,
               "c": 4,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
               "B": true,
               "R": true
             },
             {
               "r": 2,
-              "c": 0,
-              "B": true
-            },
-            {
-              "r": 2,
-              "c": 1,
-              "B": true
-            },
-            {
-              "r": 2,
               "c": 2,
-              "B": true,
               "R": true
             },
             {
               "r": 2,
               "c": 3,
-              "B": true,
-              "R": true
-            },
-            {
-              "r": 2,
-              "c": 4,
               "B": true
             },
             {
               "r": 3,
               "c": 0,
-              "R": true
+              "B": true
             },
             {
               "r": 3,
               "c": 1,
-              "B": true
+              "B": true,
+              "R": true
             },
             {
               "r": 3,
@@ -1801,19 +627,12 @@
             {
               "r": 3,
               "c": 3,
-              "R": true
+              "B": true
             },
             {
               "r": 3,
               "c": 4,
-              "B": true,
-              "R": true
-            },
-            {
-              "r": 4,
-              "c": 1,
-              "B": true,
-              "R": true
+              "B": true
             },
             {
               "r": 4,
@@ -1825,26 +644,38 @@
               "r": 4,
               "c": 3,
               "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "R": true
             },
             {
               "r": 5,
               "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 1,
               "B": true
             },
             {
               "r": 5,
-              "c": 2,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 4,
               "B": true,
               "R": true
             },
             {
               "r": 6,
-              "c": 1,
-              "B": true
-            },
-            {
-              "r": 6,
-              "c": 2,
+              "c": 0,
               "B": true,
               "R": true
             },
@@ -1856,109 +687,92 @@
           ],
           "start": {
             "col": 0,
-            "row": 0
+            "row": 4
           },
-          "goal": null,
+          "goal": {
+            "col": 2,
+            "row": 2
+          },
           "chutes": [
             {
-              "col": 3,
+              "col": 0,
               "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 2,
               "wall": "L"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "wall": "R"
+            },
+            {
+              "col": 0,
+              "row": 2,
+              "wall": "R"
             },
             {
               "col": 3,
               "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 4,
               "wall": "T"
             },
             {
               "col": 0,
               "row": 1,
-              "wall": "T"
-            },
-            {
-              "col": 4,
-              "row": 2,
-              "wall": "T"
-            },
-            {
-              "col": 1,
-              "row": 3,
-              "wall": "L"
-            },
-            {
-              "col": 1,
-              "row": 2,
               "wall": "B"
             },
             {
-              "col": 4,
-              "row": 1,
-              "wall": "R"
-            },
-            {
-              "col": 3,
-              "row": 1,
-              "wall": "T"
-            },
-            {
-              "col": 3,
+              "col": 2,
               "row": 5,
               "wall": "T"
             },
             {
-              "col": 3,
-              "row": 2,
-              "wall": "T"
-            },
-            {
-              "col": 2,
-              "row": 2,
-              "wall": "T"
-            },
-            {
-              "col": 0,
-              "row": 2,
-              "wall": "B"
-            },
-            {
-              "col": 2,
-              "row": 4,
-              "wall": "L"
-            },
-            {
-              "col": 2,
-              "row": 3,
-              "wall": "B"
-            },
-            {
               "col": 1,
-              "row": 4,
-              "wall": "B"
-            },
-            {
-              "col": 3,
-              "row": 4,
+              "row": 5,
               "wall": "L"
             },
             {
               "col": 1,
-              "row": 6,
-              "wall": "B"
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 4,
+              "wall": "T"
             },
             {
               "col": 4,
               "row": 4,
-              "wall": "T"
-            },
-            {
-              "col": 1,
-              "row": 0,
               "wall": "R"
-            },
-            {
-              "col": 1,
-              "row": 1,
-              "wall": "T"
             },
             {
               "col": 3,
@@ -1967,75 +781,35 @@
             },
             {
               "col": 0,
-              "row": 3,
-              "wall": "L"
-            },
-            {
-              "col": 2,
-              "row": 1,
-              "wall": "R"
-            },
-            {
-              "col": 2,
               "row": 0,
-              "wall": "T"
+              "wall": "B"
             }
           ],
           "levers": [
             {
-              "col": 3,
-              "row": 5,
-              "corner": "TL"
-            },
-            {
-              "col": 2,
-              "row": 6,
-              "corner": "BR"
-            },
-            {
-              "col": 2,
-              "row": 6,
-              "corner": "TR"
-            },
-            {
-              "col": 2,
-              "row": 2,
-              "corner": "BR"
-            },
-            {
-              "col": 3,
-              "row": 3,
-              "corner": "TR"
-            },
-            {
-              "col": 2,
-              "row": 4,
-              "corner": "BR"
-            },
-            {
-              "col": 1,
-              "row": 4,
-              "corner": "TR"
-            },
-            {
               "col": 0,
-              "row": 3,
-              "corner": "TR"
-            },
-            {
-              "col": 1,
-              "row": 0,
-              "corner": "TR"
+              "row": 4,
+              "corner": "TL"
             },
             {
               "col": 4,
               "row": 1,
-              "corner": "BR"
+              "corner": "BL"
             },
             {
-              "col": 0,
-              "row": 3,
-              "corner": "TL"
+              "col": 2,
+              "row": 0,
+              "corner": "BL"
+            },
+            {
+              "col": 2,
+              "row": 4,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 5,
+              "corner": "BL"
             }
           ]
         },
@@ -2055,6 +829,1092 @@
             {
               "r": 0,
               "c": 3,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true
+            }
+          ],
+          "start": null,
+          "goal": null,
+          "chutes": [
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 2,
+              "wall": "R"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "R"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "wall": "L"
+            },
+            {
+              "col": 4,
+              "row": 2,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "R"
+            },
+            {
+              "col": 3,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "wall": "R"
+            },
+            {
+              "col": 3,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "wall": "B"
+            }
+          ],
+          "levers": [
+            {
+              "col": 3,
+              "row": 3,
+              "corner": "BL"
+            },
+            {
+              "col": 2,
+              "row": 2,
+              "corner": "BR"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "corner": "BR"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "corner": "BR"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "puzzle-1777392460601-bl60uv",
+      "name": "3 (43/107/261)",
+      "initialOrientation": 0,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true
+            }
+          ],
+          "start": {
+            "col": 2,
+            "row": 6
+          },
+          "goal": {
+            "col": 3,
+            "row": 1
+          },
+          "chutes": [
+            {
+              "col": 4,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 2,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "L"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "L"
+            },
+            {
+              "col": 3,
+              "row": 2,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 5,
+              "wall": "R"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 4,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "wall": "T"
+            }
+          ],
+          "levers": [
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "TR"
+            },
+            {
+              "col": 4,
+              "row": 2,
+              "corner": "BR"
+            }
+          ]
+        },
+        "back": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true,
+              "R": true
+            }
+          ],
+          "start": null,
+          "goal": null,
+          "chutes": [
+            {
+              "col": 0,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 2,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "R"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 5,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "R"
+            },
+            {
+              "col": 1,
+              "row": 2,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "wall": "L"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "wall": "T"
+            }
+          ],
+          "levers": [
+            {
+              "col": 0,
+              "row": 5,
+              "corner": "TL"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "corner": "TL"
+            },
+            {
+              "col": 4,
+              "row": 2,
+              "corner": "BR"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "corner": "BL"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "corner": "TL"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "corner": "BR"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "corner": "BL"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "corner": "TR"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "corner": "BL"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "puzzle-1777392434545-xslz9h",
+      "name": "4 (38/97/276)",
+      "initialOrientation": 0,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true,
+              "R": true
+            }
+          ],
+          "start": {
+            "col": 0,
+            "row": 5
+          },
+          "goal": {
+            "col": 1,
+            "row": 1
+          },
+          "chutes": [
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "R"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "L"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 4,
+              "wall": "L"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "wall": "R"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "wall": "R"
+            },
+            {
+              "col": 2,
+              "row": 4,
+              "wall": "R"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "T"
+            }
+          ],
+          "levers": [
+            {
+              "col": 1,
+              "row": 3,
+              "corner": "BL"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "corner": "TL"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 5,
+              "corner": "BR"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "corner": "TR"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "corner": "BL"
+            },
+            {
+              "col": 2,
+              "row": 2,
+              "corner": "TR"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "corner": "BR"
+            },
+            {
+              "col": 2,
+              "row": 4,
+              "corner": "BR"
+            }
+          ]
+        },
+        "back": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
               "B": true,
               "R": true
             },
@@ -2066,36 +1926,29 @@
             {
               "r": 1,
               "c": 0,
-              "B": true
-            },
-            {
-              "r": 1,
-              "c": 1,
               "B": true,
               "R": true
             },
             {
               "r": 1,
-              "c": 2,
+              "c": 3,
               "B": true,
               "R": true
             },
             {
               "r": 1,
               "c": 4,
-              "B": true,
               "R": true
             },
             {
               "r": 2,
               "c": 0,
-              "B": true,
               "R": true
             },
             {
               "r": 2,
               "c": 1,
-              "B": true
+              "R": true
             },
             {
               "r": 2,
@@ -2106,40 +1959,22 @@
             {
               "r": 2,
               "c": 3,
-              "B": true,
-              "R": true
+              "B": true
             },
             {
               "r": 2,
               "c": 4,
-              "B": true
-            },
-            {
-              "r": 3,
-              "c": 0,
-              "B": true
+              "B": true,
+              "R": true
             },
             {
               "r": 3,
               "c": 1,
-              "B": true,
               "R": true
             },
             {
               "r": 3,
               "c": 2,
-              "B": true
-            },
-            {
-              "r": 3,
-              "c": 3,
-              "B": true,
-              "R": true
-            },
-            {
-              "r": 3,
-              "c": 4,
-              "B": true,
               "R": true
             },
             {
@@ -2157,91 +1992,116 @@
             {
               "r": 4,
               "c": 2,
+              "B": true,
               "R": true
-            },
-            {
-              "r": 4,
-              "c": 3,
-              "B": true
             },
             {
               "r": 4,
               "c": 4,
-              "R": true
+              "B": true
             },
             {
               "r": 5,
               "c": 0,
-              "R": true
+              "B": true
             },
             {
               "r": 5,
               "c": 1,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 2,
               "B": true,
               "R": true
             },
             {
               "r": 5,
               "c": 3,
-              "B": true
-            },
-            {
-              "r": 5,
-              "c": 4,
-              "R": true
-            },
-            {
-              "r": 6,
-              "c": 0,
               "B": true,
               "R": true
             },
             {
-              "r": 6,
-              "c": 1,
+              "r": 5,
+              "c": 4,
               "B": true,
               "R": true
             },
             {
               "r": 6,
               "c": 2,
-              "B": true
+              "R": true
             },
             {
               "r": 6,
               "c": 3,
-              "B": true
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true,
+              "R": true
             }
           ],
           "start": null,
-          "goal": {
-            "col": 4,
-            "row": 0
-          },
+          "goal": null,
           "chutes": [
             {
-              "col": 1,
-              "row": 6,
-              "wall": "R"
+              "col": 3,
+              "row": 3,
+              "wall": "L"
             },
             {
-              "col": 1,
-              "row": 0,
-              "wall": "T"
-            },
-            {
-              "col": 4,
+              "col": 3,
               "row": 1,
               "wall": "T"
             },
             {
+              "col": 2,
+              "row": 0,
+              "wall": "R"
+            },
+            {
               "col": 0,
-              "row": 2,
-              "wall": "T"
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "wall": "R"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "wall": "B"
             },
             {
               "col": 3,
-              "row": 3,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "L"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "wall": "L"
+            },
+            {
+              "col": 2,
+              "row": 4,
+              "wall": "L"
+            },
+            {
+              "col": 2,
+              "row": 5,
               "wall": "R"
             },
             {
@@ -2250,57 +2110,240 @@
               "wall": "B"
             },
             {
+              "col": 4,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "wall": "T"
+            }
+          ],
+          "levers": [
+            {
+              "col": 0,
+              "row": 4,
+              "corner": "BR"
+            },
+            {
               "col": 0,
               "row": 1,
-              "wall": "L"
+              "corner": "TR"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "corner": "TL"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "corner": "BL"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "puzzle-1777392059345-hfn2a3",
+      "name": "5 (46/127/296)",
+      "initialOrientation": 0,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true
+            }
+          ],
+          "start": {
+            "col": 3,
+            "row": 3
+          },
+          "goal": null,
+          "chutes": [
+            {
+              "col": 4,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 3,
+              "wall": "T"
             },
             {
               "col": 1,
               "row": 1,
               "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 2,
+              "wall": "R"
+            },
+            {
+              "col": 0,
+              "row": 2,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 0,
+              "wall": "B"
             },
             {
               "col": 1,
               "row": 5,
-              "wall": "T"
-            },
-            {
-              "col": 1,
-              "row": 2,
-              "wall": "T"
-            },
-            {
-              "col": 2,
-              "row": 2,
-              "wall": "T"
-            },
-            {
-              "col": 4,
-              "row": 2,
-              "wall": "B"
-            },
-            {
-              "col": 2,
-              "row": 4,
-              "wall": "R"
-            },
-            {
-              "col": 2,
-              "row": 3,
-              "wall": "B"
-            },
-            {
-              "col": 3,
-              "row": 4,
               "wall": "B"
             },
             {
               "col": 1,
-              "row": 4,
-              "wall": "R"
-            },
-            {
-              "col": 3,
               "row": 6,
               "wall": "B"
             },
@@ -2310,13 +2353,242 @@
               "wall": "T"
             },
             {
-              "col": 3,
+              "col": 2,
+              "row": 1,
+              "wall": "R"
+            },
+            {
+              "col": 4,
               "row": 0,
-              "wall": "L"
+              "wall": "R"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "wall": "B"
             },
             {
               "col": 3,
               "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "B"
+            }
+          ],
+          "levers": [
+            {
+              "col": 1,
+              "row": 0,
+              "corner": "BL"
+            },
+            {
+              "col": 3,
+              "row": 2,
+              "corner": "TL"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "corner": "TL"
+            },
+            {
+              "col": 0,
+              "row": 0,
+              "corner": "TR"
+            },
+            {
+              "col": 2,
+              "row": 6,
+              "corner": "BR"
+            },
+            {
+              "col": 0,
+              "row": 0,
+              "corner": "BR"
+            }
+          ]
+        },
+        "back": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true,
+              "R": true
+            }
+          ],
+          "start": null,
+          "goal": {
+            "col": 1,
+            "row": 4
+          },
+          "chutes": [
+            {
+              "col": 0,
+              "row": 4,
               "wall": "T"
             },
             {
@@ -2327,7 +2599,52 @@
             {
               "col": 4,
               "row": 3,
-              "wall": "R"
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 2,
+              "wall": "L"
+            },
+            {
+              "col": 4,
+              "row": 2,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 4,
+              "wall": "T"
             },
             {
               "col": 2,
@@ -2335,126 +2652,2652 @@
               "wall": "L"
             },
             {
+              "col": 0,
+              "row": 0,
+              "wall": "L"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "wall": "B"
+            },
+            {
               "col": 2,
               "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "wall": "B"
+            }
+          ],
+          "levers": [
+            {
+              "col": 0,
+              "row": 4,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 2,
+              "corner": "BR"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "corner": "TR"
+            },
+            {
+              "col": 0,
+              "row": 0,
+              "corner": "TL"
+            },
+            {
+              "col": 2,
+              "row": 2,
+              "corner": "BR"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "corner": "TL"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "corner": "TR"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "corner": "TL"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "corner": "TL"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "corner": "TL"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "puzzle-1777392585356-0k7jzy",
+      "name": "6 (48/124/301)",
+      "initialOrientation": 0,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true,
+              "R": true
+            }
+          ],
+          "start": {
+            "col": 4,
+            "row": 2
+          },
+          "goal": {
+            "col": 0,
+            "row": 5
+          },
+          "chutes": [
+            {
+              "col": 3,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "R"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "wall": "L"
+            },
+            {
+              "col": 3,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 2,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 4,
+              "wall": "R"
+            },
+            {
+              "col": 0,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 3,
               "wall": "T"
             }
           ],
           "levers": [
             {
               "col": 1,
-              "row": 6,
+              "row": 2,
               "corner": "BL"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "corner": "BR"
+            }
+          ]
+        },
+        "back": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true
+            }
+          ],
+          "start": null,
+          "goal": null,
+          "chutes": [
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "T"
             },
             {
               "col": 3,
               "row": 0,
-              "corner": "BL"
+              "wall": "L"
             },
             {
-              "col": 4,
-              "row": 2,
-              "corner": "BL"
+              "col": 3,
+              "row": 1,
+              "wall": "B"
             },
             {
               "col": 3,
               "row": 4,
-              "corner": "TL"
+              "wall": "R"
             },
             {
-              "col": 0,
+              "col": 1,
               "row": 2,
-              "corner": "TR"
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "T"
             },
             {
               "col": 4,
               "row": 2,
-              "corner": "TL"
+              "wall": "T"
             },
             {
               "col": 0,
+              "row": 4,
+              "wall": "L"
+            },
+            {
+              "col": 4,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 3,
               "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 3,
+              "wall": "T"
+            }
+          ],
+          "levers": [
+            {
+              "col": 3,
+              "row": 5,
+              "corner": "BL"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "corner": "TL"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "corner": "TR"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "corner": "TL"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "puzzle-1777392717864-359ufa",
+      "name": "7 (45/125/345)",
+      "initialOrientation": 0,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true
+            }
+          ],
+          "start": {
+            "col": 2,
+            "row": 5
+          },
+          "goal": {
+            "col": 0,
+            "row": 4
+          },
+          "chutes": [
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "R"
+            },
+            {
+              "col": 1,
+              "row": 2,
+              "wall": "L"
+            },
+            {
+              "col": 2,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "wall": "L"
+            },
+            {
+              "col": 2,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 4,
+              "wall": "L"
+            },
+            {
+              "col": 4,
+              "row": 2,
+              "wall": "R"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "wall": "T"
+            }
+          ],
+          "levers": [
+            {
+              "col": 2,
+              "row": 5,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 0,
               "corner": "BR"
             },
             {
               "col": 1,
               "row": 5,
-              "corner": "BR"
-            },
-            {
-              "col": 2,
-              "row": 1,
-              "corner": "BR"
-            },
-            {
-              "col": 2,
-              "row": 3,
               "corner": "TL"
             },
             {
               "col": 3,
-              "row": 3,
-              "corner": "BR"
-            },
-            {
-              "col": 3,
-              "row": 1,
-              "corner": "TL"
-            },
-            {
-              "col": 2,
-              "row": 6,
-              "corner": "BL"
-            },
-            {
-              "col": 2,
-              "row": 0,
-              "corner": "BR"
-            },
-            {
-              "col": 1,
-              "row": 6,
-              "corner": "BR"
-            },
-            {
-              "col": 4,
               "row": 4,
-              "corner": "TR"
+              "corner": "BR"
             },
             {
               "col": 1,
               "row": 2,
-              "corner": "BL"
+              "corner": "TR"
             },
             {
-              "col": 4,
-              "row": 1,
+              "col": 1,
+              "row": 4,
               "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 2,
+              "corner": "TL"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "corner": "BL"
+            }
+          ]
+        },
+        "back": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true,
+              "R": true
+            }
+          ],
+          "start": null,
+          "goal": null,
+          "chutes": [
+            {
+              "col": 3,
+              "row": 0,
+              "wall": "L"
             },
             {
               "col": 3,
               "row": 2,
-              "corner": "BR"
-            },
-            {
-              "col": 3,
-              "row": 0,
-              "corner": "BR"
+              "wall": "R"
             },
             {
               "col": 2,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 4,
               "row": 1,
-              "corner": "TR"
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "wall": "R"
+            },
+            {
+              "col": 2,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "wall": "R"
+            },
+            {
+              "col": 0,
+              "row": 2,
+              "wall": "L"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "T"
+            }
+          ],
+          "levers": [
+            {
+              "col": 2,
+              "row": 5,
+              "corner": "BR"
+            },
+            {
+              "col": 0,
+              "row": 0,
+              "corner": "TL"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "corner": "BR"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "corner": "BL"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "corner": "BL"
             },
             {
               "col": 3,
               "row": 0,
-              "corner": "TR"
+              "corner": "TL"
             },
             {
               "col": 0,
               "row": 4,
               "corner": "BR"
+            },
+            {
+              "col": 3,
+              "row": 2,
+              "corner": "BR"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "corner": "TR"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "corner": "BR"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "corner": "TL"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "corner": "BL"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "puzzle-1777391950888-hfmvgn",
+      "name": "8 (59/129/384)",
+      "initialOrientation": 1,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 5,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 6,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 5,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 6,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 5,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 5,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 6,
+              "B": true
+            }
+          ],
+          "start": {
+            "col": 4,
+            "row": 0
+          },
+          "goal": null,
+          "chutes": [
+            {
+              "col": 2,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "wall": "R"
+            },
+            {
+              "col": 5,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "L"
+            },
+            {
+              "col": 6,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 6,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "wall": "B"
+            },
+            {
+              "col": 5,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 3,
+              "wall": "R"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 6,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "L"
+            },
+            {
+              "col": 5,
+              "row": 4,
+              "wall": "B"
+            }
+          ],
+          "levers": [
+            {
+              "col": 4,
+              "row": 1,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "BL"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "corner": "TL"
+            },
+            {
+              "col": 6,
+              "row": 4,
+              "corner": "TL"
+            },
+            {
+              "col": 0,
+              "row": 2,
+              "corner": "TR"
+            },
+            {
+              "col": 3,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 6,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "corner": "TL"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "BR"
+            },
+            {
+              "col": 0,
+              "row": 3,
+              "corner": "BR"
+            }
+          ]
+        },
+        "back": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 5,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 6,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 5,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 5,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 6,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 5,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 5,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 6,
+              "B": true,
+              "R": true
+            }
+          ],
+          "start": null,
+          "goal": {
+            "col": 3,
+            "row": 2
+          },
+          "chutes": [
+            {
+              "col": 4,
+              "row": 2,
+              "wall": "B"
+            },
+            {
+              "col": 5,
+              "row": 4,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 1,
+              "wall": "R"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 6,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 6,
+              "row": 4,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 5,
+              "row": 1,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 5,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 6,
+              "row": 3,
+              "wall": "L"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 5,
+              "row": 0,
+              "wall": "R"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "wall": "B"
+            }
+          ],
+          "levers": [
+            {
+              "col": 6,
+              "row": 3,
+              "corner": "TL"
+            },
+            {
+              "col": 5,
+              "row": 4,
+              "corner": "TR"
+            },
+            {
+              "col": 2,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "corner": "BR"
+            },
+            {
+              "col": 5,
+              "row": 3,
+              "corner": "BR"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "corner": "TL"
+            },
+            {
+              "col": 5,
+              "row": 1,
+              "corner": "TL"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 4,
+              "row": 3,
+              "corner": "TR"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "corner": "TL"
+            },
+            {
+              "col": 6,
+              "row": 4,
+              "corner": "BR"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "corner": "BR"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "puzzle-1777392296428-kuxw3i",
+      "name": "9 (68/125/413)",
+      "initialOrientation": 0,
+      "card": {
+        "front": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 1,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true
+            }
+          ],
+          "start": {
+            "col": 2,
+            "row": 2
+          },
+          "goal": {
+            "col": 2,
+            "row": 6
+          },
+          "chutes": [
+            {
+              "col": 2,
+              "row": 2,
+              "wall": "L"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "wall": "R"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 4,
+              "wall": "R"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 3,
+              "wall": "R"
+            },
+            {
+              "col": 3,
+              "row": 4,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 5,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "wall": "L"
+            }
+          ],
+          "levers": [
+            {
+              "col": 0,
+              "row": 1,
+              "corner": "TR"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "corner": "BR"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "corner": "BR"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "corner": "BL"
+            },
+            {
+              "col": 4,
+              "row": 2,
+              "corner": "TR"
+            },
+            {
+              "col": 0,
+              "row": 1,
+              "corner": "TL"
+            },
+            {
+              "col": 3,
+              "row": 4,
+              "corner": "TR"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "corner": "BL"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "corner": "BR"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "corner": "BR"
+            }
+          ]
+        },
+        "back": {
+          "walls": [
+            {
+              "r": 0,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 0,
+              "c": 2,
+              "B": true
+            },
+            {
+              "r": 0,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 1,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 1,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 1,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 0,
+              "B": true
+            },
+            {
+              "r": 2,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 2,
+              "c": 3,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 0,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 3,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 3,
+              "c": 4,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 4,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 4,
+              "c": 4,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 5,
+              "c": 2,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 3,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 5,
+              "c": 4,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 0,
+              "B": true,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 1,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 2,
+              "R": true
+            },
+            {
+              "r": 6,
+              "c": 3,
+              "B": true
+            },
+            {
+              "r": 6,
+              "c": 4,
+              "B": true,
+              "R": true
+            }
+          ],
+          "start": null,
+          "goal": null,
+          "chutes": [
+            {
+              "col": 2,
+              "row": 2,
+              "wall": "R"
+            },
+            {
+              "col": 4,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 6,
+              "wall": "B"
+            },
+            {
+              "col": 3,
+              "row": 1,
+              "wall": "L"
+            },
+            {
+              "col": 3,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 1,
+              "row": 6,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 3,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 3,
+              "wall": "L"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "wall": "B"
+            },
+            {
+              "col": 2,
+              "row": 3,
+              "wall": "T"
+            },
+            {
+              "col": 4,
+              "row": 0,
+              "wall": "B"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "wall": "B"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "wall": "T"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "wall": "T"
+            },
+            {
+              "col": 0,
+              "row": 5,
+              "wall": "R"
+            }
+          ],
+          "levers": [
+            {
+              "col": 1,
+              "row": 0,
+              "corner": "TR"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "corner": "BL"
+            },
+            {
+              "col": 2,
+              "row": 1,
+              "corner": "TR"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "corner": "BR"
+            },
+            {
+              "col": 0,
+              "row": 4,
+              "corner": "BR"
+            },
+            {
+              "col": 1,
+              "row": 4,
+              "corner": "TL"
+            },
+            {
+              "col": 1,
+              "row": 1,
+              "corner": "TR"
+            },
+            {
+              "col": 2,
+              "row": 5,
+              "corner": "BR"
+            },
+            {
+              "col": 4,
+              "row": 5,
+              "corner": "BR"
+            },
+            {
+              "col": 0,
+              "row": 6,
+              "corner": "TR"
+            },
+            {
+              "col": 4,
+              "row": 4,
+              "corner": "TL"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "corner": "TR"
+            },
+            {
+              "col": 1,
+              "row": 0,
+              "corner": "BR"
+            },
+            {
+              "col": 3,
+              "row": 5,
+              "corner": "BR"
+            },
+            {
+              "col": 3,
+              "row": 3,
+              "corner": "BL"
             }
           ]
         }
