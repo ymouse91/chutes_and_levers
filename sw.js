@@ -1,11 +1,13 @@
-const CACHE_NAME = 'cl-studio-v6';
+const CACHE_NAME = 'cl-studio-v7';
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.json',
   './icon192.png',
   './icon512.png',
-  './challenges.json'
+  './challenges.json',
+  './assets/fonts/oswald-latin.woff2',
+  './assets/fonts/share-tech-mono-latin.woff2'
 ];
 
 self.addEventListener('install', (event) => {
